@@ -6,7 +6,16 @@
   "trailingSlash": true,
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/steam-media/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/endacopia-header-20260730.jpg",
       "headers": [
         {
           "key": "Cache-Control",
