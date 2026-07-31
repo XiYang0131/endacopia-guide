@@ -3,7 +3,7 @@
   "trailingSlash": true,
   "headers": [
     {
-      "source": "/assets/endacopia-header-20260730.jpg",
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
