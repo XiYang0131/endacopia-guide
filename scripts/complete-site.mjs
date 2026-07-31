@@ -207,6 +207,23 @@ ${footer()}
 `;
 }
 
+function mediaGrid(items) {
+  const klass = items.length === 1 ? "media-grid media-single" : "media-grid";
+  const figures = items.map((item) => `            <figure class="guide-media">
+              <img src="/assets/steam-media/${item.file}" width="${item.width}" height="${item.height}" alt="${esc(item.alt)}" loading="lazy" decoding="async">
+              <figcaption>${esc(item.caption)}</figcaption>
+            </figure>`).join("\n");
+
+  return `          <h2>Official Steam Media Reference</h2>
+          <div class="${klass}">
+${figures}
+          </div>
+          <div class="source-box">
+            <p>These are official Steam store screenshots used as temporary visual references. Replace them with your own route-specific screenshots after capture.</p>
+          </div>
+`;
+}
+
 const pages = [
   {
     slug: "endacopia-office-secret",
@@ -220,6 +237,23 @@ const pages = [
             <h2>Spoiler Scope</h2>
             <p>This page covers the Office secret required for Stay / Ending C. It assumes you already have a near-complete Chapter I save and are deliberately chasing the hidden route.</p>
           </div>
+
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-10.jpg",
+    width: 1537,
+    height: 868,
+    alt: "Official Endacopia Steam screenshot showing Mellow using a telescope at night",
+    caption: "Official Steam store screenshot showing the telescope mood used as a temporary reference for the Office phone-number route."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-08.jpg",
+    width: 1533,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing Mellow in an interior conversation scene with stairs",
+    caption: "Official Steam store screenshot showing an interior route scene. Replace with the exact 277-5944 and stair-wait proof when captured."
+  }
+])}
 
           <h2>Office Route Steps</h2>
           <ol class="step-list">
@@ -281,6 +315,16 @@ const pages = [
     badges: ["Office", "Fast answer"],
     quick: '<code>277-5944</code> is the Office secret phone number in Endacopia. Reveal it with the Telescope, call it from the Jobs app on the Office computer, then follow the clue by waiting under the stairs near the vending machine.',
     body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-10.jpg",
+    width: 1537,
+    height: 868,
+    alt: "Official Endacopia Steam screenshot showing Mellow looking through a telescope at night",
+    caption: "Official Steam store screenshot used as a temporary visual reference for the Telescope step that leads to 277-5944."
+  }
+])}
+
           <h2>Where To Use 277-5944</h2>
           <p>The number belongs to an in-game Office route, not to a normal menu option. The useful sequence is Telescope clue first, Jobs app call second, stair wait third.</p>
           <ol class="step-list">
@@ -337,6 +381,23 @@ const pages = [
     badges: ["18 fish", "Ending C"],
     quick: 'For the Timesville secret, use the Metal Detector to find the Fish Paper, catch all 18 unique fish across the six clock periods, inspect the paper to receive the key, return to the small monochrome shack, switch to windowed mode with <code>Alt+Enter</code>, and use the key on the revealed lock.',
     body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-05.jpg",
+    width: 1536,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing the fishing minigame",
+    caption: "Official Steam store screenshot showing fishing gameplay. Replace with the completed Fish Paper and Lost Key proof when captured."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-06.jpg",
+    width: 1534,
+    height: 865,
+    alt: "Official Endacopia Steam screenshot showing Mellow inside a Timesville room",
+    caption: "Official Steam store screenshot used as a Timesville room reference for the hidden shack route."
+  }
+])}
+
           <h2>Timesville Secret Route</h2>
           <ol class="step-list">
             <li><strong>Get the Fishing Paper.</strong> Use the Metal Detector on the sand after the Timesville route gives you access to the beach search.</li>
@@ -396,6 +457,16 @@ const pages = [
     badges: ["18 fish", "Achievement"],
     quick: 'Endacopia has 18 required Timesville fish for the full fishing checklist: three catches in each of six clock slots. Catch all 18, then exit or recheck the fishing paper to confirm the Fisherman achievement and the secret-route key.',
     body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-05.jpg",
+    width: 1536,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing the fishing minigame at sea",
+    caption: "Official Steam store screenshot showing the fishing minigame. Use this until each time-slot catch list is captured in-game."
+  }
+])}
+
           <h2>All 18 Fish</h2>
           <div class="table-wrap">
             <table>
@@ -458,6 +529,23 @@ const pages = [
     badges: ["Ending C", "Map route"],
     quick: 'For the Misery Town secret, bring the Metal Detector to the cinema, scan the sandy floor to find the remote, use it on the screen to reveal the route map, record the map, then follow it in the checkerboard room until the hidden encounter resolves.',
     body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-03.jpg",
+    width: 1362,
+    height: 766,
+    alt: "Official Endacopia Steam screenshot showing a circus battle scene",
+    caption: "Official Steam store screenshot used as a Misery Town / circus-area mood reference, not the exact remote-map proof."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-09.jpg",
+    width: 1532,
+    height: 857,
+    alt: "Official Endacopia Steam screenshot showing a stage performer scene",
+    caption: "Official Steam store screenshot showing a stage/performance scene. Replace with cinema remote and checkerboard-map screenshots when available."
+  }
+])}
+
           <h2>Misery Town Route Steps</h2>
           <ol class="step-list">
             <li><strong>Enter the cinema with the Metal Detector.</strong> The sand floor is the clue; use the detector before leaving the area behind.</li>
@@ -510,6 +598,23 @@ const pages = [
     badges: ["Chameleon", "Achievements"],
     quick: 'No Strings Attached is the Chameleon combat achievement; Case Closed is the paired avoidance achievement. Make a save before the Chameleon conversation, run one branch for the fight, reload, then run the correct identity/avoidance branch for Case Closed.',
     body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-04.jpg",
+    width: 1536,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing a red character conversation scene",
+    caption: "Official Steam store screenshot used as a Chameleon route reference. Replace with the exact pre-conversation and achievement screenshots when captured."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-03.jpg",
+    width: 1362,
+    height: 766,
+    alt: "Official Endacopia Steam screenshot showing combat UI",
+    caption: "Official Steam store screenshot showing combat UI, useful as temporary achievement-branch media."
+  }
+])}
+
           <h2>Branch Before The Conversation</h2>
           <p>The Chameleon route is a classic achievement split. If you overwrite the save after one outcome, you may need to replay too much of Timesville. Save before the identity conversation, then keep that save until both achievements are confirmed.</p>
 
@@ -612,12 +717,29 @@ const pages = [
     description: "Water Break achievement guide for Endacopia with the confirmed objective, route notes, and a cautious checklist for finding three hydration occasions.",
     eyebrow: "Achievement note",
     badges: ["Water Break", "Cautious"],
-    quick: 'Water Break requires hydrating yourself on three separate occasions. The achievement description confirms the count, but the exact third source is still the part most likely to need in-game verification, so use this page as a capture checklist rather than a fake solved route.',
+    quick: 'Water Break requires hydrating yourself on three separate occasions. Current public notes point to the Office water cooler, the Mouse/Rat apartment dispenser, and the Timesville aquarium waterfall; keep this as a screenshot checklist until all three are captured in your own run.',
     body: `
           <div class="spoiler-box">
             <h2>Verification Note</h2>
-            <p>I am keeping this page cautious until the third hydration spot is personally captured. Current public notes confirm the achievement condition, and some walkthrough notes identify early water sources, but a clean three-shot proof set is still the next editorial task.</p>
+            <p>I am keeping this page cautious until all three hydration spots are personally captured. Current public notes identify the likely full set, but a clean three-shot proof set is still the next editorial task.</p>
           </div>
+
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-08.jpg",
+    width: 1533,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing an interior scene with Mellow",
+    caption: "Official Steam store screenshot used as a temporary interior reference for hydration-route capture planning."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-06.jpg",
+    width: 1534,
+    height: 865,
+    alt: "Official Endacopia Steam screenshot showing a Timesville room",
+    caption: "Official Steam store screenshot used as Timesville reference. Replace with the aquarium waterfall proof as soon as it is captured."
+  }
+])}
 
           <h2>Known Requirement</h2>
           <p>Steam lists Water Break as an achievement for hydrating yourself on three separate occasions. Treat "separate occasions" as three distinct interactions, not three clicks on the same source unless your run proves otherwise.</p>
@@ -628,8 +750,8 @@ const pages = [
               <thead><tr><th>Hydration Slot</th><th>Status</th><th>What To Capture</th></tr></thead>
               <tbody>
                 <tr><td>Office water cooler</td><td>Public walkthrough note</td><td>Interaction before leaving the Office route.</td></tr>
-                <tr><td>Rat room bottle</td><td>Public walkthrough note</td><td>Interaction inside the Rat room during Timesville.</td></tr>
-                <tr><td>Third source</td><td>Needs own screenshot verification</td><td>Record source name/location, route chapter, and unlock moment.</td></tr>
+                <tr><td>Mouse / Rat apartment dispenser</td><td>Public walkthrough note</td><td>Interaction inside the apartment room during Timesville.</td></tr>
+                <tr><td>Timesville aquarium waterfall</td><td>Public-source note; needs own screenshot</td><td>Capture the waterfall interaction and the achievement unlock moment.</td></tr>
               </tbody>
             </table>
           </div>
@@ -643,11 +765,11 @@ const pages = [
 
           <h2>Sources Used</h2>
           <div class="source-box">
-            <p><a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://showgamer.com/en/prohozhdeniya-igr/4923-prohozhdenie-endacopia">ShowGamer walkthrough</a></p>
+            <p><a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://showgamer.com/en/prohozhdeniya-igr/4923-prohozhdenie-endacopia">ShowGamer walkthrough</a> | <a href="https://endacopiaguide.wiki/guides/water-break">Water Break location notes</a> | <a href="https://www.reddit.com/r/Endacopia/comments/1v9msac/i_have_now_100_endacopias_achievements/">Reddit 100% thread</a></p>
           </div>
 `,
     sidebar: {
-      summary: "Cautious Water Break tracker until the third hydration proof is captured.",
+      summary: "Cautious Water Break tracker until all three hydration proofs are captured.",
       badges: ["Water Break", "3 times", "Verify"],
       related: [
         { href: "/endacopia-achievements-guide/", label: "Achievements guide" },
@@ -669,6 +791,23 @@ const pages = [
     badges: ["Editorial", "Screenshots"],
     quick: 'The next biggest ranking upgrade is not more generic text; it is real, route-specific screenshots. Prioritize Ending C proof, Timesville fish, Office phone/stairs, boss achievement branches, and replacement media for the current official Steam reference images.',
     body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-10.jpg",
+    width: 1537,
+    height: 868,
+    alt: "Official Endacopia Steam screenshot showing the telescope scene",
+    caption: "Use official Steam media only as temporary visual scaffolding. The final screenshot set should be self-captured proof."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-05.jpg",
+    width: 1536,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing fishing gameplay",
+    caption: "Fishing is one of the best first targets for real screenshots because it supports both achievements and Ending C."
+  }
+])}
+
           <h2>Priority Screenshot List</h2>
           <ul class="shot-list">
             <li><strong>Header art replacement</strong><span>Create or license a local hero/OG asset so the site is not relying only on Steam reference media.</span></li>
@@ -1000,8 +1139,8 @@ ${trustCards.map(card).join("\n")}
 async function updateHomepage() {
   const file = path.join(root, "index.html");
   let html = await readFile(file, "utf8");
-  html = html.replace(/<!-- COMPLETE_SITE_DEEP_DIVES_START -->[\s\S]*?<!-- COMPLETE_SITE_DEEP_DIVES_END -->\n*/g, "");
-  html = html.replace(/<!-- COMPLETE_SITE_TRUST_START -->[\s\S]*?<!-- COMPLETE_SITE_TRUST_END -->\n*/g, "");
+  html = html.replace(/\s*<!-- COMPLETE_SITE_DEEP_DIVES_START -->[\s\S]*?<!-- COMPLETE_SITE_DEEP_DIVES_END -->\n*/g, "\n");
+  html = html.replace(/\s*<!-- COMPLETE_SITE_TRUST_START -->[\s\S]*?<!-- COMPLETE_SITE_TRUST_END -->\n*/g, "\n");
 
   const needle = '      <section class="band">\n        <div class="container content-layout">\n          <article class="article">\n            <h2>How to Use This Hub</h2>';
   if (!html.includes(needle)) {
