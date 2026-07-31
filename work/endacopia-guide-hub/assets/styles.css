@@ -33,6 +33,7 @@ a {
 
 img {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -414,8 +415,10 @@ h1 {
 
 .guide-media img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #050505;
 }
 
 .guide-media figcaption {
