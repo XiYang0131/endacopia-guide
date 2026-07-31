@@ -620,8 +620,10 @@ tr:last-child td {
 
 .game-card img {
   width: 100%;
-  aspect-ratio: 460 / 215;
-  object-fit: cover;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #050505;
 }
 
 .game-facts {
