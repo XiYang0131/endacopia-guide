@@ -4,7 +4,7 @@ import path from "node:path";
 const root = path.join(process.cwd(), "work", "endacopia-guide-hub");
 const site = "https://www.endacopiaguide.com";
 const lastmod = "2026-08-01";
-const version = "20260801-modules";
+const version = "20260801-beginner";
 const ogImage = `${site}/assets/og/endacopia-guide-og.jpg`;
 const headerImage = "/assets/endacopia-header-20260730.jpg";
 
@@ -40,6 +40,7 @@ const newGuides = [
   "endacopia-save-file-location",
   "endacopia-water-break-achievement",
   "endacopia-screenshot-checklist",
+  "endacopia-beginner-guide",
   "endacopia-prologue-walkthrough",
   "endacopia-demo-vs-full-game",
   "about",
@@ -853,6 +854,126 @@ ${mediaGrid([
     }
   },
   {
+    slug: "endacopia-beginner-guide",
+    title: "Endacopia Beginner Guide - First 3 Puzzles, CHESHIRE and Clocky",
+    description: "Endacopia beginner guide for the first three puzzle blockers: Doors.exe, vent and fridge route, cheese and coins, CHESHIRE password, and Clocky boss.",
+    eyebrow: "Beginner guide",
+    badges: ["First puzzles", "CHESHIRE"],
+    quick: 'For a first Endacopia run, solve these blockers in order: power the computer and run Doors.exe, use the spinning chair/vent route to reach the kitchen, solve the fridge for cheese, use cheese to lure the cockroach and get two coins, feed the Wall Bank to reveal <code>CHESHIRE</code>, then beat Clocky with timed blocks and short counters before entering the bathroom/toilet route.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-02.jpg",
+    width: 1783,
+    height: 999,
+    alt: "Official Endacopia Steam screenshot showing Mellow's room with the computer and clock",
+    caption: "The first blockers start in Mellow's room: computer, framed wall creature, chair, vent, and the hallway route."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-03.jpg",
+    width: 1362,
+    height: 766,
+    alt: "Official Endacopia Steam screenshot showing a combat encounter",
+    caption: "Clocky is the first real combat check; block first, counter in short bursts, and protect stamina."
+  }
+])}
+
+          <div class="spoiler-box">
+            <h2>Spoiler Scope</h2>
+            <p>This beginner guide covers the opening house / demo-style route only. It is written for players stuck in the first 30 to 40 minutes before Chapter I opens up. For the later full-game route, use the <a href="/endacopia-walkthrough/">full walkthrough</a>.</p>
+          </div>
+
+          <h2>First 3 Puzzle Blockers</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Blocker</th><th>Fast Solution</th><th>Common Mistake</th></tr></thead>
+              <tbody>
+                <tr><td>1. Computer / Doors.exe</td><td>Plug the cable under the desk, boot the computer, choose Mellow's profile, and run Doors.exe to open the first route.</td><td>Only inspecting the computer once. Try the usable cable/boot sequence before leaving the room.</td></tr>
+                <tr><td>2. Vent / Kitchen / Fridge</td><td>Spin the chair three times, crawl through the vent, hide from Henry, solve the fridge chain, and take the cheese.</td><td>Trying to force the hallway first, or missing the chair/vent route in Mellow's room.</td></tr>
+                <tr><td>3. Cheese / Coins / Wall Bank</td><td>Use cheese in Mellow's room, step on the cockroach, collect both coins, then feed the Wall Bank to reveal <code>CHESHIRE</code>.</td><td>Trying to pick up the cockroach by hand, or feeding the Wall Bank before collecting both coins.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Puzzle 1: Computer And Doors.exe</h2>
+          <ol class="step-list">
+            <li><strong>Start in Mellow's room.</strong> Inspect the computer area and the cable under the desk.</li>
+            <li><strong>Power the computer.</strong> Plug in the cable, boot the computer, and select Mellow's profile.</li>
+            <li><strong>Run Doors.exe.</strong> Use the program to open the door route. This sets up the hallway and bathroom visit.</li>
+            <li><strong>Do not skip the room.</strong> The same room also contains the chair/vent path and the Wall Bank coin puzzle, so you will return here several times.</li>
+          </ol>
+
+          <h2>Puzzle 2: Vent, Henry, And Fridge Cheese</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Step</th><th>Action</th><th>Result</th></tr></thead>
+              <tbody>
+                <tr><td>Open vent</td><td>Spin the chair in Mellow's room three times.</td><td>The vent route opens.</td></tr>
+                <tr><td>Kitchen entry</td><td>Crawl through the vent and follow the path into the kitchen.</td><td>You reach the kitchen puzzle area.</td></tr>
+                <tr><td>Henry stealth</td><td>Hide in the right cabinet when Henry approaches and spam-click the left cabinet to misdirect him.</td><td>Henry leaves and the fridge puzzle can continue.</td></tr>
+                <tr><td>Fridge chain</td><td>Use hammer on dice box; press 1, 2, 3; place yellow triangle, blue rectangle, red circle; confirm; click ghost; use key; flip both switches; pull fridge handle.</td><td>You obtain cheese.</td></tr>
+                <tr><td>Return</td><td>Go back through the vent and mash A during the tentacle grab.</td><td>You return to Mellow's room with cheese.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Puzzle 3: Cheese, Coins, And CHESHIRE</h2>
+          <ol class="step-list">
+            <li><strong>Use the cheese in Mellow's room.</strong> This lures out the cockroach connected to the framed creature / Wall Bank puzzle chain.</li>
+            <li><strong>Step on the cockroach.</strong> Mellow will not simply pick it up. Stomping it drops two coins.</li>
+            <li><strong>Collect both coins.</strong> Missing one coin blocks the Wall Bank exchange.</li>
+            <li><strong>Feed the Wall Bank.</strong> After both coins are given, the password is revealed: <code>CHESHIRE</code>.</li>
+            <li><strong>Use the password later.</strong> Return to the bathroom/toilet sequence after Clocky and enter <code>CHESHIRE</code> when prompted.</li>
+          </ol>
+
+          <h2>Clocky Boss Tips</h2>
+          <p>Clocky is less about attacking fast and more about rhythm. Watch the clock hands, block the strike, then counter with two hits. A third hit is only safe when stamina is still healthy. If stamina drops too low, skip the counter and wait for the next block cycle.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Problem</th><th>Fix</th></tr></thead>
+              <tbody>
+                <tr><td>I keep getting hit.</td><td>Block when the clock hands begin the attack animation. Blocking early or late can fail.</td></tr>
+                <tr><td>I run out of stamina.</td><td>Use two-hit counters instead of spamming attacks. Keep enough stamina to block the next charge.</td></tr>
+                <tr><td>Clocky will not die.</td><td>Repeat the block/counter cycle. Community guides describe roughly six successful rounds.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Beginner Route Checklist</h2>
+          <ul class="shot-list">
+            <li><strong>Computer started</strong><span>Power cable plugged, Mellow profile selected, Doors.exe opened.</span></li>
+            <li><strong>Vent route cleared</strong><span>Chair spun three times, kitchen reached, Henry stealth completed.</span></li>
+            <li><strong>Cheese obtained</strong><span>Fridge puzzle chain completed and cheese added to inventory.</span></li>
+            <li><strong>CHESHIRE unlocked</strong><span>Cockroach lured, two coins collected, Wall Bank fed.</span></li>
+            <li><strong>Clocky defeated</strong><span>Timed block/counter pattern completed without draining stamina.</span></li>
+            <li><strong>Bathroom route open</strong><span>Use plunger/toilet route and enter CHESHIRE to leave the demo-style opening.</span></li>
+          </ul>
+
+          <h2>Where To Go After The Opening</h2>
+          <p>If you are playing the full Steam release, the toilet route moves into Chapter I. Continue with the <a href="/endacopia-prologue-walkthrough/">Prologue Walkthrough</a> for the complete opening route, then use <a href="/endacopia-full-game/">Full Game Guide</a>, <a href="/endacopia-walkthrough/">Walkthrough</a>, and <a href="/endacopia-all-endings/">All Endings</a> for later chapters and completion routes.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://endacopia.wiki/guides/getting-started/">Endacopia Wiki Getting Started</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki Walkthrough</a> | <a href="https://endacopia.wiki/puzzles/vent-kitchen/">Vent & Kitchen Route</a> | <a href="https://endacopia.wiki/puzzles/fridge-puzzle/">Fridge Puzzle</a> | <a href="https://endacopia.wiki/puzzles/kitchen-coins/">Kitchen & Coins Puzzle</a> | <a href="https://endacopia.wiki/characters/clocky/">Clocky</a> | <a href="https://endacopia.wiki/guides/mini-games/">Mini-Games Guide</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Fast beginner route for the first three puzzle blockers before Chapter I.",
+      badges: ["Beginner", "CHESHIRE", "Clocky"],
+      related: [
+        { href: "/endacopia-prologue-walkthrough/", label: "Prologue walkthrough" },
+        { href: "/endacopia-demo-vs-full-game/", label: "Demo vs full game" },
+        { href: "/endacopia-clocky/", label: "Clocky guide" },
+        { href: "/endacopia-walkthrough/", label: "Full walkthrough" }
+      ],
+      checks: [
+        { label: "Password", value: "CHESHIRE" },
+        { label: "Boss", value: "Clocky" },
+        { label: "Scope", value: "Opening" }
+      ]
+    }
+  },
+  {
     slug: "endacopia-prologue-walkthrough",
     title: "Endacopia Prologue Walkthrough - Demo Opening House Guide",
     description: "Endacopia Prologue walkthrough for the opening house and old demo route: Mellow's room, Doors.exe, kitchen, coins, CHESHIRE, Clocky, and the toilet portal.",
@@ -927,6 +1048,7 @@ ${mediaGrid([
       summary: "Opening house route for demo-style searches before the full game branches into Chapter I.",
       badges: ["Prologue", "Demo", "CHESHIRE"],
       related: [
+        { href: "/endacopia-beginner-guide/", label: "Beginner guide" },
         { href: "/endacopia-demo-vs-full-game/", label: "Demo vs full game" },
         { href: "/endacopia-full-game/", label: "Full game guide" },
         { href: "/endacopia-walkthrough/", label: "Full walkthrough" },
@@ -1013,6 +1135,7 @@ ${mediaGrid([
       summary: "Explains why old Prologue/demo guides do not replace the 2026 Steam full-game route.",
       badges: ["Demo", "Full game", "Timeline"],
       related: [
+        { href: "/endacopia-beginner-guide/", label: "Beginner guide" },
         { href: "/endacopia-prologue-walkthrough/", label: "Prologue walkthrough" },
         { href: "/endacopia-release-date/", label: "Release date" },
         { href: "/endacopia-full-game/", label: "Full game guide" },
@@ -1021,7 +1144,7 @@ ${mediaGrid([
       checks: [
         { label: "Demo", value: "Prologue" },
         { label: "Full release", value: "Jul 27" },
-        { label: "Pages", value: "32" }
+        { label: "Pages", value: "33" }
       ]
     }
   },
@@ -1166,6 +1289,7 @@ ${mediaGrid([
     body: `
           <h2>August 1, 2026</h2>
           <ul class="shot-list">
+            <li><strong>Beginner guide</strong><span>Added a first-30-minutes beginner route for Doors.exe, vent/kitchen, fridge cheese, Wall Bank coins, CHESHIRE, and Clocky boss searches.</span></li>
             <li><strong>Demo bridge pages</strong><span>Added Prologue Walkthrough and Demo vs Full Game pages to capture old demo-guide searches and route users into the 2026 full-game walkthrough.</span></li>
             <li><strong>Module structure</strong><span>Clarified that older demo content mostly covers the Prologue, while the Steam full game continues into Chapter I hubs, saw-choice endings, achievements, and secret routes.</span></li>
           </ul>
@@ -1200,7 +1324,7 @@ ${mediaGrid([
       ],
       checks: [
         { label: "Latest", value: "Aug 1" },
-        { label: "Pages", value: "32" },
+        { label: "Pages", value: "33" },
         { label: "Next", value: "Proof" }
       ]
     }
@@ -1264,6 +1388,7 @@ function card({ href, title, text, badges }) {
 
 function homepageInsert() {
   const routeCards = [
+    { href: "/endacopia-beginner-guide/", title: "Beginner Guide", text: "First 3 opening blockers: Doors.exe, vent and fridge route, CHESHIRE password, and Clocky boss.", badges: ["Beginner", "Clocky"] },
     { href: "/endacopia-demo-vs-full-game/", title: "Demo vs Full Game", text: "Why old demo/prologue guides stop before Chapter I, endings, achievements, and 2026 full-game routes.", badges: ["Demo", "Full game"] },
     { href: "/endacopia-prologue-walkthrough/", title: "Prologue Walkthrough", text: "Opening house route for Mellow's room, Doors.exe, kitchen, coins, CHESHIRE, Clocky, and the toilet portal.", badges: ["Prologue", "CHESHIRE"] },
     { href: "/endacopia-office-secret/", title: "Endacopia Office Secret", text: "Telescope clue, 277-5944, Jobs call, stair wait, and symbol route for Ending C.", badges: ["Office", "277-5944"] },
@@ -1291,7 +1416,7 @@ function homepageInsert() {
           <div class="section-head">
             <div>
               <h2>Route Deep Dives</h2>
-              <p>Long-tail pages for the exact blockers players search after demo videos or a first run: Prologue, full-game differences, Office, 277-5944, Timesville fish, Misery Town, Chameleon, saves, and Water Break.</p>
+              <p>Long-tail pages for the exact blockers players search after demo videos or a first run: beginner route, Prologue, full-game differences, Office, 277-5944, Timesville fish, Misery Town, Chameleon, saves, and Water Break.</p>
             </div>
           </div>
           <div class="guide-grid">
@@ -1330,7 +1455,8 @@ async function updateHomepage() {
     throw new Error("Homepage insertion point not found");
   }
   html = html.replace(needle, `${homepageInsert()}\n${needle}`);
-  html = html.replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>32</strong></li>');
+  html = html.replace(/<span class="eyebrow">Updated [^<]+<\/span>/, '<span class="eyebrow">Updated August 1, 2026</span>');
+  html = html.replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>33</strong></li>');
   await writeFile(file, html, "utf8");
 }
 
