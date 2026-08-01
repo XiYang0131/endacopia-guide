@@ -3,8 +3,8 @@ import path from "node:path";
 
 const root = path.join(process.cwd(), "work", "endacopia-guide-hub");
 const site = "https://www.endacopiaguide.com";
-const lastmod = "2026-07-31";
-const version = "20260731-complete";
+const lastmod = "2026-08-01";
+const version = "20260801-modules";
 const ogImage = `${site}/assets/og/endacopia-guide-og.jpg`;
 const headerImage = "/assets/endacopia-header-20260730.jpg";
 
@@ -40,6 +40,8 @@ const newGuides = [
   "endacopia-save-file-location",
   "endacopia-water-break-achievement",
   "endacopia-screenshot-checklist",
+  "endacopia-prologue-walkthrough",
+  "endacopia-demo-vs-full-game",
   "about",
   "contact",
   "editorial-policy",
@@ -184,7 +186,7 @@ ${nav()}
           <span class="eyebrow">${esc(page.eyebrow)}</span>
           <h1>${esc(page.h1 || page.title)}</h1>
           <div class="meta-line">
-            <span class="badge hot">Updated July 31, 2026</span>
+            <span class="badge hot">Updated August 1, 2026</span>
             ${(page.badges || []).map((badge, index) => `<span class="badge${index === 0 ? " safe" : ""}">${esc(badge)}</span>`).join("\n            ")}
           </div>
 
@@ -851,6 +853,179 @@ ${mediaGrid([
     }
   },
   {
+    slug: "endacopia-prologue-walkthrough",
+    title: "Endacopia Prologue Walkthrough - Demo Opening House Guide",
+    description: "Endacopia Prologue walkthrough for the opening house and old demo route: Mellow's room, Doors.exe, kitchen, coins, CHESHIRE, Clocky, and the toilet portal.",
+    eyebrow: "Prologue walkthrough",
+    badges: ["Demo opening", "House route"],
+    quick: 'The Endacopia Prologue is the opening house route that most older demo guides cover. Work through Mellow\'s room, boot the computer, enter Doors.exe, use the vent/kitchen route, get cheese and coins, enter <code>CHESHIRE</code>, beat Clocky, then use the plunger/toilet route to move into Chapter I in the full game.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-02.jpg",
+    width: 1783,
+    height: 999,
+    alt: "Official Endacopia Steam screenshot showing Mellow's room with computer and clock",
+    caption: "Official Steam store screenshot showing the bedroom/computer setup that matches the early Prologue route."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-01.jpg",
+    width: 1537,
+    height: 865,
+    alt: "Official Endacopia Steam screenshot showing the outside of Mellow's house",
+    caption: "Official Steam store screenshot used as a temporary house-route reference for the demo-style opening."
+  }
+])}
+
+          <div class="spoiler-box">
+            <h2>Demo Context</h2>
+            <p>If you found an older Chinese or short-video walkthrough, it is probably covering this Prologue/demo route. That is useful for the opening, but it does not replace full-game pages for Chapter I, endings, achievements, Water Break, The Yeti, or Ending C.</p>
+          </div>
+
+          <h2>Prologue Route Order</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Route Beat</th><th>What To Do</th><th>Why It Matters</th></tr></thead>
+              <tbody>
+                <tr><td>Mellow's room</td><td>Inspect the room, framed drawing, computer area, and soccer mini-game if you want Footwork Master later.</td><td>Introduces the interaction style and optional achievement tracking.</td></tr>
+                <tr><td>Computer / Doors.exe</td><td>Plug in the computer, boot it, pick Mellow's profile, and open Doors.exe.</td><td>Starts the house-route loop.</td></tr>
+                <tr><td>Hallway and bathroom</td><td>Visit the bathroom, pick up the plunger, and note that the password is not ready yet.</td><td>Sets up the toilet portal return.</td></tr>
+                <tr><td>Kitchen route</td><td>Use the vent path, handle the Henry stealth moment, solve the fridge/cheese step, and escape the vent QTE.</td><td>Gets the cheese needed for the coin route.</td></tr>
+                <tr><td>Coins and wall bank</td><td>Use the cheese and collect coins, then feed the wall bank to reveal <code>CHESHIRE</code>.</td><td>Unlocks the bathroom password.</td></tr>
+                <tr><td>Clocky fight</td><td>Block, counter, and repeat until Clocky is defeated.</td><td>Ends the Prologue combat check.</td></tr>
+                <tr><td>Toilet portal</td><td>Return to the bathroom, use the plunger/toilet route, and enter <code>CHESHIRE</code>.</td><td>The full game continues into Chapter I after this point.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>What Old Demo Guides Still Help With</h2>
+          <ol class="step-list">
+            <li><strong>Opening controls.</strong> Mouse interaction, right-click cursor cycling, and movement basics carry forward.</li>
+            <li><strong>House puzzles.</strong> Computer, vent, cheese, coins, Clocky, and CHESHIRE are still useful Prologue search terms.</li>
+            <li><strong>Game tone.</strong> Older demo videos help players decide if they want the full Steam game.</li>
+          </ol>
+
+          <h2>Where Old Demo Guides Stop Helping</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Search Intent</th><th>Use Demo Guide?</th><th>Use This Instead</th></tr></thead>
+              <tbody>
+                <tr><td>Ending A / B / C</td><td>No</td><td><a href="/endacopia-all-endings/">All endings guide</a></td></tr>
+                <tr><td>Misery Town, Timesville, Office</td><td>No</td><td><a href="/endacopia-walkthrough/">Full walkthrough</a></td></tr>
+                <tr><td>Water Break / all fish / The Yeti</td><td>No</td><td><a href="/endacopia-achievements-guide/">Achievements guide</a></td></tr>
+                <tr><td>Demo opening house</td><td>Yes</td><td>This Prologue page</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a> | <a href="https://www.neoseeker.com/endacopia/Prologue">Neoseeker Prologue</a> | <a href="https://andyl4nd.itch.io/endacopiademo">Itch.io demo page</a> | <a href="https://www.newgrounds.com/portal/view/861144">Newgrounds demo page</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Opening house route for demo-style searches before the full game branches into Chapter I.",
+      badges: ["Prologue", "Demo", "CHESHIRE"],
+      related: [
+        { href: "/endacopia-demo-vs-full-game/", label: "Demo vs full game" },
+        { href: "/endacopia-full-game/", label: "Full game guide" },
+        { href: "/endacopia-walkthrough/", label: "Full walkthrough" },
+        { href: "/endacopia-release-date/", label: "Release date timeline" }
+      ],
+      checks: [
+        { label: "Password", value: "CHESHIRE" },
+        { label: "Boss", value: "Clocky" },
+        { label: "Next", value: "Chapter I" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-demo-vs-full-game",
+    title: "Endacopia Demo vs Full Game - What Changed After Release",
+    description: "Compare the old Endacopia demo and the 2026 Steam full game: Prologue coverage, Chapter I hubs, endings, achievements, saves, and outdated guide warnings.",
+    eyebrow: "Demo vs full game",
+    badges: ["2022 demo", "2026 full game"],
+    quick: 'Older Endacopia demo guides mostly cover the Prologue/opening house route. The Steam full game released on July 27, 2026 and continues into Chapter I hubs, saw-choice endings, Steam achievements, Ending C secrets, The Yeti, and save-file routing.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-02.jpg",
+    width: 1783,
+    height: 999,
+    alt: "Official Endacopia Steam screenshot showing Mellow's room",
+    caption: "The bedroom/computer setup is the kind of scene older demo guides usually cover."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-07.jpg",
+    width: 1534,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing the Saw Box choice interface",
+    caption: "The Saw Box and later ending routes belong to full-game completion, not demo-only routing."
+  }
+])}
+
+          <h2>Fast Comparison</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Topic</th><th>Old Demo / Prologue</th><th>Steam Full Game</th></tr></thead>
+              <tbody>
+                <tr><td>Core coverage</td><td>Opening house, computer, kitchen, coins, CHESHIRE, Clocky.</td><td>Prologue plus Chapter I hubs, later chapters, saw choice, endings, and achievements.</td></tr>
+                <tr><td>Release timing</td><td>Demo existed years before launch, including Newgrounds/itch-era uploads.</td><td>Steam release date: July 27, 2026.</td></tr>
+                <tr><td>Guide usefulness</td><td>Good for learning controls and the house route.</td><td>Required for all serious completion guides.</td></tr>
+                <tr><td>Achievements</td><td>No complete Steam achievement route.</td><td>16 Steam achievements, including Water Break, The Yeti, Stay, Escape, and Return.</td></tr>
+                <tr><td>Saves</td><td>Not useful for full completion planning.</td><td>Local save backups matter for Ending A/B/C and boss branches.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Full Game Module Map</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Module</th><th>Main Content</th><th>Best Page</th></tr></thead>
+              <tbody>
+                <tr><td>Prologue</td><td>Mellow's house, Doors.exe, kitchen, coins, CHESHIRE, Clocky, toilet portal.</td><td><a href="/endacopia-prologue-walkthrough/">Prologue walkthrough</a></td></tr>
+                <tr><td>Chapter I hubs</td><td>Misery Town, Timesville, The Office, body-part recovery, hidden area secrets.</td><td><a href="/endacopia-walkthrough/">Full walkthrough</a></td></tr>
+                <tr><td>Timesville</td><td>Fishing, Fish Paper, 18 fish, Lost Key, windowed-mode shack.</td><td><a href="/endacopia-timesville-fishing-guide/">Timesville fishing secret</a></td></tr>
+                <tr><td>The Office</td><td>Call center, Telescope, 277-5944, stair wait, symbol chain.</td><td><a href="/endacopia-office-secret/">Office secret guide</a></td></tr>
+                <tr><td>Ending branch</td><td>Saw Box 471, Toy Saw, real Saw, Ending A, Ending B.</td><td><a href="/endacopia-all-endings/">All endings</a></td></tr>
+                <tr><td>Secret cleanup</td><td>Ending C / Stay, The Yeti, Water Break, 100% achievements.</td><td><a href="/endacopia-achievements-guide/">Achievements guide</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>When An Old Guide Is Probably Outdated</h2>
+          <ol class="step-list">
+            <li><strong>It only shows the house.</strong> Useful for Prologue, incomplete for the full game.</li>
+            <li><strong>It never mentions Steam achievements.</strong> It probably cannot help with 100% completion.</li>
+            <li><strong>It has no Saw Box or Ending C route.</strong> It is missing full-release ending content.</li>
+            <li><strong>It predates July 27, 2026.</strong> Treat it as demo-era unless it was updated after Steam launch.</li>
+          </ol>
+
+          <h2>Best Search Path</h2>
+          <p>If you came from a short video or old demo walkthrough, use <a href="/endacopia-prologue-walkthrough/">Prologue Walkthrough</a> first, then move to <a href="/endacopia-full-game/">Full Game Guide</a>, <a href="/endacopia-walkthrough/">Walkthrough</a>, and <a href="/endacopia-all-endings/">All Endings</a>.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://steamdb.info/app/2684630/">SteamDB</a> | <a href="https://andyl4nd.itch.io/endacopiademo">Itch.io demo page</a> | <a href="https://www.newgrounds.com/portal/view/861144">Newgrounds demo page</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Explains why old Prologue/demo guides do not replace the 2026 Steam full-game route.",
+      badges: ["Demo", "Full game", "Timeline"],
+      related: [
+        { href: "/endacopia-prologue-walkthrough/", label: "Prologue walkthrough" },
+        { href: "/endacopia-release-date/", label: "Release date" },
+        { href: "/endacopia-full-game/", label: "Full game guide" },
+        { href: "/endacopia-all-endings/", label: "All endings" }
+      ],
+      checks: [
+        { label: "Demo", value: "Prologue" },
+        { label: "Full release", value: "Jul 27" },
+        { label: "Pages", value: "32" }
+      ]
+    }
+  },
+  {
     slug: "about",
     title: "About Endacopia Guide Hub",
     description: "About this unofficial Endacopia guide project, its coverage goals, source policy, and current update priorities.",
@@ -989,6 +1164,12 @@ ${mediaGrid([
     badges: ["Updated", "Site notes"],
     quick: 'This changelog records meaningful guide updates, especially source-backed route additions, image fixes, sitemap changes, and pages that still need in-game proof.',
     body: `
+          <h2>August 1, 2026</h2>
+          <ul class="shot-list">
+            <li><strong>Demo bridge pages</strong><span>Added Prologue Walkthrough and Demo vs Full Game pages to capture old demo-guide searches and route users into the 2026 full-game walkthrough.</span></li>
+            <li><strong>Module structure</strong><span>Clarified that older demo content mostly covers the Prologue, while the Steam full game continues into Chapter I hubs, saw-choice endings, achievements, and secret routes.</span></li>
+          </ul>
+
           <h2>July 31, 2026</h2>
           <ul class="shot-list">
             <li><strong>Long-tail guides</strong><span>Added Office secret, 277-5944, Timesville secret, all fish, Misery Town secret, Chameleon branch, save location, Water Break, and screenshot checklist pages.</span></li>
@@ -1018,8 +1199,8 @@ ${mediaGrid([
         { href: "/endacopia-screenshot-checklist/", label: "Screenshot checklist" }
       ],
       checks: [
-        { label: "Latest", value: "Jul 31" },
-        { label: "Pages", value: "30" },
+        { label: "Latest", value: "Aug 1" },
+        { label: "Pages", value: "32" },
         { label: "Next", value: "Proof" }
       ]
     }
@@ -1083,6 +1264,8 @@ function card({ href, title, text, badges }) {
 
 function homepageInsert() {
   const routeCards = [
+    { href: "/endacopia-demo-vs-full-game/", title: "Demo vs Full Game", text: "Why old demo/prologue guides stop before Chapter I, endings, achievements, and 2026 full-game routes.", badges: ["Demo", "Full game"] },
+    { href: "/endacopia-prologue-walkthrough/", title: "Prologue Walkthrough", text: "Opening house route for Mellow's room, Doors.exe, kitchen, coins, CHESHIRE, Clocky, and the toilet portal.", badges: ["Prologue", "CHESHIRE"] },
     { href: "/endacopia-office-secret/", title: "Endacopia Office Secret", text: "Telescope clue, 277-5944, Jobs call, stair wait, and symbol route for Ending C.", badges: ["Office", "277-5944"] },
     { href: "/endacopia-277-5944/", title: "277-5944 Phone Number", text: "Fast answer page for the Office phone number and the under-stairs follow-up.", badges: ["Fast answer", "Phone"] },
     { href: "/endacopia-timesville-fishing-guide/", title: "Timesville Fishing Secret", text: "Fish Paper, 18 fish, Lost Key, windowed-mode shack, and Ending C checks.", badges: ["Timesville", "Secret"] },
@@ -1108,7 +1291,7 @@ function homepageInsert() {
           <div class="section-head">
             <div>
               <h2>Route Deep Dives</h2>
-              <p>Long-tail pages for the exact blockers players search after the first run: Office, 277-5944, Timesville fish, Misery Town, Chameleon, saves, and Water Break.</p>
+              <p>Long-tail pages for the exact blockers players search after demo videos or a first run: Prologue, full-game differences, Office, 277-5944, Timesville fish, Misery Town, Chameleon, saves, and Water Break.</p>
             </div>
           </div>
           <div class="guide-grid">
@@ -1147,7 +1330,7 @@ async function updateHomepage() {
     throw new Error("Homepage insertion point not found");
   }
   html = html.replace(needle, `${homepageInsert()}\n${needle}`);
-  html = html.replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>30</strong></li>');
+  html = html.replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>32</strong></li>');
   await writeFile(file, html, "utf8");
 }
 
