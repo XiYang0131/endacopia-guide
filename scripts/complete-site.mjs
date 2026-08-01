@@ -4,7 +4,7 @@ import path from "node:path";
 const root = path.join(process.cwd(), "work", "endacopia-guide-hub");
 const site = "https://www.endacopiaguide.com";
 const lastmod = "2026-08-01";
-const version = "20260801-beginner";
+const version = "20260801-puzzles";
 const ogImage = `${site}/assets/og/endacopia-guide-og.jpg`;
 const headerImage = "/assets/endacopia-header-20260730.jpg";
 
@@ -43,6 +43,10 @@ const newGuides = [
   "endacopia-beginner-guide",
   "endacopia-prologue-walkthrough",
   "endacopia-demo-vs-full-game",
+  "endacopia-puzzle-solutions",
+  "endacopia-cheshire-password",
+  "endacopia-let-me-go-let-me-talk",
+  "endacopia-boss-fights-guide",
   "about",
   "contact",
   "editorial-policy",
@@ -96,6 +100,7 @@ function nav() {
         <a class="brand" href="/"><span class="brand-mark">E</span><span>Endacopia Guide Hub</span></a>
         <div class="nav-links">
           <a href="/endacopia-walkthrough/">Walkthrough</a>
+          <a href="/endacopia-puzzle-solutions/">Puzzles</a>
           <a href="/endacopia-all-endings/">All Endings</a>
           <a href="/endacopia-achievements-guide/">Achievements</a>
           <a href="/endacopia-wiki/">Wiki</a>
@@ -1144,7 +1149,349 @@ ${mediaGrid([
       checks: [
         { label: "Demo", value: "Prologue" },
         { label: "Full release", value: "Jul 27" },
-        { label: "Pages", value: "33" }
+        { label: "Pages", value: "37" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-puzzle-solutions",
+    title: "Endacopia Puzzle Solutions - Passwords, Codes and Item Routes",
+    description: "Answer-first Endacopia puzzle solutions for CHESHIRE, LET ME GO, LET ME TALK, Saw Box 471, Core colors, Scribbly, clown colors, and common softlocks.",
+    eyebrow: "Puzzle answers",
+    badges: ["Passwords", "Codes"],
+    quick: 'The highest-intent Endacopia puzzle answers are: toilet password <code>CHESHIRE</code>, first Office phrase <code>LET ME GO</code>, second phrase <code>LET ME TALK</code>, Saw Box code <code>471</code>, Scribbly name <code>SCRIBBLY</code>, dead-clown colors Yellow / Pink / Purple / Red, and Core color order Green / Yellow / Black / Red.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-02.jpg",
+    width: 1783,
+    height: 999,
+    alt: "Official Endacopia Steam screenshot showing Mellow's room with the computer and wall puzzle",
+    caption: "Opening puzzles start in Mellow's room: computer, wall bank, vent route, CHESHIRE, and Clocky."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-07.jpg",
+    width: 1920,
+    height: 1080,
+    alt: "Official Endacopia Steam screenshot showing the Saw Box choice interface",
+    caption: "The Saw Box branch is a late-game answer query. Save before choosing one saw."
+  }
+])}
+
+          <div class="spoiler-box">
+            <h2>Spoiler Scope</h2>
+            <p>This is an answer-first page for players who already searched a password, code, phrase, item route, or softlock. It intentionally gives exact answers before the longer route context.</p>
+          </div>
+
+          <h2>Endacopia Puzzle Answers At A Glance</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Blocker</th><th>Exact Answer</th><th>What It Unlocks</th></tr></thead>
+              <tbody>
+                <tr><td>Toilet password</td><td><code>CHESHIRE</code></td><td>Starts the post-Prologue route after the bathroom/toilet sequence.</td></tr>
+                <tr><td>First Office button phrase</td><td><code>LET ME GO</code></td><td>Opens the first corporate route restriction.</td></tr>
+                <tr><td>Second Office button phrase</td><td><code>LET ME TALK</code></td><td>Restores Mellow's mouth after the later prompt.</td></tr>
+                <tr><td>Dead-clown puzzle</td><td>Yellow, Pink, Purple, Red</td><td>Awards the Scalpel for the body-part route.</td></tr>
+                <tr><td>Missing Bingo Ball</td><td>Use the Scalpel on the patient</td><td>Recovers the red Bingo Ball.</td></tr>
+                <tr><td>Scribbly route</td><td>Find 8 paper pieces, draw the face, enter <code>SCRIBBLY</code></td><td>Awards the map.</td></tr>
+                <tr><td>Core color order</td><td>Green, Yellow, Black, Red</td><td>Opens the AI route after the Core check.</td></tr>
+                <tr><td>Saw Box</td><td><code>471</code></td><td>Opens the saw choice for Ending A / Ending B.</td></tr>
+                <tr><td>Office phone secret</td><td><code>277-5944</code></td><td>Starts the hidden Office secret for Stay / Ending C.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Opening House Softlocks</h2>
+          <ol class="step-list">
+            <li><strong>Doors.exe does not create a real route.</strong> Plug the cable under the desk, boot the computer, select Mellow's profile, and launch Doors.exe before rechecking the physical door.</li>
+            <li><strong>The kitchen seems unreachable.</strong> Spin the chair in Mellow's room three times to open the vent, then use the vent route.</li>
+            <li><strong>The fridge puzzle gives no cheese.</strong> Follow the short chain: hammer, 1-2-3, colored shapes, ghost/key, switches, then handle.</li>
+            <li><strong>The toilet password is missing.</strong> Get cheese, lure the cockroach, step on it, collect both coins, and feed the Wall Bank first.</li>
+          </ol>
+
+          <h2>CHESHIRE Route</h2>
+          <p>The toilet answer is not a random word to brute force. The intended route is fridge cheese -> cockroach -> two coins -> Wall Bank -> <code>CHESHIRE</code>. For the full opening sequence, use the <a href="/endacopia-cheshire-password/">CHESHIRE password guide</a> or the <a href="/endacopia-beginner-guide/">beginner guide</a>.</p>
+
+          <h2>Office Phrase Route</h2>
+          <p><code>LET ME GO</code> and <code>LET ME TALK</code> are sequential answers, not interchangeable guesses. Use <code>LET ME GO</code> first to remove the route restriction, then return later for <code>LET ME TALK</code> when the game points you back to the button-room interface.</p>
+
+          <h2>Late-Game Codes And Branch Saves</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Code</th><th>Use</th><th>Save Advice</th></tr></thead>
+              <tbody>
+                <tr><td><code>471</code></td><td>Henry's Saw Box.</td><td>Save before taking either saw, because the choice controls Ending A vs Ending B.</td></tr>
+                <tr><td><code>277-5944</code></td><td>Office phone clue.</td><td>Use it from the Jobs app only after revealing the clue with the Telescope.</td></tr>
+                <tr><td>Green / Yellow / Black / Red</td><td>Core color sequence.</td><td>Screenshot the Core state before moving into the AI route.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Screenshot Proof Still Needed</h2>
+          <ul class="shot-list">
+            <li><strong>Core colors</strong><span>Capture the complete Green / Yellow / Black / Red sequence in the 2026 Steam build.</span></li>
+            <li><strong>Button phrases</strong><span>Capture LET ME GO accepted first and LET ME TALK accepted later.</span></li>
+            <li><strong>Henry file</strong><span>Capture PASSWORDS.TXT showing the Saw Box / SOW Box entry for 471.</span></li>
+            <li><strong>277-5944</strong><span>Capture the Telescope clue and the Jobs app call.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam Achievements</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki Walkthrough</a> | <a href="https://dq7reimagined.com/endacopia/puzzle-solutions/">Public puzzle cross-check</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Answer-first page for passwords, codes, phrases, item routes, and common softlocks.",
+      badges: ["Answers", "CHESHIRE", "471"],
+      related: [
+        { href: "/endacopia-cheshire-password/", label: "CHESHIRE password" },
+        { href: "/endacopia-let-me-go-let-me-talk/", label: "LET ME GO / TALK" },
+        { href: "/endacopia-saw-box-code/", label: "Saw Box code" },
+        { href: "/endacopia-277-5944/", label: "277-5944 phone number" },
+        { href: "/endacopia-boss-fights-guide/", label: "Boss fights guide" }
+      ],
+      checks: [
+        { label: "Toilet", value: "CHESHIRE" },
+        { label: "Saw Box", value: "471" },
+        { label: "Office", value: "LET ME TALK" },
+        { label: "Phone", value: "277-5944" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-cheshire-password",
+    title: "Endacopia CHESHIRE Password - Toilet Code and Wall Bank Route",
+    description: "Fast answer for the Endacopia CHESHIRE toilet password, how to earn it from the Wall Bank, and what to check if the bathroom route will not start.",
+    eyebrow: "Password answer",
+    badges: ["CHESHIRE", "Toilet code"],
+    quick: 'The Endacopia toilet password is <code>CHESHIRE</code>. The intended route is to solve the fridge for cheese, lure the cockroach in Mellow\'s room, step on it for two coins, feed the Wall Bank, then return to the bathroom/toilet prompt and enter <code>CHESHIRE</code>.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-02.jpg",
+    width: 1783,
+    height: 999,
+    alt: "Official Endacopia Steam screenshot showing Mellow's room with the computer and wall puzzle",
+    caption: "The password route loops through Mellow's room: vent, cheese, cockroach, coins, Wall Bank, then bathroom."
+  }
+])}
+
+          <h2>How To Get CHESHIRE Normally</h2>
+          <ol class="step-list">
+            <li><strong>Open the vent route.</strong> Spin the chair in Mellow's room until the vent opens.</li>
+            <li><strong>Reach the kitchen.</strong> Crawl through the vent and hide from Henry when he checks the cabinets.</li>
+            <li><strong>Solve the fridge.</strong> Complete the fridge chain and take the cheese.</li>
+            <li><strong>Return with cheese.</strong> Use the cheese in Mellow's room to lure out the cockroach.</li>
+            <li><strong>Get both coins.</strong> Step on the cockroach, then collect the two coins it drops.</li>
+            <li><strong>Feed the Wall Bank.</strong> Give both coins to the Wall Bank to reveal <code>CHESHIRE</code>.</li>
+            <li><strong>Use the bathroom route.</strong> Return to the toilet creature and enter the full word.</li>
+          </ol>
+
+          <h2>Do Not Enter These</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Wrong Guess</th><th>Why It Fails</th></tr></thead>
+              <tbody>
+                <tr><td><code>SHINE</code></td><td>It sounds like part of the clue during fast dialogue, but it is not the full password.</td></tr>
+                <tr><td><code>SHIRE</code></td><td>Only the ending of the word.</td></tr>
+                <tr><td><code>TO SHINE</code></td><td>Not the Wall Bank answer.</td></tr>
+                <tr><td>Any fridge letters</td><td>The fridge is an item route for cheese, not a letter cipher for the toilet.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>If The Toilet Route Will Not Start</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Symptom</th><th>Likely Cause</th><th>Fix</th></tr></thead>
+              <tbody>
+                <tr><td>No password prompt</td><td>Bathroom interaction is incomplete.</td><td>Use the plunger/toilet interaction first, then talk to the creature.</td></tr>
+                <tr><td>Password rejected</td><td>Wrong spelling or partial word.</td><td>Enter the full eight-letter word: <code>CHESHIRE</code>.</td></tr>
+                <tr><td>Wall Bank gives no clue</td><td>Missing one coin.</td><td>Recheck the floor after stepping on the cockroach.</td></tr>
+                <tr><td>Still no cheese</td><td>Fridge route not completed.</td><td>Return to the kitchen and finish every fridge mechanism before leaving.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Where This Fits In The Route</h2>
+          <p><code>CHESHIRE</code> is an opening-house blocker. If you are playing the 2026 Steam full release, the route continues after the toilet sequence into the full game. If you are using old demo videos, remember that many of them stop at this point.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://endacopia.wiki/puzzles/kitchen-coins/">Kitchen and Coins Puzzle</a> | <a href="https://endacopia.wiki/puzzles/fridge-puzzle/">Fridge Puzzle</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki Walkthrough</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Exact route for the toilet password, Wall Bank coins, and bathroom softlock checks.",
+      badges: ["CHESHIRE", "Wall Bank", "Opening"],
+      related: [
+        { href: "/endacopia-puzzle-solutions/", label: "All puzzle solutions" },
+        { href: "/endacopia-beginner-guide/", label: "Beginner guide" },
+        { href: "/endacopia-prologue-walkthrough/", label: "Prologue walkthrough" },
+        { href: "/endacopia-clocky/", label: "Clocky guide" }
+      ],
+      checks: [
+        { label: "Password", value: "CHESHIRE" },
+        { label: "Need", value: "2 coins" },
+        { label: "Item", value: "Cheese" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-let-me-go-let-me-talk",
+    title: "Endacopia LET ME GO and LET ME TALK - Office Button Room Phrases",
+    description: "Fast answer for the Endacopia LET ME GO and LET ME TALK button-room phrases, when to enter each one, and why the order matters.",
+    eyebrow: "Office phrase answers",
+    badges: ["LET ME GO", "LET ME TALK"],
+    quick: 'Use <code>LET ME GO</code> first in the Office button-room route. Later, when the game points you back to the same word interface, enter <code>LET ME TALK</code> to restore Mellow\'s mouth. The two phrases are sequential, not interchangeable.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-08.jpg",
+    width: 1533,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing an interior conversation route",
+    caption: "Office route screenshots are still being replaced with self-captured button-room proof."
+  }
+])}
+
+          <h2>Phrase Order</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>When</th><th>Enter</th><th>Result</th></tr></thead>
+              <tbody>
+                <tr><td>First button-room restriction</td><td><code>LET ME GO</code></td><td>Opens the next corporate route section.</td></tr>
+                <tr><td>Later mouth-restoration prompt</td><td><code>LET ME TALK</code></td><td>Restores Mellow's mouth and normal speech route.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Common Mistakes</h2>
+          <ol class="step-list">
+            <li><strong>Entering LET ME TALK too early.</strong> It is a later phrase. Use <code>LET ME GO</code> first.</li>
+            <li><strong>Repeating LET ME GO after the route opens.</strong> The second prompt needs <code>LET ME TALK</code>, not the first phrase again.</li>
+            <li><strong>Leaving extra words selected.</strong> Clear the word interface before building the phrase again.</li>
+            <li><strong>Using this page out of route order.</strong> If the Office path is not open yet, return to the main walkthrough or body-part route first.</li>
+          </ol>
+
+          <h2>Quick Diagnostic</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Search Query</th><th>Likely Need</th><th>Next Step</th></tr></thead>
+              <tbody>
+                <tr><td>Endacopia LET ME GO</td><td>First access restriction.</td><td>Enter <code>LET ME GO</code> and continue right.</td></tr>
+                <tr><td>Endacopia LET ME TALK</td><td>Mellow cannot speak.</td><td>Return to the same word interface later and enter <code>LET ME TALK</code>.</td></tr>
+                <tr><td>Endacopia Office button room</td><td>Phrase order confusion.</td><td>Use GO first, TALK second.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Proof Still Needed</h2>
+          <ul class="shot-list">
+            <li><strong>LET ME GO accepted</strong><span>Button-room screenshot immediately after the first phrase succeeds.</span></li>
+            <li><strong>LET ME TALK accepted</strong><span>Later screenshot showing the phrase and mouth restoration result.</span></li>
+            <li><strong>Route state</strong><span>Screenshot of the prompt that sends the player back to the word room.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://dq7reimagined.com/endacopia/puzzle-solutions/">Public puzzle cross-check</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki Walkthrough</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Fast order check for the two Office button-room phrases.",
+      badges: ["Office", "Phrase", "Softlock"],
+      related: [
+        { href: "/endacopia-puzzle-solutions/", label: "All puzzle solutions" },
+        { href: "/endacopia-office-secret/", label: "Office secret guide" },
+        { href: "/endacopia-walkthrough/", label: "Full walkthrough" },
+        { href: "/endacopia-achievements-guide/", label: "Achievements guide" }
+      ],
+      checks: [
+        { label: "First", value: "LET ME GO" },
+        { label: "Second", value: "LET ME TALK" },
+        { label: "Scope", value: "Office" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-boss-fights-guide",
+    title: "Endacopia Boss Fights Guide - Clocky, AI, Trapezist and Chameleon",
+    description: "Endacopia boss fights guide for Clocky, AI, Trapezist, and Chameleon, with achievement branches, avoid routes, stamina tips, and screenshot targets.",
+    eyebrow: "Boss fights",
+    badges: ["Combat", "Achievements"],
+    quick: 'Endacopia boss searches usually split into two needs: how to survive the fight, or how to avoid the fight for the paired achievement. Steam achievement names confirm the pairs: Fatal Performance / Cut The Act, No Strings Attached / Case Closed, System Override / Short Circuit, plus Clocky as the first combat skill check.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-03.jpg",
+    width: 1362,
+    height: 766,
+    alt: "Official Endacopia Steam screenshot showing a combat encounter",
+    caption: "Combat pages should be upgraded with self-captured tells, block timing, and achievement unlock proof."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-09.jpg",
+    width: 1535,
+    height: 865,
+    alt: "Official Endacopia Steam screenshot showing a boss-like character scene",
+    caption: "Late-route boss pages need separate defeat and avoid-route screenshots."
+  }
+])}
+
+          <h2>Boss And Achievement Map</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Encounter</th><th>Fight Achievement</th><th>Avoid Achievement</th><th>Page</th></tr></thead>
+              <tbody>
+                <tr><td>Clocky</td><td>Opening combat check</td><td>Ending C route implication</td><td><a href="/endacopia-clocky/">Clocky guide</a></td></tr>
+                <tr><td>AI</td><td>System Override</td><td>Short Circuit</td><td>Screenshot pending</td></tr>
+                <tr><td>Trapezist</td><td>Fatal Performance</td><td>Cut The Act</td><td>Screenshot pending</td></tr>
+                <tr><td>Chameleon</td><td>No Strings Attached</td><td>Case Closed</td><td><a href="/endacopia-chameleon-battle/">Chameleon battle</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Universal Combat Tips</h2>
+          <ol class="step-list">
+            <li><strong>Block before chasing damage.</strong> The first failure pattern is attacking until stamina is gone, then eating the next strike.</li>
+            <li><strong>Counter in short bursts.</strong> Two clean hits after a block are usually safer than a greedy third hit.</li>
+            <li><strong>Watch the tell, not the health bar.</strong> Bosses often telegraph from hand, body, or head movement before the hit lands.</li>
+            <li><strong>Keep branch saves.</strong> The fight and avoid achievements are separate, so save before the route decision when possible.</li>
+          </ol>
+
+          <h2>Clocky Quick Fix</h2>
+          <p>Clocky is the first practical check for the combat system. Watch the clock hands, block the incoming strike, then counter briefly. If stamina is low, skip the counter and preserve the next block.</p>
+
+          <h2>Completion Route Advice</h2>
+          <p>If you are going for 100%, treat each boss as two routes: one save for the fight achievement and one save for the avoid achievement. This is especially important for AI, Trapezist, and Chameleon because Steam lists paired defeat/avoid achievements for those encounters.</p>
+
+          <h2>Proof Still Needed</h2>
+          <ul class="shot-list">
+            <li><strong>AI</strong><span>Entry state, defeat route, Short Circuit avoid route, and System Override unlock.</span></li>
+            <li><strong>Trapezist</strong><span>Entry state, Fatal Performance route, Cut The Act avoid route, and branch save proof.</span></li>
+            <li><strong>Chameleon</strong><span>No Strings Attached and Case Closed unlock states from the same branch save.</span></li>
+            <li><strong>A Natural Brawler</strong><span>Running count or unlock moment for defeating 15 enemies.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://steamcommunity.com/stats/2684630/achievements">Steam Achievements</a> | <a href="https://endacopia.wiki/guides/mini-games/">Endacopia Wiki Mini-Games</a> | <a href="https://endacopia.wiki/characters/clocky/">Clocky</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Boss and achievement map for fight routes, avoid routes, and combat timing.",
+      badges: ["Bosses", "Steam", "100%"],
+      related: [
+        { href: "/endacopia-clocky/", label: "Clocky guide" },
+        { href: "/endacopia-chameleon-battle/", label: "Chameleon battle" },
+        { href: "/endacopia-achievements-guide/", label: "Achievements guide" },
+        { href: "/endacopia-100-percent-achievement-checklist/", label: "100% checklist" }
+      ],
+      checks: [
+        { label: "Fight pairs", value: "3" },
+        { label: "First boss", value: "Clocky" },
+        { label: "Need saves", value: "Yes" }
       ]
     }
   },
@@ -1289,6 +1636,7 @@ ${mediaGrid([
     body: `
           <h2>August 1, 2026</h2>
           <ul class="shot-list">
+            <li><strong>Puzzle answer cluster</strong><span>Added Puzzle Solutions, CHESHIRE Password, LET ME GO / LET ME TALK, and Boss Fights pages to target answer-first long-tail searches.</span></li>
             <li><strong>Beginner guide</strong><span>Added a first-30-minutes beginner route for Doors.exe, vent/kitchen, fridge cheese, Wall Bank coins, CHESHIRE, and Clocky boss searches.</span></li>
             <li><strong>Demo bridge pages</strong><span>Added Prologue Walkthrough and Demo vs Full Game pages to capture old demo-guide searches and route users into the 2026 full-game walkthrough.</span></li>
             <li><strong>Module structure</strong><span>Clarified that older demo content mostly covers the Prologue, while the Steam full game continues into Chapter I hubs, saw-choice endings, achievements, and secret routes.</span></li>
@@ -1324,7 +1672,7 @@ ${mediaGrid([
       ],
       checks: [
         { label: "Latest", value: "Aug 1" },
-        { label: "Pages", value: "33" },
+        { label: "Pages", value: "37" },
         { label: "Next", value: "Proof" }
       ]
     }
@@ -1372,8 +1720,13 @@ function updateSharedHtml(html, filePath) {
   html = html
     .replace(/\/assets\/styles\.css(?:\?v=[^"]+)?/g, `/assets/styles.css?v=${version}`)
     .replace(/\/assets\/main\.js(?:\?v=[^"]+)?/g, `/assets/main.js?v=${version}`)
+    .replace(/<a href="\/endacopia-walkthrough\/">Walkthrough<\/a>(?!\s*<a href="\/endacopia-puzzle-solutions\/">Puzzles<\/a>)/g, '<a href="/endacopia-walkthrough/">Walkthrough</a><a href="/endacopia-puzzle-solutions/">Puzzles</a>')
     .replace(/<span><a href="\/">Home<\/a> \| <a href="\/sitemap\.xml">Sitemap<\/a><\/span>/g, footerLinks)
     .replace(/<span><a href="\/sitemap\.xml">Sitemap<\/a> \| <a href="\/endacopia-wiki\/">Source checklist<\/a><\/span>/g, footerLinks);
+
+  if (!/<div class="nav-links">[\s\S]*?href="\/endacopia-puzzle-solutions\/"[\s\S]*?<\/div>/.test(html)) {
+    html = html.replace(/<div class="nav-links">/, '<div class="nav-links"><a href="/endacopia-puzzle-solutions/">Puzzles</a>');
+  }
 
   return html;
 }
@@ -1388,6 +1741,10 @@ function card({ href, title, text, badges }) {
 
 function homepageInsert() {
   const routeCards = [
+    { href: "/endacopia-puzzle-solutions/", title: "Puzzle Solutions", text: "Answer-first table for CHESHIRE, LET ME GO, LET ME TALK, 471, Core colors, Scribbly, and softlocks.", badges: ["Answers", "Codes"] },
+    { href: "/endacopia-cheshire-password/", title: "CHESHIRE Password", text: "Toilet password route from fridge cheese, cockroach coins, and Wall Bank to the bathroom prompt.", badges: ["CHESHIRE", "Toilet"] },
+    { href: "/endacopia-let-me-go-let-me-talk/", title: "LET ME GO / TALK", text: "Office button-room phrase order: use LET ME GO first, then LET ME TALK later.", badges: ["Office", "Phrases"] },
+    { href: "/endacopia-boss-fights-guide/", title: "Boss Fights Guide", text: "Clocky, AI, Trapezist, and Chameleon route map with Steam fight/avoid achievement pairs.", badges: ["Bosses", "100%"] },
     { href: "/endacopia-beginner-guide/", title: "Beginner Guide", text: "First 3 opening blockers: Doors.exe, vent and fridge route, CHESHIRE password, and Clocky boss.", badges: ["Beginner", "Clocky"] },
     { href: "/endacopia-demo-vs-full-game/", title: "Demo vs Full Game", text: "Why old demo/prologue guides stop before Chapter I, endings, achievements, and 2026 full-game routes.", badges: ["Demo", "Full game"] },
     { href: "/endacopia-prologue-walkthrough/", title: "Prologue Walkthrough", text: "Opening house route for Mellow's room, Doors.exe, kitchen, coins, CHESHIRE, Clocky, and the toilet portal.", badges: ["Prologue", "CHESHIRE"] },
@@ -1416,7 +1773,7 @@ function homepageInsert() {
           <div class="section-head">
             <div>
               <h2>Route Deep Dives</h2>
-              <p>Long-tail pages for the exact blockers players search after demo videos or a first run: beginner route, Prologue, full-game differences, Office, 277-5944, Timesville fish, Misery Town, Chameleon, saves, and Water Break.</p>
+              <p>Long-tail pages for exact blockers players search after demo videos or a first run: puzzle answers, passwords, phrase order, boss fights, Prologue, full-game differences, Office, 277-5944, Timesville fish, Misery Town, saves, and Water Break.</p>
             </div>
           </div>
           <div class="guide-grid">
@@ -1456,7 +1813,7 @@ async function updateHomepage() {
   }
   html = html.replace(needle, `${homepageInsert()}\n${needle}`);
   html = html.replace(/<span class="eyebrow">Updated [^<]+<\/span>/, '<span class="eyebrow">Updated August 1, 2026</span>');
-  html = html.replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>33</strong></li>');
+  html = html.replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>37</strong></li>');
   await writeFile(file, html, "utf8");
 }
 
