@@ -4,7 +4,7 @@ import path from "node:path";
 const root = path.join(process.cwd(), "work", "endacopia-guide-hub");
 const site = "https://www.endacopiaguide.com";
 const lastmod = "2026-08-02";
-const version = "20260802-keyword-expansion";
+const version = "20260802-community-proof";
 const ogImage = `${site}/assets/og/endacopia-guide-og.jpg`;
 const headerImage = "/assets/endacopia-header-20260730.jpg";
 
@@ -58,6 +58,8 @@ const newGuides = [
   "how-long-to-beat-endacopia",
   "endacopia-meaning-lore",
   "endacopia-items-guide",
+  "endacopia-name-puzzle-flashlight",
+  "endacopia-clown-theater-puzzle",
   "about",
   "contact",
   "editorial-policy",
@@ -1160,7 +1162,7 @@ ${mediaGrid([
       checks: [
         { label: "Demo", value: "Prologue" },
         { label: "Full release", value: "Jul 27" },
-        { label: "Pages", value: "48" }
+        { label: "Pages", value: "50" }
       ]
     }
   },
@@ -1860,10 +1862,10 @@ ${mediaGrid([
   {
     slug: "endacopia-soccer-ball",
     title: "Endacopia Soccer Ball Guide - How to Kick and Reach 100 Points",
-    description: "Endacopia soccer ball guide for how to kick in Endacopia, how to time the ball, and how to reach 100 points for the Footwork Master achievement.",
+    description: "Endacopia soccer ball guide for how to kick in Endacopia, whether there is a keybind, where to click the ball, and how to reach 100 points for Footwork Master.",
     eyebrow: "Soccer ball",
     badges: ["Footwork Master", "100 points"],
-    quick: 'To kick the soccer ball in Endacopia, click the ball itself as it reaches the line labeled <strong>kick</strong>. Do not mash. Watch one full cue cycle, click once at the timing window, then repeat until you reach <strong>100 points</strong> for Footwork Master.',
+    quick: 'To kick the soccer ball in Endacopia, use the mouse: click the ball itself as it reaches the line labeled <strong>kick</strong>. Steam community answers point to timing the click when the ball is just under the white / kick line, not looking for a keyboard keybind. Repeat clean single clicks until you reach <strong>100 points</strong> for Footwork Master.',
     body: `
 ${mediaGrid([
   {
@@ -1889,12 +1891,21 @@ ${mediaGrid([
             <table>
               <thead><tr><th>Problem</th><th>Likely Cause</th><th>Fix</th></tr></thead>
               <tbody>
+                <tr><td>You are looking for a keybind</td><td>The mini-game expects a mouse click in the hit window.</td><td>Click the ball again when it enters the kick window; do not wait for a keyboard prompt.</td></tr>
                 <tr><td>The kick never counts</td><td>You are clicking too early, too late, or outside the ball.</td><td>Click directly on the ball when it sits just under the kick line.</td></tr>
                 <tr><td>The cue disappears</td><td>You are losing rhythm after a few attempts.</td><td>Stop for one cycle, watch the line, then restart one-click timing.</td></tr>
                 <tr><td>100 feels impossible</td><td>You are trying to brute force the input.</td><td>Treat it like a rhythm check: one clean click beats several rushed clicks.</td></tr>
               </tbody>
             </table>
           </div>
+
+          <h2>Player-Confirmed Input Notes</h2>
+          <ul class="shot-list">
+            <li><strong>No separate keybind</strong><span>A Steam answer to the keybind question says to click again with precise timing instead of pressing a keyboard button.</span></li>
+            <li><strong>Click the ball itself</strong><span>The useful target is the ball, not the background, score label, or the word kick.</span></li>
+            <li><strong>Use the line as your cue</strong><span>Community replies describe the hit window as the moment the ball is below the white / kick line.</span></li>
+            <li><strong>Avoid automation advice</strong><span>Some players discuss automated clicking, but this guide keeps the route to normal manual play.</span></li>
+          </ul>
 
           <h2>Does Soccer Ball Matter For Story?</h2>
           <p>The soccer ball is mainly an achievement and mini-game search, not a main-story blocker. If you only want to progress, use the <a href="/endacopia-beginner-guide/">beginner guide</a>. If you want 100%, keep practicing until Footwork Master unlocks.</p>
@@ -1904,7 +1915,7 @@ ${mediaGrid([
 
           <h2>Sources Used</h2>
           <div class="source-box">
-            <p><a href="https://steamcommunity.com/app/2684630/discussions/0/6369856709164997745/">Steam community soccer ball thread</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a></p>
+            <p><a href="https://steamcommunity.com/app/2684630/discussions/0/6369856709164997745/">Steam community soccer ball thread</a> | <a href="https://steamcommunity.com/app/2684630/discussions/0/589559427438286450/?l=spanish">Steam keybind / timing thread</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a></p>
           </div>
 `,
     sidebar: {
@@ -2058,7 +2069,7 @@ ${mediaGrid([
     description: "How long to beat Endacopia, with realistic time ranges for the demo, guided main story, blind first playthrough, endings cleanup, and 100 percent achievement runs.",
     eyebrow: "Playtime",
     badges: ["How long", "Full game"],
-    quick: 'A practical Endacopia completion estimate is <strong>5-7 hours</strong> for a guided main-story run, <strong>6-9 hours</strong> for a blind first playthrough, and <strong>8-12+ hours</strong> for 100% achievements and all endings. Treat these as early-release estimates because public completion data is still thin.',
+    quick: 'A practical Endacopia completion estimate is <strong>5-7 hours</strong> for a guided main-story run, <strong>6-9 hours</strong> for a blind first playthrough, and <strong>8-12+ hours</strong> for 100% achievements and all endings. Speedrun.com already has verified Any% Ending A/B runs around 52-55 minutes, but those are optimized lower bounds, not normal first-play estimates.',
     body: `
 ${mediaGrid([
   {
@@ -2092,12 +2103,25 @@ ${mediaGrid([
             <li><strong>All fish.</strong> Steam confirms the I Want To Be A Fisherman achievement for catching every fish.</li>
           </ol>
 
+          <h2>Speedrun Baseline</h2>
+          <p>Speedrun records are useful because they prove the game can be finished much faster than a blind playthrough, but they should be used as a lower-bound benchmark only.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Route</th><th>Verified Time</th><th>How To Use It</th></tr></thead>
+              <tbody>
+                <tr><td>Any% Ending B</td><td>52m 31s</td><td>Optimized route reference, not a casual estimate.</td></tr>
+                <tr><td>Any% Ending A</td><td>54m 50s</td><td>Shows the approximate floor for a routed ending run.</td></tr>
+                <tr><td>Any% / 100% / Demo categories</td><td>Live leaderboard</td><td>Check before updating this page because early routes may improve quickly.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
           <h2>Fastest Way To Reduce Time</h2>
           <p>Use the <a href="/endacopia-puzzle-solutions/">Puzzle Solutions</a> page for exact answers, then keep one save before major branches. If you are only checking whether Endacopia fits an evening session, expect one focused session for a guided route and more than one session for 100% cleanup.</p>
 
           <h2>Sources Used</h2>
           <div class="source-box">
-            <p><a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://www.youtube.com/watch?v=JNN2VtQtUzo">Full walkthrough video reference</a></p>
+            <p><a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://www.speedrun.com/endacopia">Speedrun.com Endacopia leaderboard</a> | <a href="https://www.speedrun.com/endacopia/runs/y64d78pm">Verified Ending B run</a> | <a href="https://www.speedrun.com/endacopia/runs/z54roegm">Verified Ending A run</a> | <a href="https://www.youtube.com/watch?v=JNN2VtQtUzo">Full walkthrough video reference</a></p>
           </div>
 `,
     sidebar: {
@@ -2183,7 +2207,7 @@ ${mediaGrid([
     description: "Endacopia items guide for common blockers: how to get the key, metal detector, cheese, wrench, Core key, Nibbles room picture, and where each item route points next.",
     eyebrow: "Item routes",
     badges: ["Items", "Blockers"],
-    quick: 'Use this Endacopia item guide as a routing page: <strong>Cheese</strong> feeds the CHESHIRE password route, <strong>Metal Detector</strong> leads to beach/cinema searches, <strong>Fishing Paper</strong> points to the Lost Key, and <strong>Wrench / Core Key</strong> belong to the Office and Core route.',
+    quick: 'Use this Endacopia item guide as a routing page: <strong>Cheese</strong> feeds the CHESHIRE password route, <strong>Metal Detector</strong> leads to beach/cinema searches, <strong>Fishing Paper</strong> points to the Lost Key, and <strong>Wrench / Core Key</strong> belong to the Office and Core route. A current player report also points to giving the flower to the bench worker so he drops the wrench, then using the wrench on the watercooler.',
     body: `
 ${mediaGrid([
   {
@@ -2226,6 +2250,15 @@ ${mediaGrid([
             <li><strong>Do not assume one use is the only use.</strong> Player reports show the Metal Detector causes confusion because it has multiple route uses.</li>
           </ol>
 
+          <h2>Player-Reported Key / Wrench Blocker</h2>
+          <p>A recent Reddit help thread describes a common Office blocker after the player waters the flower and increases productivity. Treat this as a player-reported route note until the site has its own screenshots.</p>
+          <ol class="step-list">
+            <li><strong>Do not keep hunting for a loose key immediately.</strong> If you already have the flower route active, the missing step may be social rather than a hidden pickup.</li>
+            <li><strong>Give the flower to the guy stuck in the bench near the entrance.</strong> The reported reward is a dropped wrench.</li>
+            <li><strong>Pick up the wrench.</strong> Add it to your route notes before changing areas.</li>
+            <li><strong>Use the wrench on the watercooler.</strong> This should move the Office item chain forward toward the later Core checks.</li>
+          </ol>
+
           <h2>Question Keywords Covered</h2>
           <ul class="shot-list">
             <li><strong>how to get key Endacopia</strong><span>Route into Fishing Paper and Lost Key checks.</span></li>
@@ -2237,7 +2270,7 @@ ${mediaGrid([
 
           <h2>Sources Used</h2>
           <div class="source-box">
-            <p><a href="https://endacopia.fandom.com/wiki/Guide_for_Full_Game">Fandom full-game guide</a> | <a href="https://www.neoseeker.com/endacopia/Chapter_1">Neoseeker Chapter 1</a> | <a href="https://www.neoseeker.com/endacopia/Chapter_3">Neoseeker Chapter 3</a> | <a href="https://dq7reimagined.com/endacopia/">DQ7 Endacopia hub</a> | <a href="https://www.reddit.com/r/Endacopia/comments/1v8xh3u/where_did_you_get_stuck/">Reddit stuck-thread reference</a></p>
+            <p><a href="https://endacopia.fandom.com/wiki/Guide_for_Full_Game">Fandom full-game guide</a> | <a href="https://www.neoseeker.com/endacopia/Chapter_1">Neoseeker Chapter 1</a> | <a href="https://www.neoseeker.com/endacopia/Chapter_3">Neoseeker Chapter 3</a> | <a href="https://dq7reimagined.com/endacopia/">DQ7 Endacopia hub</a> | <a href="https://www.reddit.com/r/Endacopia/comments/1v8fnne/how_do_i_get_the_key/">Reddit key / wrench blocker thread</a> | <a href="https://www.reddit.com/r/Endacopia/comments/1v8xh3u/where_did_you_get_stuck/">Reddit stuck-thread reference</a></p>
           </div>
 `,
     sidebar: {
@@ -2253,6 +2286,148 @@ ${mediaGrid([
         { label: "Cheese", value: "CHESHIRE" },
         { label: "Detector", value: "Multi-use" },
         { label: "Nibbles", value: "Verify" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-name-puzzle-flashlight",
+    title: "Endacopia Name Puzzle Guide - Flashlight, Box Clue and Room Boundary",
+    description: "Endacopia name puzzle guide for the room that asks for a name after the toilet route, including the flashlight clue, box wording, and room-boundary verification checklist.",
+    eyebrow: "Name puzzle",
+    badges: ["Flashlight", "Lore clue"],
+    quick: 'If Endacopia asks for a name after the toilet route and face-drawing step, do not guess from the prompt alone. A current player answer points to using the <strong>flashlight</strong> and checking beyond the normal room bounds / package clue. This page keeps the answer method spoiler-light until a self-captured screenshot confirms the exact input.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-07.jpg",
+    width: 1532,
+    height: 863,
+    alt: "Official Endacopia Steam screenshot used as a placeholder for name puzzle route context",
+    caption: "Name-puzzle searches should eventually use a self-captured screenshot of the prompt, flashlight clue, and entered answer."
+  }
+])}
+
+          <h2>Fast Route</h2>
+          <ol class="step-list">
+            <li><strong>Return to the room with the name prompt.</strong> This blocker is reported after the toilet-route scene and the face-drawing prompt.</li>
+            <li><strong>Equip or use the flashlight.</strong> The player-sourced hint is not to stare at the text box only.</li>
+            <li><strong>Sweep the room edges.</strong> Check beyond the visible room boundary and around any package / box clue.</li>
+            <li><strong>Read the box wording carefully.</strong> The clue reported by players points toward looking online / at the box / close to the room edge.</li>
+            <li><strong>Record proof before entering the answer.</strong> Capture the prompt, flashlight reveal, and final input so the page can be upgraded from player-reported to tested.</li>
+          </ol>
+
+          <h2>Why This Puzzle Gets Searched</h2>
+          <p>The name prompt feels like a lore question, but the useful action is environmental inspection. Players who search <strong>Endacopia what is its name</strong>, <strong>Endacopia name puzzle</strong>, or <strong>Endacopia flashlight clue</strong> are usually missing the boundary clue rather than a normal inventory item.</p>
+
+          <h2>Proof Checklist</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Capture</th><th>Why It Matters</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Name prompt after face drawing</td><td>Confirms the exact route state for the page.</td><td>Needed</td></tr>
+                <tr><td>Flashlight sweep around room boundary</td><td>Shows where the clue appears.</td><td>Needed</td></tr>
+                <tr><td>Package / box clue</td><td>Connects the in-game hint to the answer method.</td><td>Needed</td></tr>
+                <tr><td>Accepted answer screen</td><td>Turns this into a final spoiler page instead of a hint page.</td><td>Needed</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Related Searches Covered</h2>
+          <ul class="shot-list">
+            <li><strong>Endacopia what is its name</strong><span>Answer with the flashlight / boundary clue method first.</span></li>
+            <li><strong>Endacopia name puzzle</strong><span>Route the player away from random guessing.</span></li>
+            <li><strong>Endacopia flashlight clue</strong><span>Use this page once a real screenshot is captured.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://www.reddit.com/r/Endacopia/comments/1v8hil9/what_the_hell_is_its_name_lore_spoiler_ig/">Reddit name-puzzle help thread</a> | <a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Spoiler-light player-reported route for the name prompt, flashlight clue, and room-boundary check.",
+      badges: ["Name", "Flashlight", "Verify"],
+      related: [
+        { href: "/endacopia-scribbly/", label: "Scribbly guide" },
+        { href: "/endacopia-cheshire-password/", label: "CHESHIRE password" },
+        { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions" },
+        { href: "/endacopia-meaning-lore/", label: "Meaning and lore" }
+      ],
+      checks: [
+        { label: "Prompt", value: "Name" },
+        { label: "Tool", value: "Flashlight" },
+        { label: "Proof", value: "Needed" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-clown-theater-puzzle",
+    title: "Endacopia Clown Theater Puzzle Guide - Colored Seats and Mini-Game Answer",
+    description: "Endacopia clown theater puzzle guide for the circus mini-game blocker, colored theater seats, projector story clues, and answer verification checklist.",
+    eyebrow: "Clown puzzle",
+    badges: ["Theater", "Clowns"],
+    quick: 'If you are stuck on the Endacopia clown mini-game, check the nearby <strong>theater tent</strong> instead of brute forcing the clown screen. A current player answer says the colored seats line up with clown colors, and the projector stories provide the state you need to enter back in the mini-game.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-06.jpg",
+    width: 1920,
+    height: 1080,
+    alt: "Official Endacopia Steam screenshot used as a placeholder for circus and clown puzzle context",
+    caption: "This page needs a self-captured theater-seat screenshot and clown mini-game screenshot before publishing exact answer tables."
+  }
+])}
+
+          <h2>Fast Route</h2>
+          <ol class="step-list">
+            <li><strong>Leave the clown mini-game room.</strong> Do not brute force the answer if the interface gives no obvious feedback.</li>
+            <li><strong>Go to the theater tent outside / next to the room.</strong> The player-reported clue is in the theater area, not hidden in the mini-game UI.</li>
+            <li><strong>Record the colored seats.</strong> Match each seat color to the corresponding clown color.</li>
+            <li><strong>Watch the projector stories.</strong> The ending of each story tells you what state that clown should be set to.</li>
+            <li><strong>Return to the mini-game and apply the mapped states.</strong> Verify one color at a time instead of changing everything randomly.</li>
+          </ol>
+
+          <h2>Clue Mapping Table</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Signal</th><th>What To Record</th><th>Why It Matters</th></tr></thead>
+              <tbody>
+                <tr><td>Colored theater seats</td><td>Seat colors and their order</td><td>Connects the theater clue to clown colors.</td></tr>
+                <tr><td>Projector story scenes</td><td>How each colored story ends</td><td>Gives the state / outcome to enter in the mini-game.</td></tr>
+                <tr><td>Clown mini-game screen</td><td>Available states for each clown</td><td>Lets the page build a final answer table later.</td></tr>
+                <tr><td>Completion result</td><td>Accepted input and next room change</td><td>Confirms the solution is not just a theory.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Spoiler-Light Answer Method</h2>
+          <p>The reliable method is to treat the theater as the answer key: color identifies which clown, and the story ending identifies what to set for that clown. Until the site captures the full sequence, this page should not claim an exact final order.</p>
+
+          <h2>Search Keywords Covered</h2>
+          <ul class="shot-list">
+            <li><strong>Endacopia clown puzzle</strong><span>Main landing intent for the mini-game blocker.</span></li>
+            <li><strong>Endacopia theater puzzle</strong><span>Captures players who found the theater but not the mapping.</span></li>
+            <li><strong>Endacopia colored seats</strong><span>Useful once screenshots show the exact colors and order.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://www.reddit.com/r/Endacopia/comments/1v872eh/what_is_this_bruh_what_do_i_do_here_spoilers/">Reddit clown / theater help thread</a> | <a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Player-reported clown mini-game route using theater seats, projector stories, and color mapping.",
+      badges: ["Clown", "Theater", "Verify"],
+      related: [
+        { href: "/endacopia-trapezist/", label: "Trapezist guide" },
+        { href: "/endacopia-boss-fights-guide/", label: "Boss fights guide" },
+        { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions" },
+        { href: "/endacopia-map/", label: "Map guide" }
+      ],
+      checks: [
+        { label: "Area", value: "Theater" },
+        { label: "Signal", value: "Seats" },
+        { label: "Proof", value: "Needed" }
       ]
     }
   },
@@ -2397,6 +2572,7 @@ ${mediaGrid([
     body: `
           <h2>August 2, 2026</h2>
           <ul class="shot-list">
+            <li><strong>Community proof pages</strong><span>Added player-sourced Name Puzzle Flashlight and Clown Theater Puzzle pages, plus soccer keybind notes, key/wrench blocker notes, and Speedrun.com lower-bound playtime data.</span></li>
             <li><strong>Similarweb keyword expansion</strong><span>Added Soccer Ball, Download, Games Like Endacopia, How Long To Beat, Meaning/Lore, and Items Guide pages from current keyword-generator opportunities.</span></li>
             <li><strong>Engagement optimization</strong><span>Rebuilt the homepage as an answer-first router and added Quick Answers above the fold.</span></li>
             <li><strong>Search Console opportunity pages</strong><span>Added Map, Scribbly, Steam Deck, Underground, and Trapezist pages for queries already showing impressions.</span></li>
@@ -2441,7 +2617,7 @@ ${mediaGrid([
       ],
       checks: [
         { label: "Latest", value: "Aug 2" },
-        { label: "Pages", value: "48" },
+        { label: "Pages", value: "50" },
         { label: "Next", value: "Proof" }
       ]
     }
@@ -2511,6 +2687,8 @@ function card({ href, title, text, badges }) {
 function homepageInsert() {
   const routeCards = [
     { href: "/endacopia-soccer-ball/", title: "Soccer Ball Guide", text: "How to kick in Endacopia, where to click the ball, and how to reach 100 points for Footwork Master.", badges: ["Soccer", "100 points"] },
+    { href: "/endacopia-name-puzzle-flashlight/", title: "Name Puzzle Flashlight", text: "Player-reported route for the name prompt, flashlight clue, package hint, and room-boundary check.", badges: ["Name", "Flashlight"] },
+    { href: "/endacopia-clown-theater-puzzle/", title: "Clown Theater Puzzle", text: "Use theater seats, projector stories, and clown colors to solve the circus mini-game blocker.", badges: ["Clown", "Theater"] },
     { href: "/endacopia-download/", title: "Download Guide", text: "Official Steam, demo, price, online-play, and safe-link answers for download/free/crack searches.", badges: ["Download", "Steam"] },
     { href: "/games-like-endacopia/", title: "Games Like Endacopia", text: "Point-and-click horror, surreal puzzle, creepy browser shorts, and similar-game discovery clusters.", badges: ["Similar", "Horror"] },
     { href: "/how-long-to-beat-endacopia/", title: "How Long To Beat", text: "Early-release playtime estimates for demo, guided main story, blind run, endings, and 100% cleanup.", badges: ["Playtime", "100%"] },
@@ -2553,7 +2731,7 @@ function homepageInsert() {
           <div class="section-head">
             <div>
               <h2>Answer Hubs And Long-Tail Fixes</h2>
-              <p>Pages built from current Search Console and Similarweb opportunities: soccer ball, official download, games like Endacopia, playtime, item routes, meaning/lore, map, Scribbly, Steam Deck, underground routes, Trapezist, puzzle answers, passwords, boss fights, Office, Timesville fish, Misery Town, saves, and Water Break.</p>
+              <p>Pages built from current Search Console, Similarweb, Steam Community, Reddit, and Speedrun opportunities: soccer ball, name puzzle, clown theater, official download, games like Endacopia, playtime, item routes, meaning/lore, map, Scribbly, Steam Deck, underground routes, Trapezist, puzzle answers, passwords, boss fights, Office, Timesville fish, Misery Town, saves, and Water Break.</p>
             </div>
           </div>
           <div class="guide-grid">
@@ -2614,10 +2792,10 @@ async function updateHomepage() {
     .replace(/"description": "Fast, spoiler-controlled Endacopia walkthroughs and ending guides\."/g, '"description": "Fast Endacopia walkthroughs, map routes, achievements, endings, puzzle answers, and route checks."')
     .replace(/<span class="eyebrow">Updated [^<]+<\/span>/, '<span class="eyebrow">Updated August 2, 2026</span>')
     .replace(/<h1>Endacopia guides built for quick answers first\.<\/h1>/, '<h1>Endacopia Guide: maps, endings, achievements, and puzzle answers.</h1>')
-    .replace(/<p class="lede">Use this hub to jump straight into Endacopia walkthroughs, ending routes, Steam achievements, character pages, and puzzle notes without digging through long videos\.<\/p>/, '<p class="lede">Choose the exact blocker you are stuck on: soccer ball, official download, CHESHIRE, Scribbly map, Saw Box 471, Trapezist, Steam Deck saves, secret Ending C, or the full walkthrough.</p>')
-    .replace(/placeholder="Try (?:endings, Clocky, achievements, secret|map, Scribbly, CHESHIRE, Steam Deck, Trapezist|map, Scribbly, CHESHIRE|soccer ball, download, CHESHIRE)\.\.\."/g, 'placeholder="Try soccer ball, download, CHESHIRE..."')
+    .replace(/<p class="lede">Use this hub to jump straight into Endacopia walkthroughs, ending routes, Steam achievements, character pages, and puzzle notes without digging through long videos\.<\/p>/, '<p class="lede">Choose the exact blocker you are stuck on: soccer ball, name puzzle, clown theater, official download, CHESHIRE, Scribbly map, Saw Box 471, Trapezist, Steam Deck saves, secret Ending C, or the full walkthrough.</p>')
+    .replace(/placeholder="Try (?:endings, Clocky, achievements, secret|map, Scribbly, CHESHIRE, Steam Deck, Trapezist|map, Scribbly, CHESHIRE|soccer ball, download, CHESHIRE)\.\.\."/g, 'placeholder="Try name puzzle, clown, soccer..."')
     .replace(/<a class="button" href="\/endacopia-all-endings\/">Start with endings<\/a>/, '<a class="button" href="/endacopia-puzzle-solutions/">Open puzzle answers</a>')
-    .replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>48</strong></li>');
+    .replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>50</strong></li>');
   html = html.replace(/(<p class="lede">[\s\S]*?<\/p>\n)/, `$1${homepageHeroAnswers()}\n`);
   await writeFile(file, html, "utf8");
 }
