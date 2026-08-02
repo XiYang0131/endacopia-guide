@@ -153,6 +153,45 @@ h1 {
   font-size: 18px;
 }
 
+.hero-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero-answer-grid a {
+  min-height: 76px;
+  display: grid;
+  align-content: center;
+  gap: 3px;
+  border: 1px solid rgba(47, 111, 115, 0.24);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 11px 12px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 8px 18px rgba(38, 42, 46, 0.05);
+}
+
+.hero-answer-grid a:hover {
+  border-color: var(--accent);
+  background: var(--panel);
+}
+
+.hero-answer-grid span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.hero-answer-grid strong {
+  font-size: 16px;
+  line-height: 1.25;
+}
+
 .hero-media {
   border: 1px solid var(--line);
   background: var(--panel);
@@ -331,6 +370,14 @@ h1 {
   grid-template-columns: minmax(0, 760px) 300px;
   gap: 34px;
   align-items: start;
+}
+
+.content-layout > *,
+.article,
+.sidebar,
+.side-panel,
+.guide-card {
+  min-width: 0;
 }
 
 .article {
@@ -573,6 +620,7 @@ h1 {
 }
 
 .table-wrap {
+  max-width: 100%;
   overflow-x: auto;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -696,6 +744,14 @@ tr:last-child td {
   display: none !important;
 }
 
+code[data-copyable] {
+  cursor: copy;
+  border-radius: 4px;
+  padding: 1px 4px;
+  background: rgba(168, 82, 53, 0.08);
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 920px) {
   .hero-grid,
   .content-layout {
@@ -725,6 +781,22 @@ tr:last-child td {
 
   .toolbar {
     grid-template-columns: 1fr;
+  }
+
+  .hero-answer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    width: min(100% - 32px, 100%);
+  }
+
+  .content-layout,
+  .article,
+  .sidebar,
+  .side-panel {
+    width: 100%;
+    max-width: 100%;
   }
 
   .guide-grid {

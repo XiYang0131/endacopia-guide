@@ -1,15 +1,77 @@
 const searchInput = document.querySelector("[data-guide-search]");
 const cards = Array.from(document.querySelectorAll("[data-guide-card]"));
 
+const track = (eventName, params = {}) => {
+  if (typeof window.gtag === "function") {
+    window.gtag("event", eventName, {
+      site_area: "endacopia_guide",
+      ...params
+    });
+  }
+};
+
 if (searchInput && cards.length > 0) {
+  let searchTracked = false;
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.trim().toLowerCase();
     cards.forEach((card) => {
       const text = card.textContent.toLowerCase();
       card.classList.toggle("hidden", query.length > 0 && !text.includes(query));
     });
+
+    if (!searchTracked && query.length >= 2) {
+      searchTracked = true;
+      track("guide_search_used", {
+        search_term: query.slice(0, 80)
+      });
+    }
   });
 }
+
+cards.forEach((card) => {
+  card.addEventListener("click", () => {
+    track("guide_card_click", {
+      link_url: card.href,
+      link_text: card.querySelector("strong")?.textContent?.trim() || card.textContent.trim().slice(0, 80)
+    });
+  });
+});
+
+document.querySelectorAll("code").forEach((code) => {
+  const value = code.textContent.trim();
+  if (!value || value.length > 120) return;
+
+  code.dataset.copyable = "true";
+  code.title = "Click to copy";
+  code.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+      track("guide_code_copy", {
+        code_value: value
+      });
+    } catch {
+      track("guide_code_click", {
+        code_value: value
+      });
+    }
+  });
+});
+
+let scrolledHalf = false;
+window.addEventListener("scroll", () => {
+  if (scrolledHalf) return;
+
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  if (scrollable <= 0) return;
+
+  const progress = window.scrollY / scrollable;
+  if (progress >= 0.5) {
+    scrolledHalf = true;
+    track("guide_scroll_50", {
+      page_path: window.location.pathname
+    });
+  }
+}, { passive: true });
 
 const checklist = document.querySelector("[data-achievement-checklist]");
 
@@ -57,6 +119,10 @@ if (checklist) {
       nextState[input.dataset.achievementId] = input.checked;
       writeSaved(nextState);
       updateProgress();
+      track("achievement_check_toggle", {
+        achievement_id: input.dataset.achievementId,
+        checked: input.checked
+      });
     });
   });
 
@@ -67,6 +133,7 @@ if (checklist) {
       });
       writeSaved({});
       updateProgress();
+      track("achievement_checklist_reset");
     });
   }
 

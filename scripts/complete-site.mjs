@@ -3,8 +3,8 @@ import path from "node:path";
 
 const root = path.join(process.cwd(), "work", "endacopia-guide-hub");
 const site = "https://www.endacopiaguide.com";
-const lastmod = "2026-08-01";
-const version = "20260801-puzzles";
+const lastmod = "2026-08-02";
+const version = "20260802-engagement";
 const ogImage = `${site}/assets/og/endacopia-guide-og.jpg`;
 const headerImage = "/assets/endacopia-header-20260730.jpg";
 
@@ -47,6 +47,11 @@ const newGuides = [
   "endacopia-cheshire-password",
   "endacopia-let-me-go-let-me-talk",
   "endacopia-boss-fights-guide",
+  "endacopia-map",
+  "endacopia-scribbly",
+  "endacopia-steam-deck",
+  "endacopia-underground",
+  "endacopia-trapezist",
   "about",
   "contact",
   "editorial-policy",
@@ -192,7 +197,7 @@ ${nav()}
           <span class="eyebrow">${esc(page.eyebrow)}</span>
           <h1>${esc(page.h1 || page.title)}</h1>
           <div class="meta-line">
-            <span class="badge hot">Updated August 1, 2026</span>
+            <span class="badge hot">Updated August 2, 2026</span>
             ${(page.badges || []).map((badge, index) => `<span class="badge${index === 0 ? " safe" : ""}">${esc(badge)}</span>`).join("\n            ")}
           </div>
 
@@ -1149,7 +1154,7 @@ ${mediaGrid([
       checks: [
         { label: "Demo", value: "Prologue" },
         { label: "Full release", value: "Jul 27" },
-        { label: "Pages", value: "37" }
+        { label: "Pages", value: "42" }
       ]
     }
   },
@@ -1496,6 +1501,357 @@ ${mediaGrid([
     }
   },
   {
+    slug: "endacopia-map",
+    title: "Endacopia Map Guide - Scribbly Map, Misery Town Map and Underground Routes",
+    description: "Endacopia map guide for players searching where the map comes from, how the Scribbly paper route works, and how the Misery Town checkerboard map is used.",
+    eyebrow: "Map answer",
+    badges: ["Map", "Scribbly"],
+    quick: 'There are two common Endacopia map searches. The <strong>Scribbly map</strong> comes from finding 8 paper pieces, drawing the face, and entering <code>SCRIBBLY</code>. The <strong>Misery Town map</strong> is revealed by using the remote on the cinema screen, then following the checkerboard route it shows.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-03.jpg",
+    width: 1362,
+    height: 766,
+    alt: "Official Endacopia Steam screenshot showing a circus-area scene used for Misery Town map context",
+    caption: "Map searches usually point to either the Scribbly paper route or the Misery Town cinema/checkerboard route."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-09.jpg",
+    width: 1532,
+    height: 857,
+    alt: "Official Endacopia Steam screenshot showing a stage route scene",
+    caption: "Replace this store-reference shot with a self-captured cinema map screenshot once available."
+  }
+])}
+
+          <h2>Which Map Do You Need?</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Search Intent</th><th>Answer</th><th>Open This Page</th></tr></thead>
+              <tbody>
+                <tr><td>Endacopia map</td><td>Usually Scribbly's map or the Misery Town checkerboard map.</td><td><a href="/endacopia-scribbly/">Scribbly route</a></td></tr>
+                <tr><td>How to get the map</td><td>Find 8 paper pieces, draw the face, then enter <code>SCRIBBLY</code>.</td><td><a href="/endacopia-scribbly/">Scribbly guide</a></td></tr>
+                <tr><td>Misery Town map</td><td>Use the buried remote on the cinema screen, then copy the route.</td><td><a href="/endacopia-misery-town-secret/">Misery Town secret</a></td></tr>
+                <tr><td>Underground / hidden route</td><td>Often a secret-boss or hidden-area query; start with the route checklist.</td><td><a href="/endacopia-underground/">Underground guide</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Scribbly Map Route</h2>
+          <ol class="step-list">
+            <li><strong>Collect the paper pieces.</strong> The public route notes call for 8 pieces before the face/name step works.</li>
+            <li><strong>Draw the face.</strong> Complete the paper/face prompt instead of skipping straight to the name.</li>
+            <li><strong>Enter <code>SCRIBBLY</code>.</strong> This is the answer-first blocker for the map reward.</li>
+            <li><strong>Use the map as a route tool.</strong> Move from the answer page into the full walkthrough if you are missing later context.</li>
+          </ol>
+
+          <h2>Misery Town Map Route</h2>
+          <ol class="step-list">
+            <li><strong>Bring the Metal Detector.</strong> Search the cinema sand for the remote.</li>
+            <li><strong>Use the remote on the screen.</strong> The cinema screen reveals the path map.</li>
+            <li><strong>Screenshot the map.</strong> The checkerboard room is much easier if you copy the route before leaving.</li>
+            <li><strong>Follow the checkerboard path.</strong> Complete the hidden sequence before counting the secret as done.</li>
+          </ol>
+
+          <h2>Proof Still Needed</h2>
+          <ul class="shot-list">
+            <li><strong>Scribbly map reward</strong><span>Paper pieces, drawn face, SCRIBBLY prompt, and map reward.</span></li>
+            <li><strong>Cinema map</strong><span>Remote use and full checkerboard route image.</span></li>
+            <li><strong>Checkerboard completion</strong><span>Final step or hidden encounter after following the map.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://endacopia.fandom.com/wiki/Guide_for_Full_Game">Fandom full-game guide</a> | <a href="https://www.neoseeker.com/endacopia/Chapter_2">Neoseeker Chapter 2</a> | <a href="https://dq7reimagined.com/endacopia/puzzle-solutions/">DQ7 puzzle solutions</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Map hub for Scribbly, Misery Town, checkerboard, and hidden-route searches.",
+      badges: ["Map", "Scribbly", "Misery Town"],
+      related: [
+        { href: "/endacopia-scribbly/", label: "Scribbly map guide" },
+        { href: "/endacopia-misery-town-secret/", label: "Misery Town secret" },
+        { href: "/endacopia-underground/", label: "Underground route" },
+        { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions" }
+      ],
+      checks: [
+        { label: "Scribbly", value: "8 pieces" },
+        { label: "Name", value: "SCRIBBLY" },
+        { label: "Cinema", value: "Remote" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-scribbly",
+    title: "Endacopia Scribbly Guide - 8 Paper Pieces, Face Drawing and Map Reward",
+    description: "Fast answer for Endacopia Scribbly: collect 8 paper pieces, draw the face, enter SCRIBBLY, and use the reward map without confusing it with Misery Town.",
+    eyebrow: "Scribbly answer",
+    badges: ["SCRIBBLY", "Map"],
+    quick: 'For the Endacopia Scribbly route, collect all <strong>8 paper pieces</strong>, complete the face drawing prompt, then enter <code>SCRIBBLY</code>. This awards the map and feeds into later route navigation, but it is separate from the Misery Town cinema/checkerboard map.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-02.jpg",
+    width: 1783,
+    height: 999,
+    alt: "Official Endacopia Steam screenshot showing Mellow's room and paper-route context",
+    caption: "Scribbly is an exact-answer search. Replace this with paper-piece and face-drawing screenshots after capture."
+  }
+])}
+
+          <h2>Scribbly Route Checklist</h2>
+          <ol class="step-list">
+            <li><strong>Find 8 paper pieces.</strong> Do not try to solve the name prompt with only part of the paper route finished.</li>
+            <li><strong>Draw the face.</strong> The drawing step is part of the intended route, not flavor text.</li>
+            <li><strong>Enter <code>SCRIBBLY</code>.</strong> Use the full uppercase answer if you are copying it from a guide.</li>
+            <li><strong>Claim the map.</strong> After the prompt resolves, move to the map page or main walkthrough for the next route step.</li>
+          </ol>
+
+          <h2>Fast Troubleshooting</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Problem</th><th>Likely Cause</th><th>Fix</th></tr></thead>
+              <tbody>
+                <tr><td><code>SCRIBBLY</code> does nothing</td><td>Paper pieces or face drawing incomplete.</td><td>Return to the collectible route and confirm all 8 pieces.</td></tr>
+                <tr><td>No map appears</td><td>The prompt was not fully completed.</td><td>Finish the face/name sequence before leaving the area.</td></tr>
+                <tr><td>Checkerboard route still confusing</td><td>You are mixing Scribbly map with Misery Town cinema map.</td><td>Use the <a href="/endacopia-map/">map guide</a> to separate the two.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Scribbly vs Misery Town Map</h2>
+          <p>The Scribbly answer is a name/password-style blocker. The Misery Town map is a separate cinema route that uses the Metal Detector, buried remote, screen reveal, and checkerboard path. If your query is about the cinema floor or remote, open <a href="/endacopia-misery-town-secret/">Misery Town Secret</a> instead.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://endacopia.fandom.com/wiki/Guide_for_Full_Game">Fandom full-game guide</a> | <a href="https://dq7reimagined.com/endacopia/puzzle-solutions/">DQ7 puzzle solutions</a> | <a href="https://www.neoseeker.com/endacopia/walkthrough">Neoseeker walkthrough</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Exact Scribbly answer page for paper pieces, face drawing, and the map reward.",
+      badges: ["SCRIBBLY", "8 pieces", "Map"],
+      related: [
+        { href: "/endacopia-map/", label: "Map guide" },
+        { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions" },
+        { href: "/endacopia-walkthrough/", label: "Walkthrough" }
+      ],
+      checks: [
+        { label: "Pieces", value: "8" },
+        { label: "Answer", value: "SCRIBBLY" },
+        { label: "Reward", value: "Map" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-steam-deck",
+    title: "Endacopia Steam Deck Guide - Proton Save Path, Controls and Quick Fixes",
+    description: "Endacopia Steam Deck guide covering Proton save location, point-and-click controls, windowed-mode route checks, and what to verify before moving saves.",
+    eyebrow: "Steam Deck",
+    badges: ["Steam Deck", "Proton"],
+    quick: 'For Steam Deck, install Endacopia through Steam and expect Proton to create a Windows-style prefix under <code>steamapps/compatdata/2684630/</code>. The likely save path mirrors Windows inside the prefix: <code>pfx/drive_c/users/steamuser/Saved Games/Endacopia/</code>. Back up before copying or editing saves.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-01.jpg",
+    width: 1920,
+    height: 1080,
+    alt: "Official Endacopia Steam screenshot used for Steam Deck guide context",
+    caption: "Endacopia is a point-and-click game with Steam achievements, which makes it a natural Steam Deck search even before a large Deck-specific guide exists."
+  }
+])}
+
+          <h2>Steam Deck Quick Setup</h2>
+          <ol class="step-list">
+            <li><strong>Install from Steam.</strong> Use the Steam store app ID <code>2684630</code> so Proton and achievements are tied to the right prefix.</li>
+            <li><strong>Use mouse-style controls.</strong> Trackpad or touchscreen is usually more comfortable than trying to map every click to buttons.</li>
+            <li><strong>Keep a branch save.</strong> Ending and boss routes benefit from save backups before Saw Box, Chameleon, Trapezist, and Ending C checks.</li>
+            <li><strong>Use Desktop Mode for files.</strong> If you need save backups, switch to Desktop Mode and browse the Proton prefix carefully.</li>
+          </ol>
+
+          <h2>Likely Steam Deck Save Path</h2>
+          <div class="source-box">
+            <p><code>~/.local/share/Steam/steamapps/compatdata/2684630/pfx/drive_c/users/steamuser/Saved Games/Endacopia/</code></p>
+          </div>
+          <p>This path follows the normal Proton pattern for Windows save folders. If your Steam library is on a microSD card or custom library, start from that library's <code>steamapps/compatdata/2684630/</code> folder instead.</p>
+
+          <h2>Steam Deck Route Notes</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Task</th><th>Deck Advice</th><th>Related Guide</th></tr></thead>
+              <tbody>
+                <tr><td>Ending A / B branch</td><td>Back up before choosing a Saw from the Saw Box.</td><td><a href="/endacopia-saw-box-code/">Saw Box 471</a></td></tr>
+                <tr><td>Ending C secrets</td><td>Copy a near-complete save before Misery Town, Timesville, and Office cleanup.</td><td><a href="/endacopia-secret-ending/">Secret ending</a></td></tr>
+                <tr><td>Timesville shack</td><td>Windowed-mode instructions may be awkward in Game Mode; keep Desktop Mode as a fallback.</td><td><a href="/endacopia-timesville-fishing-guide/">Timesville secret</a></td></tr>
+                <tr><td>Steam achievements</td><td>Stay online while testing unlocks if possible.</td><td><a href="/endacopia-achievements-guide/">Achievements</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://www.reddit.com/r/Steam/comments/zfeqc6/proton_where_is_it_saving_nonesteam_game_save/">Proton prefix discussion</a> | <a href="https://discuss.cachyos.org/t/savegame-directory/23427">Proton save path example</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Steam Deck and Proton reference for save backups, controls, and route checks.",
+      badges: ["Deck", "Proton", "Saves"],
+      related: [
+        { href: "/endacopia-save-file-location/", label: "Save file location" },
+        { href: "/endacopia-achievements-guide/", label: "Achievements guide" },
+        { href: "/endacopia-saw-box-code/", label: "Saw Box code" },
+        { href: "/endacopia-secret-ending/", label: "Secret ending" }
+      ],
+      checks: [
+        { label: "App ID", value: "2684630" },
+        { label: "Prefix", value: "compatdata" },
+        { label: "Backups", value: "Yes" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-underground",
+    title: "Endacopia Underground Guide - Hidden Route, Secret Bosses and Fight Club Searches",
+    description: "Endacopia underground guide for players searching how to go underground, secret boss routes, hidden fighters, and what to verify before chasing the old demo-era content.",
+    eyebrow: "Underground route",
+    badges: ["Underground", "Secret bosses"],
+    quick: 'Endacopia underground searches usually refer to hidden combat or secret-route content rather than a normal main-menu destination. Start by checking whether you mean <strong>Fight Club / hidden fighters</strong>, the <strong>Misery Town hidden map route</strong>, or older demo-era underground videos.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-03.jpg",
+    width: 1362,
+    height: 766,
+    alt: "Official Endacopia Steam screenshot showing a combat route scene",
+    caption: "Underground searches overlap with secret bosses, hidden fighters, and Misery Town route cleanup."
+  }
+])}
+
+          <h2>What Does Underground Mean?</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Query</th><th>Likely Meaning</th><th>Best Next Page</th></tr></thead>
+              <tbody>
+                <tr><td>how to go underground in Endacopia</td><td>Hidden combat/fighter route or old secret-boss video context.</td><td><a href="/endacopia-boss-fights-guide/">Boss fights guide</a></td></tr>
+                <tr><td>Endacopia underground fighters</td><td>Secret boss / Fight Club style cleanup.</td><td><a href="/endacopia-achievements-guide/">Achievements guide</a></td></tr>
+                <tr><td>Endacopia map underground</td><td>Misery Town remote/checkerboard route.</td><td><a href="/endacopia-map/">Map guide</a></td></tr>
+                <tr><td>old underground secret endings</td><td>Demo-era videos, not necessarily the 2026 full-game route.</td><td><a href="/endacopia-demo-vs-full-game/">Demo vs full game</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Safe Search Path</h2>
+          <ol class="step-list">
+            <li><strong>Confirm your version.</strong> If the video is from years before July 27, 2026, treat it as demo-era route material.</li>
+            <li><strong>Check achievements first.</strong> If the search is about hidden fighters, match it against Steam achievement names before replaying a whole chapter.</li>
+            <li><strong>Open the map route if you are in Misery Town.</strong> The remote/checkerboard path is the stronger current map-related lead.</li>
+            <li><strong>Keep screenshots.</strong> Underground/secret-boss pages still need exact full-release proof, so capture the entrance and unlock screens.</li>
+          </ol>
+
+          <h2>Proof Still Needed</h2>
+          <ul class="shot-list">
+            <li><strong>Entrance state</strong><span>Where the full-release route begins.</span></li>
+            <li><strong>Secret fighter list</strong><span>Names, unlock requirements, and achievement relation.</span></li>
+            <li><strong>Demo comparison</strong><span>Which older underground videos still apply to the Steam build.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://www.youtube.com/watch?v=K-gHUV1GvKQ">Secret bosses video reference</a> | <a href="https://www.youtube.com/watch?v=LcPkmL7AY0E">Older underground video reference</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Routing page for underground, hidden fighters, secret bosses, and old-video searches.",
+      badges: ["Underground", "Secret", "Verify"],
+      related: [
+        { href: "/endacopia-boss-fights-guide/", label: "Boss fights guide" },
+        { href: "/endacopia-map/", label: "Map guide" },
+        { href: "/endacopia-demo-vs-full-game/", label: "Demo vs full game" },
+        { href: "/endacopia-achievements-guide/", label: "Achievements guide" }
+      ],
+      checks: [
+        { label: "Version", value: "Full game" },
+        { label: "Proof", value: "Needed" },
+        { label: "Intent", value: "Hidden" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-trapezist",
+    title: "Endacopia Trapezist Guide - Fatal Performance and Cut The Act",
+    description: "Endacopia Trapezist guide explaining the fight route for Fatal Performance, the scalpel rope route for Cut The Act, and where to save before the branch.",
+    eyebrow: "Boss route",
+    badges: ["Trapezist", "Achievements"],
+    quick: 'For Trapezist, keep a save before the final branch. Fight the boss to unlock <strong>Fatal Performance</strong>. To avoid the battle, bring/use the <strong>Scalpel</strong> on the support rope before combat to unlock <strong>Cut The Act</strong>.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-09.jpg",
+    width: 1532,
+    height: 857,
+    alt: "Official Endacopia Steam screenshot showing a stage performer scene",
+    caption: "Trapezist searches are achievement-intent searches: defeat route vs avoid route."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-03.jpg",
+    width: 1362,
+    height: 766,
+    alt: "Official Endacopia Steam screenshot showing a combat encounter",
+    caption: "Replace with self-captured Trapezist fight and rope-cut proof after capture."
+  }
+])}
+
+          <h2>Fatal Performance vs Cut The Act</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Achievement</th><th>Route</th><th>Save Advice</th></tr></thead>
+              <tbody>
+                <tr><td>Fatal Performance</td><td>Commit to the Trapezist battle and finish the fight.</td><td>Use a pre-branch save so you can reload for Cut The Act.</td></tr>
+                <tr><td>Cut The Act</td><td>Use the Scalpel on the support rope before the battle starts.</td><td>Confirm you have the Scalpel before entering the final encounter state.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Fight Route</h2>
+          <ol class="step-list">
+            <li><strong>Enter with a backup save.</strong> The boss branch affects 100% cleanup.</li>
+            <li><strong>Watch thrown projectiles.</strong> Public route notes describe returning or countering the thrown balls during the fight.</li>
+            <li><strong>Do not spend all stamina at once.</strong> Block or reset between safe counter windows.</li>
+            <li><strong>Confirm the unlock.</strong> Fatal Performance should be tied to finishing the direct battle route.</li>
+          </ol>
+
+          <h2>Avoid Route</h2>
+          <ol class="step-list">
+            <li><strong>Bring the Scalpel.</strong> If you missed the body-part route item, do not push into the encounter yet.</li>
+            <li><strong>Cut the support rope.</strong> Use the Scalpel before combat commits.</li>
+            <li><strong>Check for Cut The Act.</strong> This is the avoid-battle achievement, separate from the fight achievement.</li>
+          </ol>
+
+          <h2>Related Route Notes</h2>
+          <p>Trapezist sits in the same 100% cleanup family as AI and Chameleon: each has a fight outcome and an avoid outcome. Use <a href="/endacopia-boss-fights-guide/">Boss Fights Guide</a> for the full pair table.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://www.neoseeker.com/endacopia/Chapter_2">Neoseeker Chapter 2</a> | <a href="https://dq7reimagined.com/endacopia/boss-fights-guide/">DQ7 boss guide</a> | <a href="https://endacopia.fandom.com/wiki/Trapezist">Fandom Trapezist</a> | <a href="https://endacopiaguide.wiki/bosses/trapezist">Trapezist route reference</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Focused Trapezist route page for fight and avoid achievements.",
+      badges: ["Trapezist", "Fatal Performance", "Cut The Act"],
+      related: [
+        { href: "/endacopia-boss-fights-guide/", label: "Boss fights guide" },
+        { href: "/endacopia-achievements-guide/", label: "Achievements guide" },
+        { href: "/endacopia-100-percent-achievement-checklist/", label: "100% checklist" },
+        { href: "/endacopia-chameleon-battle/", label: "Chameleon battle" }
+      ],
+      checks: [
+        { label: "Fight", value: "Fatal Performance" },
+        { label: "Avoid", value: "Cut The Act" },
+        { label: "Item", value: "Scalpel" }
+      ]
+    }
+  },
+  {
     slug: "about",
     title: "About Endacopia Guide Hub",
     description: "About this unofficial Endacopia guide project, its coverage goals, source policy, and current update priorities.",
@@ -1634,6 +1990,13 @@ ${mediaGrid([
     badges: ["Updated", "Site notes"],
     quick: 'This changelog records meaningful guide updates, especially source-backed route additions, image fixes, sitemap changes, and pages that still need in-game proof.',
     body: `
+          <h2>August 2, 2026</h2>
+          <ul class="shot-list">
+            <li><strong>Engagement optimization</strong><span>Rebuilt the homepage as an answer-first router and added Quick Answers above the fold.</span></li>
+            <li><strong>Search Console opportunity pages</strong><span>Added Map, Scribbly, Steam Deck, Underground, and Trapezist pages for queries already showing impressions.</span></li>
+            <li><strong>Analytics events</strong><span>Added GA events for guide-card clicks, search use, copyable code snippets, and 50% scroll depth.</span></li>
+          </ul>
+
           <h2>August 1, 2026</h2>
           <ul class="shot-list">
             <li><strong>Puzzle answer cluster</strong><span>Added Puzzle Solutions, CHESHIRE Password, LET ME GO / LET ME TALK, and Boss Fights pages to target answer-first long-tail searches.</span></li>
@@ -1672,7 +2035,7 @@ ${mediaGrid([
       ],
       checks: [
         { label: "Latest", value: "Aug 1" },
-        { label: "Pages", value: "37" },
+        { label: "Pages", value: "42" },
         { label: "Next", value: "Proof" }
       ]
     }
@@ -1741,6 +2104,11 @@ function card({ href, title, text, badges }) {
 
 function homepageInsert() {
   const routeCards = [
+    { href: "/endacopia-map/", title: "Map Guide", text: "Scribbly map, Misery Town cinema map, checkerboard path, and where each map search should go.", badges: ["Map", "Scribbly"] },
+    { href: "/endacopia-scribbly/", title: "Scribbly Guide", text: "Collect 8 paper pieces, draw the face, enter SCRIBBLY, and claim the map reward.", badges: ["SCRIBBLY", "Map"] },
+    { href: "/endacopia-trapezist/", title: "Trapezist Guide", text: "Fatal Performance fight route, Cut The Act scalpel-rope route, and branch-save advice.", badges: ["Trapezist", "Boss"] },
+    { href: "/endacopia-steam-deck/", title: "Steam Deck Guide", text: "Proton save path, Deck controls, Desktop Mode backup notes, and route-specific caveats.", badges: ["Steam Deck", "Proton"] },
+    { href: "/endacopia-underground/", title: "Underground Guide", text: "Hidden route intent splitter for underground fighters, old videos, map routes, and secret bosses.", badges: ["Underground", "Hidden"] },
     { href: "/endacopia-puzzle-solutions/", title: "Puzzle Solutions", text: "Answer-first table for CHESHIRE, LET ME GO, LET ME TALK, 471, Core colors, Scribbly, and softlocks.", badges: ["Answers", "Codes"] },
     { href: "/endacopia-cheshire-password/", title: "CHESHIRE Password", text: "Toilet password route from fridge cheese, cockroach coins, and Wall Bank to the bathroom prompt.", badges: ["CHESHIRE", "Toilet"] },
     { href: "/endacopia-let-me-go-let-me-talk/", title: "LET ME GO / TALK", text: "Office button-room phrase order: use LET ME GO first, then LET ME TALK later.", badges: ["Office", "Phrases"] },
@@ -1772,8 +2140,8 @@ function homepageInsert() {
         <div class="container">
           <div class="section-head">
             <div>
-              <h2>Route Deep Dives</h2>
-              <p>Long-tail pages for exact blockers players search after demo videos or a first run: puzzle answers, passwords, phrase order, boss fights, Prologue, full-game differences, Office, 277-5944, Timesville fish, Misery Town, saves, and Water Break.</p>
+              <h2>Answer Hubs And Long-Tail Fixes</h2>
+              <p>Pages built from current Search Console opportunities and exact blockers: map, Scribbly, Steam Deck, underground routes, Trapezist, puzzle answers, passwords, phrase order, boss fights, Prologue, full-game differences, Office, 277-5944, Timesville fish, Misery Town, saves, and Water Break.</p>
             </div>
           </div>
           <div class="guide-grid">
@@ -1801,19 +2169,44 @@ ${trustCards.map(card).join("\n")}
 `;
 }
 
+function homepageHeroAnswers() {
+  return `          <!-- COMPLETE_SITE_HERO_ANSWERS_START -->
+          <div class="hero-answer-grid" aria-label="Fast Endacopia answers">
+            <a href="/endacopia-cheshire-password/"><span>Toilet password</span><strong>CHESHIRE</strong></a>
+            <a href="/endacopia-saw-box-code/"><span>Saw Box code</span><strong>471</strong></a>
+            <a href="/endacopia-let-me-go-let-me-talk/"><span>Office phrases</span><strong>LET ME GO / TALK</strong></a>
+            <a href="/endacopia-scribbly/"><span>Scribbly map</span><strong>8 pieces + SCRIBBLY</strong></a>
+          </div>
+          <!-- COMPLETE_SITE_HERO_ANSWERS_END -->`;
+}
+
 async function updateHomepage() {
   const file = path.join(root, "index.html");
   let html = await readFile(file, "utf8");
   html = html.replace(/\s*<!-- COMPLETE_SITE_DEEP_DIVES_START -->[\s\S]*?<!-- COMPLETE_SITE_DEEP_DIVES_END -->\n*/g, "\n");
   html = html.replace(/\s*<!-- COMPLETE_SITE_TRUST_START -->[\s\S]*?<!-- COMPLETE_SITE_TRUST_END -->\n*/g, "\n");
+  html = html.replace(/\s*<!-- COMPLETE_SITE_HERO_ANSWERS_START -->[\s\S]*?<!-- COMPLETE_SITE_HERO_ANSWERS_END -->\n*/g, "\n");
 
   const needle = '      <section class="band">\n        <div class="container content-layout">\n          <article class="article">\n            <h2>How to Use This Hub</h2>';
   if (!html.includes(needle)) {
     throw new Error("Homepage insertion point not found");
   }
   html = html.replace(needle, `${homepageInsert()}\n${needle}`);
-  html = html.replace(/<span class="eyebrow">Updated [^<]+<\/span>/, '<span class="eyebrow">Updated August 1, 2026</span>');
-  html = html.replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>37</strong></li>');
+  html = html
+    .replace(/<title>[^<]*<\/title>/, '<title>Endacopia Guide - Walkthrough, Map, Achievements, Endings & Puzzle Answers</title>')
+    .replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="Endacopia guide hub for walkthroughs, map routes, achievements, all endings, puzzle answers, CHESHIRE, Scribbly, Steam Deck, and boss fight routes.">')
+    .replace(/<meta property="og:title" content="[^"]*">/, '<meta property="og:title" content="Endacopia Guide - Walkthrough, Map, Achievements, Endings & Puzzle Answers">')
+    .replace(/<meta property="og:description" content="[^"]*">/, '<meta property="og:description" content="Endacopia guide hub for walkthroughs, map routes, achievements, all endings, puzzle answers, CHESHIRE, Scribbly, Steam Deck, and boss fight routes.">')
+    .replace(/<meta name="twitter:title" content="[^"]*">/, '<meta name="twitter:title" content="Endacopia Guide - Walkthrough, Map, Achievements, Endings & Puzzle Answers">')
+    .replace(/<meta name="twitter:description" content="[^"]*">/, '<meta name="twitter:description" content="Endacopia guide hub for walkthroughs, map routes, achievements, all endings, puzzle answers, CHESHIRE, Scribbly, Steam Deck, and boss fight routes.">')
+    .replace(/"description": "Fast, spoiler-controlled Endacopia walkthroughs and ending guides\."/g, '"description": "Fast Endacopia walkthroughs, map routes, achievements, endings, puzzle answers, and route checks."')
+    .replace(/<span class="eyebrow">Updated [^<]+<\/span>/, '<span class="eyebrow">Updated August 2, 2026</span>')
+    .replace(/<h1>Endacopia guides built for quick answers first\.<\/h1>/, '<h1>Endacopia Guide: maps, endings, achievements, and puzzle answers.</h1>')
+    .replace(/<p class="lede">Use this hub to jump straight into Endacopia walkthroughs, ending routes, Steam achievements, character pages, and puzzle notes without digging through long videos\.<\/p>/, '<p class="lede">Choose the exact blocker you are stuck on: CHESHIRE, Scribbly map, Saw Box 471, Trapezist, Steam Deck saves, secret Ending C, or the full walkthrough.</p>')
+    .replace(/placeholder="Try (?:endings, Clocky, achievements, secret|map, Scribbly, CHESHIRE, Steam Deck, Trapezist|map, Scribbly, CHESHIRE)\.\.\."/g, 'placeholder="Try map, Scribbly, CHESHIRE..."')
+    .replace(/<a class="button" href="\/endacopia-all-endings\/">Start with endings<\/a>/, '<a class="button" href="/endacopia-puzzle-solutions/">Open puzzle answers</a>')
+    .replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>42</strong></li>');
+  html = html.replace(/(<p class="lede">[\s\S]*?<\/p>\n)/, `$1${homepageHeroAnswers()}\n`);
   await writeFile(file, html, "utf8");
 }
 
