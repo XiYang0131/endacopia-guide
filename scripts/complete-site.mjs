@@ -4,7 +4,7 @@ import path from "node:path";
 const root = path.join(process.cwd(), "work", "endacopia-guide-hub");
 const site = "https://www.endacopiaguide.com";
 const lastmod = "2026-08-02";
-const version = "20260802-engagement";
+const version = "20260802-keyword-expansion";
 const ogImage = `${site}/assets/og/endacopia-guide-og.jpg`;
 const headerImage = "/assets/endacopia-header-20260730.jpg";
 
@@ -52,6 +52,12 @@ const newGuides = [
   "endacopia-steam-deck",
   "endacopia-underground",
   "endacopia-trapezist",
+  "endacopia-soccer-ball",
+  "endacopia-download",
+  "games-like-endacopia",
+  "how-long-to-beat-endacopia",
+  "endacopia-meaning-lore",
+  "endacopia-items-guide",
   "about",
   "contact",
   "editorial-policy",
@@ -389,10 +395,10 @@ ${mediaGrid([
   {
     slug: "endacopia-timesville-fishing-guide",
     title: "Endacopia Timesville Fishing Secret Guide - Fish Paper and Lost Key",
-    description: "Timesville secret guide for Endacopia Ending C: find the Fish Paper, catch all 18 fish, claim the key, and finish the windowed-mode shack step.",
+    description: "Timesville secret guide for Endacopia Ending C and how to fish in Endacopia: find the Fish Paper, catch all 18 fish, claim the key, and finish the windowed-mode shack step.",
     eyebrow: "Timesville secret",
     badges: ["18 fish", "Ending C"],
-    quick: 'For the Timesville secret, use the Metal Detector to find the Fish Paper, catch all 18 unique fish across the six clock periods, inspect the paper to receive the key, return to the small monochrome shack, switch to windowed mode with <code>Alt+Enter</code>, and use the key on the revealed lock.',
+    quick: 'For how to fish in Endacopia and complete the Timesville secret, use the Metal Detector to find the Fish Paper, catch all 18 unique fish across the six clock periods, inspect the paper to receive the key, return to the small monochrome shack, switch to windowed mode with <code>Alt+Enter</code>, and use the key on the revealed lock.',
     body: `
 ${mediaGrid([
   {
@@ -465,10 +471,10 @@ ${mediaGrid([
   {
     slug: "endacopia-all-fish-guide",
     title: "Endacopia All Fish Guide - 18 Fish Checklist by Time Slot",
-    description: "All 18 Endacopia fish for Timesville, grouped by day and night clock slots for the Fisherman achievement and the secret route key.",
+    description: "How to fish in Endacopia and catch all 18 Timesville fish, grouped by day and night clock slots for the Fisherman achievement and the secret route key.",
     eyebrow: "Fish checklist",
     badges: ["18 fish", "Achievement"],
-    quick: 'Endacopia has 18 required Timesville fish for the full fishing checklist: three catches in each of six clock slots. Catch all 18, then exit or recheck the fishing paper to confirm the Fisherman achievement and the secret-route key.',
+    quick: 'To fish in Endacopia, use the Timesville fishing spot after the route opens, then catch 18 required Timesville fish: three catches in each of six clock slots. Catch all 18, then exit or recheck the fishing paper to confirm the Fisherman achievement and the secret-route key.',
     body: `
 ${mediaGrid([
   {
@@ -606,10 +612,10 @@ ${mediaGrid([
   {
     slug: "endacopia-chameleon-battle",
     title: "Endacopia Chameleon Battle Guide - No Strings Attached and Case Closed",
-    description: "Chameleon battle and avoidance guide for Endacopia: how No Strings Attached differs from Case Closed, when to save, and what to verify.",
+    description: "Chameleon battle and avoidance guide for Endacopia, including the common Chamelion misspelling: how No Strings Attached differs from Case Closed, when to save, and what to verify.",
     eyebrow: "Boss branch",
     badges: ["Chameleon", "Achievements"],
-    quick: 'No Strings Attached is the Chameleon combat achievement; Case Closed is the paired avoidance achievement. Make a save before the Chameleon conversation, run one branch for the fight, reload, then run the correct identity/avoidance branch for Case Closed.',
+    quick: 'No Strings Attached is the Chameleon combat achievement; Case Closed is the paired avoidance achievement. If you searched <strong>Endacopia Chamelion</strong>, this is the same boss. Make a save before the Chameleon conversation, run one branch for the fight, reload, then run the correct identity/avoidance branch for Case Closed.',
     body: `
 ${mediaGrid([
   {
@@ -1154,7 +1160,7 @@ ${mediaGrid([
       checks: [
         { label: "Demo", value: "Prologue" },
         { label: "Full release", value: "Jul 27" },
-        { label: "Pages", value: "42" }
+        { label: "Pages", value: "48" }
       ]
     }
   },
@@ -1852,6 +1858,405 @@ ${mediaGrid([
     }
   },
   {
+    slug: "endacopia-soccer-ball",
+    title: "Endacopia Soccer Ball Guide - How to Kick and Reach 100 Points",
+    description: "Endacopia soccer ball guide for how to kick in Endacopia, how to time the ball, and how to reach 100 points for the Footwork Master achievement.",
+    eyebrow: "Soccer ball",
+    badges: ["Footwork Master", "100 points"],
+    quick: 'To kick the soccer ball in Endacopia, click the ball itself as it reaches the line labeled <strong>kick</strong>. Do not mash. Watch one full cue cycle, click once at the timing window, then repeat until you reach <strong>100 points</strong> for Footwork Master.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-02.jpg",
+    width: 1783,
+    height: 999,
+    alt: "Official Endacopia Steam screenshot showing Mellow's room near the soccer ball mini-game area",
+    caption: "The soccer ball is an opening-room mini-game search. Replace this store reference with a self-captured ball timing screenshot after capture."
+  }
+])}
+
+          <h2>How To Kick The Soccer Ball</h2>
+          <ol class="step-list">
+            <li><strong>Start the mini-game from Mellow's room.</strong> Interact with the soccer ball until the score / high-score interface is visible.</li>
+            <li><strong>Watch the cue first.</strong> Let one cycle pass without clicking so you can see where the ball crosses the kick line.</li>
+            <li><strong>Click the ball itself.</strong> Steam community answers point to clicking when the ball is right below the <code>kick</code> line.</li>
+            <li><strong>Click once, then reset your rhythm.</strong> Panic clicks make it harder to learn whether you were early or late.</li>
+            <li><strong>Keep going to 100 points.</strong> Steam achievements confirm Footwork Master unlocks at a soccer score of 100 points.</li>
+          </ol>
+
+          <h2>Timing Troubleshooting</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Problem</th><th>Likely Cause</th><th>Fix</th></tr></thead>
+              <tbody>
+                <tr><td>The kick never counts</td><td>You are clicking too early, too late, or outside the ball.</td><td>Click directly on the ball when it sits just under the kick line.</td></tr>
+                <tr><td>The cue disappears</td><td>You are losing rhythm after a few attempts.</td><td>Stop for one cycle, watch the line, then restart one-click timing.</td></tr>
+                <tr><td>100 feels impossible</td><td>You are trying to brute force the input.</td><td>Treat it like a rhythm check: one clean click beats several rushed clicks.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Does Soccer Ball Matter For Story?</h2>
+          <p>The soccer ball is mainly an achievement and mini-game search, not a main-story blocker. If you only want to progress, use the <a href="/endacopia-beginner-guide/">beginner guide</a>. If you want 100%, keep practicing until Footwork Master unlocks.</p>
+
+          <h2>Keyword Notes</h2>
+          <p>This page targets the same player problem behind searches such as <strong>how to kick in Endacopia</strong>, <strong>Endacopia soccer ball</strong>, <strong>how to kick the soccer ball in Endacopia</strong>, and <strong>Endacopia kick soccer ball</strong>.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://steamcommunity.com/app/2684630/discussions/0/6369856709164997745/">Steam community soccer ball thread</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Timing page for how to kick the soccer ball and reach Footwork Master.",
+      badges: ["Soccer", "Timing", "100"],
+      related: [
+        { href: "/endacopia-achievements-guide/", label: "Achievements guide" },
+        { href: "/endacopia-100-percent-achievement-checklist/", label: "100% checklist" },
+        { href: "/endacopia-beginner-guide/", label: "Beginner guide" },
+        { href: "/endacopia-clocky/", label: "Clocky timing guide" }
+      ],
+      checks: [
+        { label: "Input", value: "Click ball" },
+        { label: "Cue", value: "Kick line" },
+        { label: "Goal", value: "100 points" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-download",
+    title: "Endacopia Download Guide - Steam, Demo, Free Play and Safe Links",
+    description: "Safe Endacopia download guide covering the official Steam full game, Steam and itch demo pages, browser-play searches, price notes, and why crack/torrent links should be avoided.",
+    eyebrow: "Download safely",
+    badges: ["Steam", "Demo"],
+    quick: 'The safest Endacopia download is the official Steam full game. Steam also offers an Endacopia demo, and the original itch.io demo now links users to Steam for the released game. Avoid crack, torrent, and re-upload pages because they are unsafe and cannot be verified.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-01.jpg",
+    width: 1920,
+    height: 1080,
+    alt: "Official Endacopia Steam screenshot used for safe download guide context",
+    caption: "Download-intent searches should land on official or clearly labeled demo/play options, not unsafe mirrors."
+  }
+])}
+
+          <h2>Official Download Options</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Intent</th><th>Best Answer</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>Endacopia Steam</td><td><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam full game</a></td><td>Released July 27, 2026; includes Steam achievements.</td></tr>
+                <tr><td>Endacopia demo</td><td><a href="https://store.steampowered.com/app/4582420/Endacopia_Demo/">Steam demo</a> or <a href="https://andyl4nd.itch.io/endacopiademo">itch.io demo</a></td><td>Demo content is not the same as the full 2026 release.</td></tr>
+                <tr><td>Endacopia free game</td><td>Use the demo if you want free official content.</td><td>The full game is paid on Steam.</td></tr>
+                <tr><td>Endacopia CrazyGames / online</td><td>Use browser pages only as separate play/demo experiences.</td><td>Check whether the page is demo content, not the full Steam game.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Price And Platform Notes</h2>
+          <p>Steam lists Endacopia as an Adventure / Indie game by Andyland with English interface, full audio, and subtitles. SteamDB lists app ID <code>2684630</code>, Windows support, and the July 27, 2026 Steam release timestamp. Prices and sale offers change, so always check the current Steam store page before publishing a price claim.</p>
+
+          <h2>Do Not Use Crack Or Torrent Pages</h2>
+          <p>Searches such as <strong>Endacopia crack</strong>, <strong>Endacopia torrent</strong>, and <strong>Endacopia free dl</strong> show demand, but they should not be served with download files. A safe guide can answer the intent by pointing to official Steam, the official demo, and warning that unofficial builds may be unsafe or outdated.</p>
+
+          <h2>Where To Go Next</h2>
+          <ul class="shot-list">
+            <li><strong>New player</strong><span>Open <a href="/endacopia-beginner-guide/">Beginner Guide</a> after installing.</span></li>
+            <li><strong>Demo player</strong><span>Use <a href="/endacopia-demo-vs-full-game/">Demo vs Full Game</a> before following old video guides.</span></li>
+            <li><strong>Steam Deck player</strong><span>Open <a href="/endacopia-steam-deck/">Steam Deck Guide</a> for Proton save notes.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://store.steampowered.com/app/4582420/Endacopia_Demo/">Steam Demo</a> | <a href="https://andyl4nd.itch.io/endacopiademo">Official itch.io demo</a> | <a href="https://steamdb.info/app/2684630/">SteamDB</a> | <a href="https://www.crazygames.com/game/endacopia">CrazyGames page</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Safe download and play-intent hub for Steam, demo, online, and price searches.",
+      badges: ["Download", "Steam", "Safe"],
+      related: [
+        { href: "/endacopia-play/", label: "Play page" },
+        { href: "/endacopia-demo-vs-full-game/", label: "Demo vs full game" },
+        { href: "/endacopia-release-date/", label: "Release date" },
+        { href: "/endacopia-steam-deck/", label: "Steam Deck guide" }
+      ],
+      checks: [
+        { label: "Full game", value: "Steam" },
+        { label: "Demo", value: "Official" },
+        { label: "Cracks", value: "Avoid" }
+      ]
+    }
+  },
+  {
+    slug: "games-like-endacopia",
+    title: "Games Like Endacopia - Point-and-Click Horror, Surreal Puzzle and Demo Picks",
+    description: "Games like Endacopia, grouped by why players search for them: creepy point-and-click puzzles, Petscop-style unease, browser horror shorts, surreal lore, and retro adventure tone.",
+    eyebrow: "Similar games",
+    badges: ["Recommendations", "Point-and-click"],
+    quick: 'If you want games like Endacopia, split the search by what you liked: <strong>creepy point-and-click puzzles</strong>, <strong>cute-but-wrong horror</strong>, <strong>surreal lore</strong>, or <strong>short browser horror</strong>. Start with Exhibit of Sorrows for browser horror, Rusty Lake for puzzle chains, and Petscop-adjacent mystery if the appeal is eerie found-game atmosphere.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-06.jpg",
+    width: 1920,
+    height: 1080,
+    alt: "Official Endacopia Steam screenshot showing surreal point-and-click adventure tone",
+    caption: "Endacopia-like searches are broader than one game: players usually want the same mix of cute presentation, wrongness, puzzles, and secrets."
+  }
+])}
+
+          <h2>Pick By What You Liked</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>You Liked</th><th>Try Searching</th><th>Why It Fits</th></tr></thead>
+              <tbody>
+                <tr><td>Short browser horror with a friendly surface</td><td>Exhibit of Sorrows</td><td>Itch lists it among games like the Endacopia demo and it matches the circus/uncanny angle.</td></tr>
+                <tr><td>Dense point-and-click puzzle chains</td><td>Rusty Lake / Cube Escape</td><td>Strong puzzle-room logic and surreal atmosphere.</td></tr>
+                <tr><td>Found-game unease and hidden lore</td><td>Petscop-style mystery searches</td><td>The original demo page compares Endacopia's feel to a Pajama Sam / Petscop mixture.</td></tr>
+                <tr><td>Retro edutainment presentation turning dark</td><td>Point-and-click horror games</td><td>Steam and press descriptions frame Endacopia around early computer edutainment with horror underneath.</td></tr>
+                <tr><td>Indie horror recommendations</td><td>itch.io games like Endacopia demo</td><td>Useful for free or browser-play discovery, but quality varies.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Search Clusters Worth Targeting</h2>
+          <ul class="shot-list">
+            <li><strong>games like Endacopia</strong><span>Use this page as the main landing page.</span></li>
+            <li><strong>point and click horror games</strong><span>Broader discovery query; compare by puzzle density and horror intensity.</span></li>
+            <li><strong>horror point and click games</strong><span>Same intent with different word order; include in headings and internal text.</span></li>
+            <li><strong>scariest point and click games</strong><span>Use sparingly; Endacopia is unsettling, but not every similar pick should be sold as pure horror.</span></li>
+          </ul>
+
+          <h2>Recommendation Rule</h2>
+          <p>Do not recommend only by genre tag. Endacopia's search demand comes from a specific blend: point-and-click interaction, puzzle blockers, surreal humor, a childlike surface, horror under the surface, mini-games, and secrets. The closer a game matches that blend, the better it belongs on this page.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://andyl4nd.itch.io/endacopiademo">Official itch.io demo</a> | <a href="https://itch.io/games-like/1754941/endacopiademo">itch.io games like Endacopia demo</a> | <a href="https://www.igdb.com/games/endacopia/similar">IGDB similar games</a> | <a href="https://steampeek.hu/?appid=2684630">SteamPeek similar games</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Similar-games landing page for point-and-click horror and surreal puzzle searches.",
+      badges: ["Similar", "Horror", "Puzzle"],
+      related: [
+        { href: "/endacopia-meaning-lore/", label: "Meaning and lore" },
+        { href: "/endacopia-download/", label: "Download guide" },
+        { href: "/endacopia-play/", label: "Play Endacopia" },
+        { href: "/endacopia-beginner-guide/", label: "Beginner guide" }
+      ],
+      checks: [
+        { label: "Intent", value: "Discovery" },
+        { label: "Main angle", value: "Point-click" },
+        { label: "Use", value: "Top funnel" }
+      ]
+    }
+  },
+  {
+    slug: "how-long-to-beat-endacopia",
+    title: "How Long To Beat Endacopia - Main Story, Demo and 100 Percent Time",
+    description: "How long to beat Endacopia, with realistic time ranges for the demo, guided main story, blind first playthrough, endings cleanup, and 100 percent achievement runs.",
+    eyebrow: "Playtime",
+    badges: ["How long", "Full game"],
+    quick: 'A practical Endacopia completion estimate is <strong>5-7 hours</strong> for a guided main-story run, <strong>6-9 hours</strong> for a blind first playthrough, and <strong>8-12+ hours</strong> for 100% achievements and all endings. Treat these as early-release estimates because public completion data is still thin.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-05.jpg",
+    width: 1920,
+    height: 1080,
+    alt: "Official Endacopia Steam screenshot showing route progression context",
+    caption: "Endacopia's time-to-beat depends heavily on whether the player is blind, using a guide, or chasing achievements."
+  }
+])}
+
+          <h2>Time Estimates</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Run Type</th><th>Estimate</th><th>Why It Varies</th></tr></thead>
+              <tbody>
+                <tr><td>Demo / Prologue only</td><td>30-40 minutes</td><td>Public walkthrough notes frame the prologue as the demo-style opening section.</td></tr>
+                <tr><td>Guided main story</td><td>5-7 hours</td><td>Using exact puzzle answers cuts out most search and backtracking.</td></tr>
+                <tr><td>Blind first playthrough</td><td>6-9 hours</td><td>Nonlinear area routing, mini-games, and object logic add time.</td></tr>
+                <tr><td>All endings</td><td>7-10 hours</td><td>Ending routes are faster if you keep branch saves before Saw Box and boss decisions.</td></tr>
+                <tr><td>100% achievements</td><td>8-12+ hours</td><td>Fishing, soccer score, boss avoid/fight branches, and secret cleanup can add retries.</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>What Adds The Most Time?</h2>
+          <ol class="step-list">
+            <li><strong>Going blind.</strong> Endacopia's strongest puzzles are fairer when you track room state, but they still reward observation.</li>
+            <li><strong>Mini-games.</strong> Soccer ball 100 points, dice, fishing, and boss fights can each add retries.</li>
+            <li><strong>Ending C / Stay.</strong> The route requires multiple secrets and can become expensive if you lack a branch save.</li>
+            <li><strong>All fish.</strong> Steam confirms the I Want To Be A Fisherman achievement for catching every fish.</li>
+          </ol>
+
+          <h2>Fastest Way To Reduce Time</h2>
+          <p>Use the <a href="/endacopia-puzzle-solutions/">Puzzle Solutions</a> page for exact answers, then keep one save before major branches. If you are only checking whether Endacopia fits an evening session, expect one focused session for a guided route and more than one session for 100% cleanup.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://endacopia.wiki/guides/walkthrough/">Endacopia Wiki walkthrough</a> | <a href="https://steamcommunity.com/stats/2684630/achievements">Steam achievements</a> | <a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://www.youtube.com/watch?v=JNN2VtQtUzo">Full walkthrough video reference</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Playtime estimates for demo, main route, all endings, and 100% runs.",
+      badges: ["Time", "Endings", "100%"],
+      related: [
+        { href: "/endacopia-walkthrough/", label: "Full walkthrough" },
+        { href: "/endacopia-all-endings/", label: "All endings" },
+        { href: "/endacopia-100-percent-achievement-checklist/", label: "100% checklist" },
+        { href: "/endacopia-soccer-ball/", label: "Soccer ball" }
+      ],
+      checks: [
+        { label: "Guided", value: "5-7h" },
+        { label: "Blind", value: "6-9h" },
+        { label: "100%", value: "8-12h+" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-meaning-lore",
+    title: "Endacopia Meaning and Lore - What the Title, Mellow and Andyland Setup Suggest",
+    description: "Endacopia meaning and lore guide for players searching what Endacopia means, whether the word has another meaning, and how the game's official setup frames Mellow's story.",
+    eyebrow: "Meaning and lore",
+    badges: ["Lore", "Meaning"],
+    quick: 'There is no widely confirmed dictionary meaning for <strong>Endacopia</strong>. The useful answer is lore-based: official descriptions frame it as a surreal point-and-click story about Mellow, a lost child with missing senses, foreign rules, tools, mini-games, hostile encounters, and hidden secrets.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-07.jpg",
+    width: 1532,
+    height: 863,
+    alt: "Official Endacopia Steam screenshot showing surreal lore context",
+    caption: "Meaning searches are usually early-fandom questions: title meaning, story premise, Mellow, and what kind of horror the game is."
+  }
+])}
+
+          <h2>Does Endacopia Mean Anything?</h2>
+          <p>As of this update, the safe answer is: no official source clearly defines Endacopia as a normal dictionary word. Searchers asking <strong>Endacopia meaning</strong> are usually asking one of three things: what the title means, what the story is about, or whether the word has a meaning outside the game.</p>
+
+          <h2>What The Official Setup Says</h2>
+          <p>Steam describes Endacopia as a surreal point-and-click adventure with abstract puzzles, monsters, mini-games, and hidden horror. The original demo page frames Mellow as a lost child moving through a world with foreign rules and also compares the feel to a childlike adventure mixed with eerie internet mystery.</p>
+
+          <h2>Lore Questions To Answer Next</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Search Query</th><th>Best Current Answer</th><th>Related Page</th></tr></thead>
+              <tbody>
+                <tr><td>endacopia meaning</td><td>No official dictionary-style meaning confirmed; explain the title through the game's premise.</td><td><a href="/endacopia-wiki/">Wiki hub</a></td></tr>
+                <tr><td>does Endacopia have a meaning other than the game</td><td>Treat it as a game-specific title unless an official creator note says otherwise.</td><td><a href="/editorial-policy/">Editorial policy</a></td></tr>
+                <tr><td>endacopia lore</td><td>Start with Mellow, missing senses, uncomfortable home, strange rules, and hidden secrets.</td><td><a href="/endacopia-characters/">Characters</a></td></tr>
+                <tr><td>is Endacopia a horror game</td><td>Yes, but it blends point-and-click puzzle adventure with underlying horror rather than being only a chase game.</td><td><a href="/endacopia-beginner-guide/">Beginner guide</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>How To Expand This Page</h2>
+          <p>The best version of this page needs direct creator interview or Kickstarter wording about the title. Until then, keep the page cautious: separate official premise, player interpretation, and unverified theories.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://store.steampowered.com/app/2684630/Endacopia/">Steam Store</a> | <a href="https://andyl4nd.itch.io/endacopiademo">Official itch.io demo</a> | <a href="https://adventuregamehotspot.com/game/1734/endacopia">Adventure Game Hotspot</a> | <a href="https://www.pcgamer.com/games/horror/point-and-click-horror-game-endacopia-is-carrying-on-petscops-legacy-of-serving-up-unnerving-and-confusing-adventures/">PC Gamer preview</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Meaning and lore landing page for title, premise, Mellow, and horror-intent searches.",
+      badges: ["Meaning", "Lore", "Horror"],
+      related: [
+        { href: "/endacopia-characters/", label: "Characters" },
+        { href: "/endacopia-wiki/", label: "Wiki hub" },
+        { href: "/games-like-endacopia/", label: "Games like Endacopia" },
+        { href: "/endacopia-beginner-guide/", label: "Beginner guide" }
+      ],
+      checks: [
+        { label: "Official meaning", value: "Unclear" },
+        { label: "Lead", value: "Mellow" },
+        { label: "Genre", value: "Horror puzzle" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-items-guide",
+    title: "Endacopia Items Guide - Key, Metal Detector, Cheese, Wrench, Core and Nibbles Checks",
+    description: "Endacopia items guide for common blockers: how to get the key, metal detector, cheese, wrench, Core key, Nibbles room picture, and where each item route points next.",
+    eyebrow: "Item routes",
+    badges: ["Items", "Blockers"],
+    quick: 'Use this Endacopia item guide as a routing page: <strong>Cheese</strong> feeds the CHESHIRE password route, <strong>Metal Detector</strong> leads to beach/cinema searches, <strong>Fishing Paper</strong> points to the Lost Key, and <strong>Wrench / Core Key</strong> belong to the Office and Core route.',
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-08.jpg",
+    width: 1533,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot showing item-route context",
+    caption: "Item searches are usually route mistakes: players have an object but do not know which hub it belongs to."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-04.jpg",
+    width: 1532,
+    height: 862,
+    alt: "Official Endacopia Steam screenshot showing outdoor route context",
+    caption: "Metal Detector, fishing, key, and map searches should be upgraded with captured route screenshots."
+  }
+])}
+
+          <h2>Fast Item Routing Table</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Item / Search</th><th>What It Is For</th><th>Best Next Page</th></tr></thead>
+              <tbody>
+                <tr><td>Cheese</td><td>Opening route clue chain that leads into the CHESHIRE bathroom password.</td><td><a href="/endacopia-cheshire-password/">CHESHIRE password</a></td></tr>
+                <tr><td>Metal Detector</td><td>Public guides place it behind a shed/bone puzzle, then use it for beach and cinema searches.</td><td><a href="/endacopia-misery-town-secret/">Misery Town secret</a></td></tr>
+                <tr><td>Fishing Paper</td><td>Points to fish-related clue work and the Lost Key route.</td><td><a href="/endacopia-timesville-fishing-guide/">Timesville fishing</a></td></tr>
+                <tr><td>Lost Key</td><td>Follow the fish-paper clue before treating the key route as solved.</td><td><a href="/endacopia-all-fish-guide/">All fish guide</a></td></tr>
+                <tr><td>Wrench</td><td>Office / work-district cleanup and water-cooler progress toward the Core route.</td><td><a href="/endacopia-office-secret/">Office route</a></td></tr>
+                <tr><td>Core / Core key</td><td>Late Office and AI route progression, not an opening-room object.</td><td><a href="/endacopia-walkthrough/">Walkthrough</a></td></tr>
+                <tr><td>Nibbles door / picture / blackmail</td><td>Exact full-release documentation is still thin; treat it as a route-state problem and record your inventory before retrying.</td><td><a href="/contact/">Submit proof</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Metal Detector Route</h2>
+          <ol class="step-list">
+            <li><strong>Open the shed route.</strong> Public guides describe a bone-order puzzle before the Metal Detector becomes available.</li>
+            <li><strong>Use it on beach clues.</strong> Neoseeker notes the Metal Detector is used on the beach to find Fishing Paper.</li>
+            <li><strong>Use it for Misery Town cinema searches.</strong> The buried remote / cinema map route depends on knowing where to search.</li>
+            <li><strong>Do not assume one use is the only use.</strong> Player reports show the Metal Detector causes confusion because it has multiple route uses.</li>
+          </ol>
+
+          <h2>Question Keywords Covered</h2>
+          <ul class="shot-list">
+            <li><strong>how to get key Endacopia</strong><span>Route into Fishing Paper and Lost Key checks.</span></li>
+            <li><strong>how to get metal detector Endacopia</strong><span>Route into shed/bone puzzle and beach/cinema use.</span></li>
+            <li><strong>where is the core Endacopia</strong><span>Route into Office / AI / Core progression.</span></li>
+            <li><strong>where to find hands Endacopia</strong><span>Route into missing-senses progress, then walkthrough.</span></li>
+            <li><strong>how to open Nibbles door</strong><span>Tracked as proof-needed until exact full-release steps are captured.</span></li>
+          </ul>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://endacopia.fandom.com/wiki/Guide_for_Full_Game">Fandom full-game guide</a> | <a href="https://www.neoseeker.com/endacopia/Chapter_1">Neoseeker Chapter 1</a> | <a href="https://www.neoseeker.com/endacopia/Chapter_3">Neoseeker Chapter 3</a> | <a href="https://dq7reimagined.com/endacopia/">DQ7 Endacopia hub</a> | <a href="https://www.reddit.com/r/Endacopia/comments/1v8xh3u/where_did_you_get_stuck/">Reddit stuck-thread reference</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Item routing hub for key, metal detector, cheese, wrench, Core, and Nibbles queries.",
+      badges: ["Items", "Key", "Metal Detector"],
+      related: [
+        { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions" },
+        { href: "/endacopia-timesville-fishing-guide/", label: "Timesville fishing" },
+        { href: "/endacopia-misery-town-secret/", label: "Misery Town secret" },
+        { href: "/endacopia-office-secret/", label: "Office route" }
+      ],
+      checks: [
+        { label: "Cheese", value: "CHESHIRE" },
+        { label: "Detector", value: "Multi-use" },
+        { label: "Nibbles", value: "Verify" }
+      ]
+    }
+  },
+  {
     slug: "about",
     title: "About Endacopia Guide Hub",
     description: "About this unofficial Endacopia guide project, its coverage goals, source policy, and current update priorities.",
@@ -1992,6 +2397,7 @@ ${mediaGrid([
     body: `
           <h2>August 2, 2026</h2>
           <ul class="shot-list">
+            <li><strong>Similarweb keyword expansion</strong><span>Added Soccer Ball, Download, Games Like Endacopia, How Long To Beat, Meaning/Lore, and Items Guide pages from current keyword-generator opportunities.</span></li>
             <li><strong>Engagement optimization</strong><span>Rebuilt the homepage as an answer-first router and added Quick Answers above the fold.</span></li>
             <li><strong>Search Console opportunity pages</strong><span>Added Map, Scribbly, Steam Deck, Underground, and Trapezist pages for queries already showing impressions.</span></li>
             <li><strong>Analytics events</strong><span>Added GA events for guide-card clicks, search use, copyable code snippets, and 50% scroll depth.</span></li>
@@ -2034,8 +2440,8 @@ ${mediaGrid([
         { href: "/endacopia-screenshot-checklist/", label: "Screenshot checklist" }
       ],
       checks: [
-        { label: "Latest", value: "Aug 1" },
-        { label: "Pages", value: "42" },
+        { label: "Latest", value: "Aug 2" },
+        { label: "Pages", value: "48" },
         { label: "Next", value: "Proof" }
       ]
     }
@@ -2104,6 +2510,12 @@ function card({ href, title, text, badges }) {
 
 function homepageInsert() {
   const routeCards = [
+    { href: "/endacopia-soccer-ball/", title: "Soccer Ball Guide", text: "How to kick in Endacopia, where to click the ball, and how to reach 100 points for Footwork Master.", badges: ["Soccer", "100 points"] },
+    { href: "/endacopia-download/", title: "Download Guide", text: "Official Steam, demo, price, online-play, and safe-link answers for download/free/crack searches.", badges: ["Download", "Steam"] },
+    { href: "/games-like-endacopia/", title: "Games Like Endacopia", text: "Point-and-click horror, surreal puzzle, creepy browser shorts, and similar-game discovery clusters.", badges: ["Similar", "Horror"] },
+    { href: "/how-long-to-beat-endacopia/", title: "How Long To Beat", text: "Early-release playtime estimates for demo, guided main story, blind run, endings, and 100% cleanup.", badges: ["Playtime", "100%"] },
+    { href: "/endacopia-items-guide/", title: "Items Guide", text: "Key, Metal Detector, Cheese, Wrench, Core, Nibbles, and item-route troubleshooting.", badges: ["Items", "Key"] },
+    { href: "/endacopia-meaning-lore/", title: "Meaning And Lore", text: "What Endacopia means, how official sources frame Mellow, and where lore searches should go.", badges: ["Lore", "Meaning"] },
     { href: "/endacopia-map/", title: "Map Guide", text: "Scribbly map, Misery Town cinema map, checkerboard path, and where each map search should go.", badges: ["Map", "Scribbly"] },
     { href: "/endacopia-scribbly/", title: "Scribbly Guide", text: "Collect 8 paper pieces, draw the face, enter SCRIBBLY, and claim the map reward.", badges: ["SCRIBBLY", "Map"] },
     { href: "/endacopia-trapezist/", title: "Trapezist Guide", text: "Fatal Performance fight route, Cut The Act scalpel-rope route, and branch-save advice.", badges: ["Trapezist", "Boss"] },
@@ -2141,7 +2553,7 @@ function homepageInsert() {
           <div class="section-head">
             <div>
               <h2>Answer Hubs And Long-Tail Fixes</h2>
-              <p>Pages built from current Search Console opportunities and exact blockers: map, Scribbly, Steam Deck, underground routes, Trapezist, puzzle answers, passwords, phrase order, boss fights, Prologue, full-game differences, Office, 277-5944, Timesville fish, Misery Town, saves, and Water Break.</p>
+              <p>Pages built from current Search Console and Similarweb opportunities: soccer ball, official download, games like Endacopia, playtime, item routes, meaning/lore, map, Scribbly, Steam Deck, underground routes, Trapezist, puzzle answers, passwords, boss fights, Office, Timesville fish, Misery Town, saves, and Water Break.</p>
             </div>
           </div>
           <div class="guide-grid">
@@ -2202,10 +2614,10 @@ async function updateHomepage() {
     .replace(/"description": "Fast, spoiler-controlled Endacopia walkthroughs and ending guides\."/g, '"description": "Fast Endacopia walkthroughs, map routes, achievements, endings, puzzle answers, and route checks."')
     .replace(/<span class="eyebrow">Updated [^<]+<\/span>/, '<span class="eyebrow">Updated August 2, 2026</span>')
     .replace(/<h1>Endacopia guides built for quick answers first\.<\/h1>/, '<h1>Endacopia Guide: maps, endings, achievements, and puzzle answers.</h1>')
-    .replace(/<p class="lede">Use this hub to jump straight into Endacopia walkthroughs, ending routes, Steam achievements, character pages, and puzzle notes without digging through long videos\.<\/p>/, '<p class="lede">Choose the exact blocker you are stuck on: CHESHIRE, Scribbly map, Saw Box 471, Trapezist, Steam Deck saves, secret Ending C, or the full walkthrough.</p>')
-    .replace(/placeholder="Try (?:endings, Clocky, achievements, secret|map, Scribbly, CHESHIRE, Steam Deck, Trapezist|map, Scribbly, CHESHIRE)\.\.\."/g, 'placeholder="Try map, Scribbly, CHESHIRE..."')
+    .replace(/<p class="lede">Use this hub to jump straight into Endacopia walkthroughs, ending routes, Steam achievements, character pages, and puzzle notes without digging through long videos\.<\/p>/, '<p class="lede">Choose the exact blocker you are stuck on: soccer ball, official download, CHESHIRE, Scribbly map, Saw Box 471, Trapezist, Steam Deck saves, secret Ending C, or the full walkthrough.</p>')
+    .replace(/placeholder="Try (?:endings, Clocky, achievements, secret|map, Scribbly, CHESHIRE, Steam Deck, Trapezist|map, Scribbly, CHESHIRE|soccer ball, download, CHESHIRE)\.\.\."/g, 'placeholder="Try soccer ball, download, CHESHIRE..."')
     .replace(/<a class="button" href="\/endacopia-all-endings\/">Start with endings<\/a>/, '<a class="button" href="/endacopia-puzzle-solutions/">Open puzzle answers</a>')
-    .replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>42</strong></li>');
+    .replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>48</strong></li>');
   html = html.replace(/(<p class="lede">[\s\S]*?<\/p>\n)/, `$1${homepageHeroAnswers()}\n`);
   await writeFile(file, html, "utf8");
 }
