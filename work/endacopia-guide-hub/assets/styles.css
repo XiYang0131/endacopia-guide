@@ -432,6 +432,12 @@ h1 {
 
 .breadcrumb a {
   color: var(--accent-dark);
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 1px 3px;
+  margin: -1px -3px;
+  border-radius: 4px;
   text-decoration: none;
 }
 
@@ -516,6 +522,10 @@ h1 {
   aspect-ratio: auto;
   object-fit: contain;
   background: #050505;
+}
+
+.guide-media picture {
+  display: block;
 }
 
 .guide-media figcaption {
@@ -814,6 +824,24 @@ tr:last-child td {
 
 .footer-grid a {
   color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 1px 3px;
+  margin: -1px -3px;
+  border-radius: 4px;
+}
+
+.article p a,
+.article li a,
+.article td a,
+.source-box a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 1px 3px;
+  margin: -1px -3px;
+  border-radius: 4px;
 }
 
 .hidden {

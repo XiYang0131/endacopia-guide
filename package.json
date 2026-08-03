@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node scripts/prepare-static.mjs"
+    "build": "node scripts/prepare-static.mjs",
+    "optimize:assets": "node scripts/optimize-assets.mjs"
   },
   "devDependencies": {}
 }
