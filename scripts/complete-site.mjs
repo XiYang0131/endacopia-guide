@@ -3,8 +3,8 @@ import path from "node:path";
 
 const root = path.join(process.cwd(), "work", "endacopia-guide-hub");
 const site = "https://www.endacopiaguide.com";
-const lastmod = "2026-08-02";
-const version = "20260802-community-proof";
+const lastmod = "2026-08-03";
+const version = "20260803-seo-core";
 const ogImage = `${site}/assets/og/endacopia-guide-og.jpg`;
 const headerImage = "/assets/endacopia-header-20260730.jpg";
 
@@ -60,6 +60,8 @@ const newGuides = [
   "endacopia-items-guide",
   "endacopia-name-puzzle-flashlight",
   "endacopia-clown-theater-puzzle",
+  "endacopia-ending-c-complete-route",
+  "endacopia-all-secrets",
   "about",
   "contact",
   "editorial-policy",
@@ -93,6 +95,104 @@ function metaBlock({ title, description, url, type = "article" }) {
     `    <meta name="twitter:description" content="${esc(description)}">`,
     `    <meta name="twitter:image" content="${ogImage}">`
   ].join("\n");
+}
+
+function textOnly(value) {
+  return String(value)
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function pageName(page) {
+  return page.h1 || page.title.replace(/\s+-\s+.*$/, "");
+}
+
+function schemaGraph(page, url) {
+  const graph = [
+    {
+      "@type": page.schemaType || "Article",
+      "@id": `${url}#article`,
+      mainEntityOfPage: url,
+      headline: page.title,
+      description: page.description,
+      url,
+      image: ogImage,
+      datePublished: page.datePublished || "2026-07-31",
+      dateModified: lastmod,
+      author: {
+        "@type": "Organization",
+        name: "Endacopia Guide Hub",
+        url: site
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Endacopia Guide Hub",
+        url: site
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: `${site}/`
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: pageName(page),
+          item: url
+        }
+      ]
+    }
+  ];
+
+  if (page.howTo?.steps?.length) {
+    graph.push({
+      "@type": "HowTo",
+      "@id": `${url}#howto`,
+      name: page.howTo.name || pageName(page),
+      description: textOnly(page.howTo.description || page.quick || page.description),
+      step: page.howTo.steps.map((step, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        name: step.name,
+        text: textOnly(step.text)
+      }))
+    });
+  }
+
+  if (page.faqs?.length) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: page.faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: textOnly(faq.a)
+        }
+      }))
+    });
+  }
+
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": graph
+  }, null, 8);
 }
 
 function gaBlock() {
@@ -160,25 +260,63 @@ function sidebar({ summary, badges = [], related = [], checks = [] }) {
         </aside>`;
 }
 
+function breadcrumb(page) {
+  return `          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span>/</span>
+            <span>${esc(pageName(page))}</span>
+          </nav>`;
+}
+
+function verificationPanel(page) {
+  const verification = {
+    status: "Source-backed",
+    lastChecked: "August 3, 2026",
+    evidence: "Public guide / community sources cross-checked",
+    next: "Replace temporary Steam media with route screenshots",
+    ...page.verification
+  };
+
+  return `          <div class="verification-panel" aria-label="Guide verification status">
+            <div>
+              <span>Verification</span>
+              <strong>${esc(verification.status)}</strong>
+            </div>
+            <div>
+              <span>Last checked</span>
+              <strong>${esc(verification.lastChecked)}</strong>
+            </div>
+            <div>
+              <span>Evidence</span>
+              <strong>${esc(verification.evidence)}</strong>
+            </div>
+            <div>
+              <span>Next proof target</span>
+              <strong>${esc(verification.next)}</strong>
+            </div>
+          </div>`;
+}
+
+function faqSection(faqs = []) {
+  if (!faqs.length) {
+    return "";
+  }
+  return `
+          <section class="faq-section" id="faq">
+            <h2>FAQ</h2>
+            <div class="faq-list">
+${faqs.map((faq) => `              <div class="faq-item">
+                <h3>${esc(faq.q)}</h3>
+                <p>${faq.a}</p>
+              </div>`).join("\n")}
+            </div>
+          </section>
+`;
+}
+
 function renderPage(page) {
   const url = canonical(page.slug);
-  const json = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": page.schemaType || "Article",
-    headline: page.title,
-    description: page.description,
-    url,
-    image: ogImage,
-    dateModified: lastmod,
-    author: {
-      "@type": "Organization",
-      name: "Endacopia Guide Hub"
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "Endacopia Guide Hub"
-    }
-  }, null, 8);
+  const json = schemaGraph(page, url);
 
   return `<!doctype html>
 <html lang="en">
@@ -202,12 +340,14 @@ ${nav()}
     <main class="main">
       <div class="container content-layout">
         <article class="article">
+${breadcrumb(page)}
           <span class="eyebrow">${esc(page.eyebrow)}</span>
           <h1>${esc(page.h1 || page.title)}</h1>
           <div class="meta-line">
-            <span class="badge hot">Updated August 2, 2026</span>
+            <span class="badge hot">Updated August 3, 2026</span>
             ${(page.badges || []).map((badge, index) => `<span class="badge${index === 0 ? " safe" : ""}">${esc(badge)}</span>`).join("\n            ")}
           </div>
+${page.hideVerification ? "" : verificationPanel(page)}
 
           <div class="answer-box">
             <h2>Quick Answer</h2>
@@ -215,6 +355,7 @@ ${nav()}
           </div>
 
 ${page.body}
+${faqSection(page.faqs)}
         </article>
 
 ${sidebar(page.sidebar)}
@@ -1162,7 +1303,7 @@ ${mediaGrid([
       checks: [
         { label: "Demo", value: "Prologue" },
         { label: "Full release", value: "Jul 27" },
-        { label: "Pages", value: "50" }
+        { label: "Pages", value: "52" }
       ]
     }
   },
@@ -1173,6 +1314,25 @@ ${mediaGrid([
     eyebrow: "Puzzle answers",
     badges: ["Passwords", "Codes"],
     quick: 'The highest-intent Endacopia puzzle answers are: toilet password <code>CHESHIRE</code>, first Office phrase <code>LET ME GO</code>, second phrase <code>LET ME TALK</code>, Saw Box code <code>471</code>, Scribbly name <code>SCRIBBLY</code>, dead-clown colors Yellow / Pink / Purple / Red, and Core color order Green / Yellow / Black / Red.',
+    verification: {
+      status: "Answer-first source hub",
+      evidence: "Fandom, Neoseeker, DQ7, Steam achievement references, and internal route pages",
+      next: "Add one screenshot per code / password answer"
+    },
+    howTo: {
+      name: "How to use Endacopia puzzle answers",
+      description: "Start with the exact code or password, then open the route page if the prompt is not available yet.",
+      steps: [
+        { name: "Identify the prompt", text: "Match your in-game blocker to the answer table: toilet, Saw Box, Office phrase, Scribbly, Core, or clown puzzle." },
+        { name: "Enter the exact answer", text: "Use the code or phrase shown on the page if your route state is ready." },
+        { name: "Open the route page if it fails", text: "If the answer is rejected, your route state is missing a required clue, item, or branch flag." }
+      ]
+    },
+    faqs: [
+      { q: "What is the Endacopia toilet password?", a: "The toilet password is CHESHIRE." },
+      { q: "What is the Endacopia Saw Box code?", a: "The Saw Box code is 471." },
+      { q: "What are the Office phrases?", a: "Use LET ME GO first, then LET ME TALK later when the route asks you to return to the phrase interface." }
+    ],
     body: `
 ${mediaGrid([
   {
@@ -1278,6 +1438,27 @@ ${mediaGrid([
     eyebrow: "Password answer",
     badges: ["CHESHIRE", "Toilet code"],
     quick: 'The Endacopia toilet password is <code>CHESHIRE</code>. The intended route is to solve the fridge for cheese, lure the cockroach in Mellow\'s room, step on it for two coins, feed the Wall Bank, then return to the bathroom/toilet prompt and enter <code>CHESHIRE</code>.',
+    verification: {
+      status: "Answer confirmed by public routes",
+      evidence: "Endacopia Wiki, DQ7 route notes, and internal prologue page",
+      next: "Capture Wall Bank reveal and toilet accepted-input screenshots"
+    },
+    howTo: {
+      name: "How to get the CHESHIRE password in Endacopia",
+      description: "Use cheese, cockroach coins, and the Wall Bank to reveal the toilet password.",
+      steps: [
+        { name: "Open the vent route", text: "Spin the chair until the vent opens and use it to reach the kitchen." },
+        { name: "Get cheese", text: "Solve the fridge route and return to Mellow's room with cheese." },
+        { name: "Get coins", text: "Use cheese to lure the cockroach, step on it, and pick up two coins." },
+        { name: "Feed the Wall Bank", text: "Give both coins to the Wall Bank to reveal CHESHIRE." },
+        { name: "Enter CHESHIRE", text: "Return to the bathroom/toilet prompt and enter CHESHIRE." }
+      ]
+    },
+    faqs: [
+      { q: "What is the Endacopia toilet password?", a: "The toilet password is CHESHIRE." },
+      { q: "Why does CHESHIRE not work?", a: "Usually the route state is missing. Reveal the word through the Wall Bank route before entering it at the toilet prompt." },
+      { q: "Where do the two coins come from?", a: "Use cheese to lure the cockroach in Mellow's room, then step on it and collect the two coins it drops." }
+    ],
     body: `
 ${mediaGrid([
   {
@@ -1866,6 +2047,26 @@ ${mediaGrid([
     eyebrow: "Soccer ball",
     badges: ["Footwork Master", "100 points"],
     quick: 'To kick the soccer ball in Endacopia, use the mouse: click the ball itself as it reaches the line labeled <strong>kick</strong>. Steam community answers point to timing the click when the ball is just under the white / kick line, not looking for a keyboard keybind. Repeat clean single clicks until you reach <strong>100 points</strong> for Footwork Master.',
+    verification: {
+      status: "Community-confirmed input",
+      evidence: "Two Steam soccer timing threads and Steam achievement data",
+      next: "Capture the ball, kick line, score 100, and Footwork Master unlock"
+    },
+    howTo: {
+      name: "How to kick the soccer ball in Endacopia",
+      description: "Click the ball itself as it reaches the kick line and repeat until 100 points.",
+      steps: [
+        { name: "Start the mini-game", text: "Interact with the soccer ball in Mellow's room until the score interface is visible." },
+        { name: "Watch one cycle", text: "Let the cue pass once so you can see where the ball crosses the kick line." },
+        { name: "Click the ball itself", text: "Use the mouse and click the ball when it is just below the white / kick line." },
+        { name: "Repeat to 100", text: "Use clean single clicks rather than mashing until Footwork Master unlocks at 100 points." }
+      ]
+    },
+    faqs: [
+      { q: "Is there a keybind for the Endacopia soccer ball?", a: "No separate keyboard keybind is needed for the reported solution. Steam community answers point to clicking the ball itself with precise timing." },
+      { q: "Where do I click to kick the soccer ball?", a: "Click directly on the ball when it reaches the white / kick line. Clicking the background or clicking too early usually fails." },
+      { q: "How many points do I need for Footwork Master?", a: "Steam achievement data and community notes point to 100 soccer points for Footwork Master." }
+    ],
     body: `
 ${mediaGrid([
   {
@@ -2296,6 +2497,26 @@ ${mediaGrid([
     eyebrow: "Name puzzle",
     badges: ["Flashlight", "Lore clue"],
     quick: 'If Endacopia asks for a name after the toilet route and face-drawing step, do not guess from the prompt alone. A current player answer points to using the <strong>flashlight</strong> and checking beyond the normal room bounds / package clue. This page keeps the answer method spoiler-light until a self-captured screenshot confirms the exact input.',
+    verification: {
+      status: "Player-reported method",
+      evidence: "Reddit help thread plus route-context pages",
+      next: "Capture prompt, flashlight reveal, package clue, and accepted input"
+    },
+    howTo: {
+      name: "How to solve the Endacopia name puzzle",
+      description: "Use the flashlight and room-boundary clue instead of guessing the name prompt.",
+      steps: [
+        { name: "Return to the name prompt", text: "Use the route state after the toilet scene and face-drawing prompt." },
+        { name: "Use the flashlight", text: "Inspect the room with the flashlight instead of staring only at the text prompt." },
+        { name: "Check room boundaries", text: "Sweep around the visible room edge and package / box clue area." },
+        { name: "Record the answer proof", text: "Capture the clue and accepted input before turning this page into a final spoiler table." }
+      ]
+    },
+    faqs: [
+      { q: "What do I do when Endacopia asks for a name?", a: "Current player reports point to using the flashlight and checking beyond the normal room boundary / package clue instead of guessing from the prompt alone." },
+      { q: "Is the name puzzle answer verified here?", a: "The method is source-backed, but the exact accepted input still needs an in-game screenshot before this page labels it as fully tested." },
+      { q: "Why does this page avoid the final spoiler?", a: "The site only publishes exact answers as final when the route has screenshot proof or strong cross-source confirmation." }
+    ],
     body: `
 ${mediaGrid([
   {
@@ -2367,6 +2588,27 @@ ${mediaGrid([
     eyebrow: "Clown puzzle",
     badges: ["Theater", "Clowns"],
     quick: 'If you are stuck on the Endacopia clown mini-game, check the nearby <strong>theater tent</strong> instead of brute forcing the clown screen. A current player answer says the colored seats line up with clown colors, and the projector stories provide the state you need to enter back in the mini-game.',
+    verification: {
+      status: "Player-reported method",
+      evidence: "Reddit theater / clown help thread",
+      next: "Capture theater seats, projector stories, clown inputs, and completion state"
+    },
+    howTo: {
+      name: "How to solve the Endacopia clown theater puzzle",
+      description: "Use theater seats and projector story endings to map clown colors to the mini-game answer.",
+      steps: [
+        { name: "Leave the clown mini-game", text: "Stop brute forcing the clown room if no answer is obvious." },
+        { name: "Go to the theater tent", text: "Find the nearby theater area described by player reports." },
+        { name: "Record colored seats", text: "Map seat colors to clown colors." },
+        { name: "Watch projector stories", text: "Use each story ending as the state to apply to the matching clown." },
+        { name: "Return and apply the states", text: "Set each clown one color at a time and capture the result." }
+      ]
+    },
+    faqs: [
+      { q: "Where is the clue for the Endacopia clown puzzle?", a: "Current player reports point to the theater tent near the mini-game room, not the clown screen itself." },
+      { q: "What do the colored seats mean?", a: "The colored seats are reported to correspond to clown colors. The projector story endings then provide the states for those clowns." },
+      { q: "Is the final clown order verified?", a: "Not yet. This page explains the source-backed method and marks the exact answer table as a screenshot proof target." }
+    ],
     body: `
 ${mediaGrid([
   {
@@ -2432,12 +2674,213 @@ ${mediaGrid([
     }
   },
   {
+    slug: "endacopia-ending-c-complete-route",
+    title: "Endacopia Ending C Complete Route - Stay Achievement and All Secrets Checklist",
+    description: "Complete Endacopia Ending C route for the Stay achievement, including the three required area secrets, save backup timing, Saw Box branch notes, final trigger checks, and troubleshooting links.",
+    eyebrow: "Ending C route",
+    badges: ["Stay", "All secrets"],
+    quick: 'To reach <strong>Endacopia Ending C / Stay</strong>, use a backed-up near-complete save, complete the three area secrets in <strong>Misery Town</strong>, <strong>Timesville</strong>, and <strong>The Office</strong>, then return to the final route only after those checks are complete. Public guides agree that the three area secrets are the core requirement; some route notes also warn about Clocky / boss branch flags, so keep a backup before testing.',
+    verification: {
+      status: "Source-backed route",
+      evidence: "Steam guide, Fandom, Neoseeker, Reddit, and current site route pages",
+      next: "Capture final familiar-face trigger and Stay unlock screenshots"
+    },
+    howTo: {
+      name: "How to unlock Endacopia Ending C",
+      description: "Complete the three area secrets and route into the Stay ending with a backed-up save.",
+      steps: [
+        { name: "Back up a near-complete save", text: "Close Endacopia, copy the save folder, and keep a restore point before changing final-route flags." },
+        { name: "Complete or confirm Ending A and Ending B", text: "Public Ending C guides expect the main ending branches to be known before starting the secret route." },
+        { name: "Finish the Misery Town secret", text: "Use the Metal Detector in the cinema sand, find the remote, reveal the map, and follow the checkerboard path." },
+        { name: "Finish the Timesville secret", text: "Use the Fish Paper route, catch all 18 fish, get the key, and complete the windowed-mode shack lock." },
+        { name: "Finish the Office secret", text: "Reveal 277-5944 with the Telescope, call it from Jobs, wait under the stairs, and finish the symbol sequence." },
+        { name: "Test the final trigger", text: "Return to the final route only after all three secrets are complete, then check the final-door and Mellow-room trigger behavior." }
+      ]
+    },
+    faqs: [
+      { q: "How many secrets are required for Ending C?", a: "Current public route notes point to three area secrets: Misery Town, Timesville, and The Office." },
+      { q: "Can I do all Ending C secrets from one save?", a: "Yes, public guides describe using a backed-up near-complete Chapter I save to complete all three area secrets in the same route window." },
+      { q: "Why is Ending C not triggering after I did one secret?", a: "One secret is not enough. Audit all three area secrets, then check branch-save state, Clocky / boss route warnings, and the final-door trigger." }
+    ],
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-04.jpg",
+    width: 1532,
+    height: 862,
+    alt: "Official Endacopia Steam screenshot used for Ending C route context",
+    caption: "Ending C needs route-specific screenshots for each area secret, the final trigger, and the Stay achievement unlock."
+  },
+  {
+    file: "endacopia-official-steam-screenshot-07.jpg",
+    width: 1532,
+    height: 863,
+    alt: "Official Endacopia Steam screenshot used for secret route context",
+    caption: "Keep this as temporary media until real Misery Town, Timesville, Office, and final-door captures are available."
+  }
+])}
+
+          <h2>At A Glance</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Requirement</th><th>What To Do</th><th>Guide</th></tr></thead>
+              <tbody>
+                <tr><td>Save backup</td><td>Close the game and copy the save folder before changing branch state.</td><td><a href="/endacopia-save-file-location/">Save file location</a></td></tr>
+                <tr><td>Misery Town secret</td><td>Detector in cinema sand, remote, screen map, checkerboard path.</td><td><a href="/endacopia-misery-town-secret/">Misery Town secret</a></td></tr>
+                <tr><td>Timesville secret</td><td>Fish Paper, 18 fish, Lost Key, windowed-mode shack lock.</td><td><a href="/endacopia-timesville-fishing-guide/">Timesville fishing</a></td></tr>
+                <tr><td>Office secret</td><td>Telescope, 277-5944, Jobs call, stair wait, symbol sequence.</td><td><a href="/endacopia-office-secret/">Office secret</a></td></tr>
+                <tr><td>Final trigger</td><td>Return only after all three secrets; if the route fails, audit branch flags.</td><td><a href="/endacopia-ending-c-not-triggering/">Troubleshooting</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Complete Route Order</h2>
+          <ol class="step-list">
+            <li><strong>Make a real backup first.</strong> Ending C is expensive to retest because route flags can be late-game and branch-sensitive. Close Endacopia before copying saves.</li>
+            <li><strong>Confirm your A / B ending state.</strong> Steam community guidance frames Ending C as a post-A/B secret route. If your save is uncertain, restore the backup before experimenting.</li>
+            <li><strong>Do Misery Town.</strong> Bring the Metal Detector to the cinema, find the remote in the sand, use it on the screen, photograph the map, and follow it in the checkerboard room.</li>
+            <li><strong>Do Timesville.</strong> Finish the Fish Paper route, catch all 18 fish, receive the Lost Key, then complete the windowed-mode shack interaction.</li>
+            <li><strong>Do The Office.</strong> Use the Telescope to reveal <code>277-5944</code>, call it from Jobs, wait under the stairs near the vending machine, then complete the symbol sequence.</li>
+            <li><strong>Return to the final route.</strong> If the final-door behavior looks normal, stop and use the troubleshooting page before overwriting your backup.</li>
+          </ol>
+
+          <h2>Branch Flags To Watch</h2>
+          <p>Public sources agree on the three secrets, but some guides also mention route-specific branch flags such as Clocky, boss fights, and saw choice. Because this site has not personally re-tested every branch combination yet, treat those as audit flags rather than casual checklist items.</p>
+          <ul class="shot-list">
+            <li><strong>Clocky route</strong><span>If you fought Clocky and Ending C fails, restore a backup and test the no-fight route reported by some guides.</span></li>
+            <li><strong>Boss route</strong><span>If a boss avoid/fight branch differs from your save, record it before changing route state.</span></li>
+            <li><strong>Saw choice</strong><span>Keep a pre-saw or Chapter I backup so A/B/C testing does not destroy your clean branch.</span></li>
+          </ul>
+
+          <h2>Proof Targets For This Page</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Screenshot</th><th>Why It Matters</th><th>Priority</th></tr></thead>
+              <tbody>
+                <tr><td>Misery Town map reveal</td><td>Confirms the first area secret.</td><td>High</td></tr>
+                <tr><td>Timesville Lost Key / shack lock</td><td>Confirms the fish-route secret.</td><td>High</td></tr>
+                <tr><td>Office 277-5944 and stair wait</td><td>Confirms the Office secret.</td><td>High</td></tr>
+                <tr><td>Final familiar-face / Stay unlock</td><td>Turns this page from source-backed into fully tested.</td><td>Highest</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669">Steam Community all endings guide</a> | <a href="https://endacopia.fandom.com/wiki/Guide_for_Full_Game">Fandom full-game guide</a> | <a href="https://www.neoseeker.com/endacopia/All_Endings">Neoseeker all endings</a> | <a href="https://www.reddit.com/r/Endacopia/comments/1va0ufl/hints_for_ending_c/">Reddit Ending C hints</a> | <a href="https://showgamer.com/en/guides/4943-vse-koncovki-endacopia-kak-poluchit-ending-a-b-c-i-yeti">ShowGamer endings guide</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "Complete Ending C / Stay route hub for all three secrets, branch flags, and final trigger checks.",
+      badges: ["Ending C", "Stay", "Secrets"],
+      related: [
+        { href: "/endacopia-all-secrets/", label: "All secrets checklist" },
+        { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting" },
+        { href: "/endacopia-misery-town-secret/", label: "Misery Town secret" },
+        { href: "/endacopia-timesville-fishing-guide/", label: "Timesville secret" },
+        { href: "/endacopia-office-secret/", label: "Office secret" }
+      ],
+      checks: [
+        { label: "Secrets", value: "3 areas" },
+        { label: "Backup", value: "Required" },
+        { label: "Proof", value: "Final trigger" }
+      ]
+    }
+  },
+  {
+    slug: "endacopia-all-secrets",
+    title: "Endacopia All Secrets Guide - Misery Town, Timesville and Office Checklist",
+    description: "Endacopia all secrets checklist for the three area secrets used by Ending C: Misery Town, Timesville, and The Office, with required items, proof targets, and related guides.",
+    eyebrow: "All secrets",
+    badges: ["Secrets", "Ending C"],
+    quick: 'The high-value Endacopia all secrets checklist is currently three area secrets: <strong>Misery Town</strong>, <strong>Timesville</strong>, and <strong>The Office</strong>. Complete all three before retesting Ending C / Stay, and keep screenshots of the remote map, Fish Paper / Lost Key route, and 277-5944 Office chain.',
+    verification: {
+      status: "Source-backed checklist",
+      evidence: "Steam guide, Reddit hints, and current route pages",
+      next: "Replace each checklist row with in-game screenshot proof"
+    },
+    howTo: {
+      name: "How to complete all Endacopia secrets",
+      description: "Finish the three main area secrets required by Ending C.",
+      steps: [
+        { name: "Finish Misery Town secret", text: "Use the Metal Detector in the cinema, find the remote, reveal the map, and follow it in the checkerboard room." },
+        { name: "Finish Timesville secret", text: "Complete Fish Paper, catch all 18 fish, obtain the key, and use the windowed-mode shack lock." },
+        { name: "Finish Office secret", text: "Use the Telescope clue, call 277-5944 from Jobs, wait under the stairs, and finish the symbol chain." },
+        { name: "Return to Ending C route", text: "Only retest the Stay ending after all three secrets are confirmed on the same route state." }
+      ]
+    },
+    faqs: [
+      { q: "What are the three Endacopia secrets?", a: "The three main Ending C secrets are Misery Town, Timesville, and The Office." },
+      { q: "Do I need every achievement for all secrets?", a: "No. The all-secrets route is about area-secret completion for Ending C; achievements overlap but are not the same checklist." },
+      { q: "Which secret should I do first?", a: "Do the secrets in any route-safe order from a backed-up save, but document Misery Town, Timesville, and Office separately so you can troubleshoot the final trigger." }
+    ],
+    body: `
+${mediaGrid([
+  {
+    file: "endacopia-official-steam-screenshot-08.jpg",
+    width: 1533,
+    height: 864,
+    alt: "Official Endacopia Steam screenshot used for all secrets checklist context",
+    caption: "All-secrets pages should become screenshot checklists: one proof image for each secret route and one final trigger proof."
+  }
+])}
+
+          <h2>All Secrets Checklist</h2>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Secret</th><th>Required Item / Clue</th><th>Completion Signal</th><th>Guide</th></tr></thead>
+              <tbody>
+                <tr><td>Misery Town</td><td>Metal Detector, cinema sand, remote, screen map</td><td>Checkerboard route resolves and returns you after the hidden encounter.</td><td><a href="/endacopia-misery-town-secret/">Misery Town guide</a></td></tr>
+                <tr><td>Timesville</td><td>Fish Paper, 18 fish, Lost Key, windowed-mode shack</td><td>The key/lock sequence resolves after the completed fish route.</td><td><a href="/endacopia-timesville-fishing-guide/">Timesville guide</a></td></tr>
+                <tr><td>The Office</td><td>Telescope clue, <code>277-5944</code>, Jobs call, stair wait</td><td>The hidden symbol chain is completed before leaving the Office route.</td><td><a href="/endacopia-office-secret/">Office guide</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Do These Count As Achievements?</h2>
+          <p>Some secrets overlap with achievement routing, but the all-secrets checklist is not the same as a 100% achievement checklist. Use this page when your search intent is <strong>Ending C</strong>, <strong>Stay</strong>, or <strong>secret route</strong>. Use the achievement checklist when you are cleaning up Steam unlocks.</p>
+
+          <h2>Screenshot Proof Plan</h2>
+          <ul class="shot-list">
+            <li><strong>Misery Town</strong><span>Capture the remote pickup, map screen, and checkerboard route entry.</span></li>
+            <li><strong>Timesville</strong><span>Capture the completed Fish Paper, Lost Key moment, and shack lock.</span></li>
+            <li><strong>Office</strong><span>Capture the 277-5944 reveal, Jobs call, stair wait, and symbol sequence.</span></li>
+            <li><strong>Final route</strong><span>Capture the route state right before Ending C / Stay triggers.</span></li>
+          </ul>
+
+          <h2>Where To Go If A Secret Fails</h2>
+          <p>If one of the secrets appears complete but Ending C still fails, do not overwrite your save. Open the specific area guide first, then use the <a href="/endacopia-ending-c-not-triggering/">Ending C troubleshooting</a> page to audit branch flags.</p>
+
+          <h2>Sources Used</h2>
+          <div class="source-box">
+            <p><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669">Steam Community all endings guide</a> | <a href="https://www.reddit.com/r/Endacopia/comments/1va0ufl/hints_for_ending_c/">Reddit Ending C hints</a> | <a href="https://endacopia.fandom.com/wiki/Guide_for_Full_Game">Fandom full-game guide</a> | <a href="https://www.neoseeker.com/endacopia/All_Endings">Neoseeker all endings</a></p>
+          </div>
+`,
+    sidebar: {
+      summary: "All secrets checklist for the three Ending C area routes.",
+      badges: ["All Secrets", "Ending C", "Checklist"],
+      related: [
+        { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route" },
+        { href: "/endacopia-misery-town-secret/", label: "Misery Town secret" },
+        { href: "/endacopia-timesville-fishing-guide/", label: "Timesville secret" },
+        { href: "/endacopia-office-secret/", label: "Office secret" },
+        { href: "/endacopia-achievements-guide/", label: "Achievements guide" }
+      ],
+      checks: [
+        { label: "Misery Town", value: "Required" },
+        { label: "Timesville", value: "Required" },
+        { label: "Office", value: "Required" }
+      ]
+    }
+  },
+  {
     slug: "about",
     title: "About Endacopia Guide Hub",
     description: "About this unofficial Endacopia guide project, its coverage goals, source policy, and current update priorities.",
     eyebrow: "About",
     badges: ["Unofficial", "Fan guide"],
     quick: 'Endacopia Guide Hub is an unofficial fan-made guide site focused on quick answers, spoiler-controlled routes, and source-backed walkthrough notes for Endacopia players.',
+    hideVerification: true,
     body: `
           <h2>What This Site Is</h2>
           <p>This site is built for players who search one exact Endacopia blocker at a time: an ending trigger, an achievement name, a phone number, a fish list, or a puzzle code. The goal is to answer that query quickly, then link into the wider route.</p>
@@ -2479,6 +2922,7 @@ ${mediaGrid([
     eyebrow: "Contact",
     badges: ["Corrections", "Proof"],
     quick: 'Use this contact page as the correction brief: include the guide URL, the exact step that is wrong or incomplete, your platform, and a screenshot or save-state note if possible.',
+    hideVerification: true,
     body: `
           <h2>Correction Format</h2>
           <ol class="step-list">
@@ -2522,6 +2966,7 @@ ${mediaGrid([
     eyebrow: "Editorial policy",
     badges: ["Sources", "Corrections"],
     quick: 'The site favors verified route steps over filler. When a detail is not personally captured or cross-checked, the page should label it as a public-source note or a verification task instead of presenting it as final.',
+    hideVerification: true,
     body: `
           <h2>Source Rules</h2>
           <ol class="step-list">
@@ -2569,7 +3014,15 @@ ${mediaGrid([
     eyebrow: "Changelog",
     badges: ["Updated", "Site notes"],
     quick: 'This changelog records meaningful guide updates, especially source-backed route additions, image fixes, sitemap changes, and pages that still need in-game proof.',
+    hideVerification: true,
     body: `
+          <h2>August 3, 2026</h2>
+          <ul class="shot-list">
+            <li><strong>SEO core route pages</strong><span>Added Ending C Complete Route and All Secrets pages for Stay, Ending C, all secrets, and secret-route searches.</span></li>
+            <li><strong>Structured data upgrade</strong><span>Added BreadcrumbList to generated guide pages and FAQPage / HowTo schema to the strongest answer pages.</span></li>
+            <li><strong>Trust upgrade</strong><span>Added visible verification panels to generated guides so source-backed and screenshot-needed content is clearly labeled.</span></li>
+          </ul>
+
           <h2>August 2, 2026</h2>
           <ul class="shot-list">
             <li><strong>Community proof pages</strong><span>Added player-sourced Name Puzzle Flashlight and Clown Theater Puzzle pages, plus soccer keybind notes, key/wrench blocker notes, and Speedrun.com lower-bound playtime data.</span></li>
@@ -2616,8 +3069,8 @@ ${mediaGrid([
         { href: "/endacopia-screenshot-checklist/", label: "Screenshot checklist" }
       ],
       checks: [
-        { label: "Latest", value: "Aug 2" },
-        { label: "Pages", value: "50" },
+        { label: "Latest", value: "Aug 3" },
+        { label: "Pages", value: "52" },
         { label: "Next", value: "Proof" }
       ]
     }
@@ -2686,6 +3139,8 @@ function card({ href, title, text, badges }) {
 
 function homepageInsert() {
   const routeCards = [
+    { href: "/endacopia-ending-c-complete-route/", title: "Ending C Complete Route", text: "Stay achievement route, all three area secrets, backup timing, branch flags, and final trigger checks.", badges: ["Ending C", "Stay"] },
+    { href: "/endacopia-all-secrets/", title: "All Secrets Checklist", text: "Misery Town, Timesville, and Office secret checklist for Ending C and Stay troubleshooting.", badges: ["Secrets", "Checklist"] },
     { href: "/endacopia-soccer-ball/", title: "Soccer Ball Guide", text: "How to kick in Endacopia, where to click the ball, and how to reach 100 points for Footwork Master.", badges: ["Soccer", "100 points"] },
     { href: "/endacopia-name-puzzle-flashlight/", title: "Name Puzzle Flashlight", text: "Player-reported route for the name prompt, flashlight clue, package hint, and room-boundary check.", badges: ["Name", "Flashlight"] },
     { href: "/endacopia-clown-theater-puzzle/", title: "Clown Theater Puzzle", text: "Use theater seats, projector stories, and clown colors to solve the circus mini-game blocker.", badges: ["Clown", "Theater"] },
@@ -2731,7 +3186,7 @@ function homepageInsert() {
           <div class="section-head">
             <div>
               <h2>Answer Hubs And Long-Tail Fixes</h2>
-              <p>Pages built from current Search Console, Similarweb, Steam Community, Reddit, and Speedrun opportunities: soccer ball, name puzzle, clown theater, official download, games like Endacopia, playtime, item routes, meaning/lore, map, Scribbly, Steam Deck, underground routes, Trapezist, puzzle answers, passwords, boss fights, Office, Timesville fish, Misery Town, saves, and Water Break.</p>
+              <p>Pages built from current Search Console, Similarweb, Steam Community, Reddit, and Speedrun opportunities: Ending C, all secrets, soccer ball, name puzzle, clown theater, official download, games like Endacopia, playtime, item routes, meaning/lore, map, Scribbly, Steam Deck, underground routes, Trapezist, puzzle answers, passwords, boss fights, Office, Timesville fish, Misery Town, saves, and Water Break.</p>
             </div>
           </div>
           <div class="guide-grid">
@@ -2762,10 +3217,10 @@ ${trustCards.map(card).join("\n")}
 function homepageHeroAnswers() {
   return `          <!-- COMPLETE_SITE_HERO_ANSWERS_START -->
           <div class="hero-answer-grid" aria-label="Fast Endacopia answers">
-            <a href="/endacopia-cheshire-password/"><span>Toilet password</span><strong>CHESHIRE</strong></a>
-            <a href="/endacopia-saw-box-code/"><span>Saw Box code</span><strong>471</strong></a>
+            <a href="/endacopia-ending-c-complete-route/"><span>Ending C route</span><strong>3 secrets + Stay</strong></a>
+            <a href="/endacopia-all-secrets/"><span>All secrets</span><strong>Misery Town / Timesville / Office</strong></a>
             <a href="/endacopia-let-me-go-let-me-talk/"><span>Office phrases</span><strong>LET ME GO / TALK</strong></a>
-            <a href="/endacopia-scribbly/"><span>Scribbly map</span><strong>8 pieces + SCRIBBLY</strong></a>
+            <a href="/endacopia-cheshire-password/"><span>Toilet password</span><strong>CHESHIRE</strong></a>
           </div>
           <!-- COMPLETE_SITE_HERO_ANSWERS_END -->`;
 }
@@ -2790,12 +3245,12 @@ async function updateHomepage() {
     .replace(/<meta name="twitter:title" content="[^"]*">/, '<meta name="twitter:title" content="Endacopia Guide - Walkthrough, Map, Achievements, Endings & Puzzle Answers">')
     .replace(/<meta name="twitter:description" content="[^"]*">/, '<meta name="twitter:description" content="Endacopia guide hub for walkthroughs, map routes, achievements, all endings, puzzle answers, CHESHIRE, Scribbly, Steam Deck, and boss fight routes.">')
     .replace(/"description": "Fast, spoiler-controlled Endacopia walkthroughs and ending guides\."/g, '"description": "Fast Endacopia walkthroughs, map routes, achievements, endings, puzzle answers, and route checks."')
-    .replace(/<span class="eyebrow">Updated [^<]+<\/span>/, '<span class="eyebrow">Updated August 2, 2026</span>')
+    .replace(/<span class="eyebrow">Updated [^<]+<\/span>/, '<span class="eyebrow">Updated August 3, 2026</span>')
     .replace(/<h1>Endacopia guides built for quick answers first\.<\/h1>/, '<h1>Endacopia Guide: maps, endings, achievements, and puzzle answers.</h1>')
-    .replace(/<p class="lede">Use this hub to jump straight into Endacopia walkthroughs, ending routes, Steam achievements, character pages, and puzzle notes without digging through long videos\.<\/p>/, '<p class="lede">Choose the exact blocker you are stuck on: soccer ball, name puzzle, clown theater, official download, CHESHIRE, Scribbly map, Saw Box 471, Trapezist, Steam Deck saves, secret Ending C, or the full walkthrough.</p>')
-    .replace(/placeholder="Try (?:endings, Clocky, achievements, secret|map, Scribbly, CHESHIRE, Steam Deck, Trapezist|map, Scribbly, CHESHIRE|soccer ball, download, CHESHIRE)\.\.\."/g, 'placeholder="Try name puzzle, clown, soccer..."')
+    .replace(/<p class="lede">Use this hub to jump straight into Endacopia walkthroughs, ending routes, Steam achievements, character pages, and puzzle notes without digging through long videos\.<\/p>/, '<p class="lede">Choose the exact blocker you are stuck on: Ending C, all secrets, soccer ball, name puzzle, clown theater, official download, CHESHIRE, Scribbly map, Saw Box 471, Trapezist, Steam Deck saves, or the full walkthrough.</p>')
+    .replace(/placeholder="Try (?:endings, Clocky, achievements, secret|map, Scribbly, CHESHIRE, Steam Deck, Trapezist|map, Scribbly, CHESHIRE|soccer ball, download, CHESHIRE|name puzzle, clown, soccer)\.\.\."/g, 'placeholder="Try Ending C, secrets, CHESHIRE..."')
     .replace(/<a class="button" href="\/endacopia-all-endings\/">Start with endings<\/a>/, '<a class="button" href="/endacopia-puzzle-solutions/">Open puzzle answers</a>')
-    .replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>50</strong></li>');
+    .replace(/<li><span>Pages<\/span><strong>\d+<\/strong><\/li>/, '<li><span>Pages</span><strong>52</strong></li>');
   html = html.replace(/(<p class="lede">[\s\S]*?<\/p>\n)/, `$1${homepageHeroAnswers()}\n`);
   await writeFile(file, html, "utf8");
 }
