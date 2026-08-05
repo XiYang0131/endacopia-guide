@@ -71,6 +71,16 @@ cards.forEach((card) => {
   });
 });
 
+document.querySelectorAll("[data-search-intent]").forEach((card) => {
+  card.addEventListener("click", () => {
+    track("search_intent_click", {
+      intent: card.dataset.searchIntent,
+      link_url: card.href,
+      page_path: window.location.pathname
+    });
+  });
+});
+
 document.querySelectorAll("code").forEach((code) => {
   const value = code.textContent.trim();
   if (!value || value.length > 120) return;
