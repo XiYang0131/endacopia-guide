@@ -10,6 +10,40 @@ const track = (eventName, params = {}) => {
   }
 };
 
+const aiReferrerDomains = new Map([
+  ["chatgpt.com", "chatgpt"],
+  ["openai.com", "chatgpt"],
+  ["perplexity.ai", "perplexity"],
+  ["claude.ai", "claude"],
+  ["copilot.microsoft.com", "copilot"],
+  ["gemini.google.com", "gemini"],
+  ["you.com", "you"],
+  ["phind.com", "phind"]
+]);
+
+const getAiReferrer = () => {
+  if (!document.referrer) return null;
+
+  try {
+    const hostname = new URL(document.referrer).hostname.toLowerCase().replace(/^www\./, "");
+    for (const [domain, source] of aiReferrerDomains) {
+      if (hostname === domain || hostname.endsWith(`.${domain}`)) return source;
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+};
+
+const aiSource = getAiReferrer();
+if (aiSource) {
+  track("ai_referral_visit", {
+    ai_source: aiSource,
+    page_path: window.location.pathname
+  });
+}
+
 if (searchInput && cards.length > 0) {
   let searchTracked = false;
   searchInput.addEventListener("input", () => {
