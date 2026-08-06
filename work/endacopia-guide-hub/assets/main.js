@@ -1,5 +1,6 @@
 const searchInput = document.querySelector("[data-guide-search]");
 const cards = Array.from(document.querySelectorAll("[data-guide-card]"));
+const searchEmpty = document.querySelector("[data-search-empty]");
 
 const track = (eventName, params = {}) => {
   if (typeof window.gtag === "function") {
@@ -48,10 +49,17 @@ if (searchInput && cards.length > 0) {
   let searchTracked = false;
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.trim().toLowerCase();
+    let visibleCards = 0;
     cards.forEach((card) => {
       const text = card.textContent.toLowerCase();
-      card.classList.toggle("hidden", query.length > 0 && !text.includes(query));
+      const matches = query.length === 0 || text.includes(query);
+      card.classList.toggle("hidden", !matches);
+      if (matches) visibleCards += 1;
     });
+
+    if (searchEmpty) {
+      searchEmpty.hidden = query.length === 0 || visibleCards > 0;
+    }
 
     if (!searchTracked && query.length >= 2) {
       searchTracked = true;
@@ -61,6 +69,54 @@ if (searchInput && cards.length > 0) {
     }
   });
 }
+
+const homeTabs = Array.from(document.querySelectorAll("[data-home-tab]"));
+const homePanels = Array.from(document.querySelectorAll("[data-home-panel]"));
+
+homeTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    const intent = tab.dataset.homeTab;
+
+    homeTabs.forEach((item) => {
+      const isActive = item === tab;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-selected", String(isActive));
+    });
+
+    homePanels.forEach((panel) => {
+      const isActive = panel.dataset.homePanel === intent;
+      panel.classList.toggle("is-active", isActive);
+      panel.hidden = !isActive;
+    });
+
+    track("guide_intent_tab", {
+      intent,
+      page_path: window.location.pathname
+    });
+  });
+});
+
+document.querySelectorAll("[data-helpful]").forEach((panel) => {
+  const buttons = Array.from(panel.querySelectorAll("[data-helpful-choice]"));
+  const note = panel.querySelector("[data-feedback-note]");
+  if (buttons.length === 0) return;
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const choice = button.dataset.helpfulChoice;
+      buttons.forEach((item) => {
+        item.disabled = true;
+        item.setAttribute("aria-pressed", String(item === button));
+      });
+
+      if (note) note.hidden = false;
+      track("guide_helpful_feedback", {
+        answer: choice,
+        page_path: window.location.pathname
+      });
+    });
+  });
+});
 
 cards.forEach((card) => {
   card.addEventListener("click", () => {
@@ -90,6 +146,8 @@ document.querySelectorAll("code").forEach((code) => {
   code.addEventListener("click", async () => {
     try {
       await navigator.clipboard.writeText(value);
+      code.classList.add("copied");
+      window.setTimeout(() => code.classList.remove("copied"), 1400);
       track("guide_code_copy", {
         code_value: value
       });

@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="An Endacopia walkthrough covering early puzzles, Chapter I routes, Chapter II boss loop, Chapter III Chameleon fight, Saw Box 471, and endings.">
     <meta name="twitter:image" content="https://www.endacopiaguide.com/assets/og/endacopia-guide-og.jpg">
     <link rel="preload" as="image" href="/assets/endacopia-header-20260730.jpg">
-    <link rel="stylesheet" href="/assets/styles.css?v=20260803-seo-core">
+    <link rel="stylesheet" href="/assets/styles.css?v=20260806-architecture">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -58,7 +58,8 @@
     <header class="site-header">
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="/"><span class="brand-mark">E</span><span>Endacopia Guide Hub</span></a>
-        <div class="nav-links"><a href="/endacopia-puzzle-solutions/">Puzzles</a>
+        <div class="nav-links">
+          <a href="/endacopia-guides/">Guide Index</a><a href="/endacopia-puzzle-solutions/">Puzzles</a>
           <a href="/endacopia-all-endings/">All Endings</a>
           <a href="/endacopia-secret-ending/">Secret Ending</a>
           <a href="/endacopia-achievements-guide/">Achievements</a>
@@ -70,6 +71,14 @@
     <main class="main">
       <div class="container content-layout">
         <article class="article">
+          <nav class="guide-subnav" aria-label="Guide sections">
+            <a href="/endacopia-guides/">Guide Index</a>
+            <a href="/endacopia-walkthrough/">Start</a>
+            <a href="/endacopia-puzzle-solutions/">Puzzles</a>
+            <a href="/endacopia-all-endings/">Endings</a>
+            <a href="/endacopia-achievements-guide/">Achievements</a>
+            <a href="/endacopia-wiki/">Wiki</a>
+          </nav>
           <span class="eyebrow">Route overview</span>
           <h1>Endacopia Walkthrough</h1>
           <div class="meta-line">
@@ -118,7 +127,7 @@
             <figure class="guide-media">
               <picture>
                 <source type="image/webp" srcset="/assets/steam-media/endacopia-official-steam-screenshot-07-640.webp 640w, /assets/steam-media/endacopia-official-steam-screenshot-07-960.webp 960w, /assets/steam-media/endacopia-official-steam-screenshot-07-1280.webp 1280w" sizes="(max-width: 620px) calc(100vw - 48px), (max-width: 920px) calc(100vw - 64px), 720px">
-              <img src="/assets/steam-media/endacopia-official-steam-screenshot-07.jpg" width="1920" height="1080" alt="Official Endacopia Steam screenshot showing Saw Box choices" loading="lazy" decoding="async">
+              <img src="/assets/steam-media/endacopia-official-steam-screenshot-07.jpg" width="1920" height="1080" alt="Official Endacopia Steam screenshot showing Saw Box choices" loading="eager" fetchpriority="high" decoding="async">
               </picture>
               <figcaption>Saw-choice official screenshot. Use the Saw Box save before branching Ending A and Ending B.</figcaption>
             </figure>
@@ -370,5 +379,6 @@
         <span><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/contact/">Contact</a> | <a href="/editorial-policy/">Editorial Policy</a> | <a href="/changelog/">Changelog</a> | <a href="/sitemap.xml">Sitemap</a></span>
       </div>
     </footer>
+      <script src="/assets/main.js?v=20260806-architecture"></script>
   </body>
 </html>

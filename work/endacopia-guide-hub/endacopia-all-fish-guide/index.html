@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="How to fish in Endacopia and catch all 18 Timesville fish, grouped by day and night clock slots for the Fisherman achievement and the secret route key.">
     <meta name="twitter:image" content="https://www.endacopiaguide.com/assets/og/endacopia-guide-og.jpg">
     <link rel="preload" as="image" href="/assets/endacopia-header-20260730.jpg">
-    <link rel="stylesheet" href="/assets/styles.css?v=20260803-seo-core">
+    <link rel="stylesheet" href="/assets/styles.css?v=20260806-architecture">
     <script type="application/ld+json">
 {
         "@context": "https://schema.org",
@@ -81,6 +81,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a class="brand" href="/"><span class="brand-mark">E</span><span>Endacopia Guide Hub</span></a>
         <div class="nav-links">
+          <a href="/endacopia-guides/">Guide Index</a>
           <a href="/endacopia-walkthrough/">Walkthrough</a>
           <a href="/endacopia-puzzle-solutions/">Puzzles</a>
           <a href="/endacopia-all-endings/">All Endings</a>
@@ -93,6 +94,14 @@
     <main class="main">
       <div class="container content-layout">
         <article class="article">
+          <nav class="guide-subnav" aria-label="Guide sections">
+            <a href="/endacopia-guides/">Guide Index</a>
+            <a href="/endacopia-walkthrough/">Start</a>
+            <a href="/endacopia-puzzle-solutions/">Puzzles</a>
+            <a href="/endacopia-all-endings/">Endings</a>
+            <a href="/endacopia-achievements-guide/">Achievements</a>
+            <a href="/endacopia-wiki/">Wiki</a>
+          </nav>
           <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="/">Home</a>
             <span>/</span>
@@ -101,7 +110,7 @@
           <span class="eyebrow">Fish checklist</span>
           <h1>Endacopia All Fish Guide - 18 Fish Checklist by Time Slot</h1>
           <div class="meta-line">
-            <span class="badge hot">Updated August 3, 2026</span>
+            <span class="badge hot">Updated August 6, 2026</span>
             <span class="badge safe">18 fish</span>
             <span class="badge">Achievement</span>
           </div>
@@ -135,7 +144,7 @@
             <figure class="guide-media">
               <picture>
                 <source type="image/webp" srcset="/assets/steam-media/endacopia-official-steam-screenshot-05-640.webp 640w, /assets/steam-media/endacopia-official-steam-screenshot-05-960.webp 960w, /assets/steam-media/endacopia-official-steam-screenshot-05-1280.webp 1280w" sizes="(max-width: 620px) calc(100vw - 48px), (max-width: 920px) calc(100vw - 64px), 720px">
-              <img src="/assets/steam-media/endacopia-official-steam-screenshot-05.jpg" width="1536" height="864" alt="Official Endacopia Steam screenshot showing the fishing minigame at sea" loading="lazy" decoding="async">
+              <img src="/assets/steam-media/endacopia-official-steam-screenshot-05.jpg" width="1536" height="864" alt="Official Endacopia Steam screenshot showing the fishing minigame at sea" loading="eager" fetchpriority="high" decoding="async">
               </picture>
               <figcaption>Official Steam store screenshot showing the fishing minigame. Use this until each time-slot catch list is captured in-game.</figcaption>
             </figure>
@@ -145,20 +154,38 @@
           </div>
 
 
+          <h2>Authorized Community Reference</h2>
+          <div class="media-grid media-single">
+            <figure class="guide-media">
+              <img src="/assets/steam-authorized/xixi/xixi-fish-timing.jpg" width="1920" height="1080" alt="Authorized community fish timing reference for Endacopia Timesville" loading="lazy" decoding="async">
+              <figcaption>xixi's authorized timing reference for the six Timesville fishing periods.</figcaption>
+            </figure>
+          </div>
+          <div class="source-box">
+            <p>This image and the timing notes below are from xixi's <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099">Steam achievement guide</a>, whose author explicitly permits reuse of information and images with credit.</p>
+          </div>
+
           <h2>All 18 Fish</h2>
           <div class="table-wrap">
             <table>
               <thead><tr><th>Time Slot</th><th>Fish 1</th><th>Fish 2</th><th>Fish 3</th></tr></thead>
               <tbody>
-                <tr><td>Day 1</td><td>Nautilus</td><td>Colisa Lalia</td><td>Jantic Fish</td></tr>
-                <tr><td>Day 2</td><td>Peter Panini</td><td>Seahorse</td><td>Singin' Fish</td></tr>
-                <tr><td>Day 3</td><td>Eel</td><td>Reddest Fish Ever</td><td>Sea Man</td></tr>
-                <tr><td>Night 1</td><td>Pirate</td><td>Skele-Fish</td><td>RC Ship</td></tr>
-                <tr><td>Night 2</td><td>Crab</td><td>Starfish</td><td>Big Worm</td></tr>
-                <tr><td>Night 3</td><td>Drawing of a Fish</td><td>Jelly</td><td>Crate</td></tr>
+                <tr><td>08 AM</td><td>Nautilus</td><td>Jantic Fish</td><td>Colisa Lalisa</td></tr>
+                <tr><td>12 PM</td><td>Seahorse</td><td>Singin' Fish</td><td>Peter Panini</td></tr>
+                <tr><td>06 PM</td><td>Eel</td><td>Sea Man</td><td>Reddest Fish Ever</td></tr>
+                <tr><td>08 PM</td><td>RC Ship</td><td>Skele-Fish</td><td>Pirate</td></tr>
+                <tr><td>12 AM</td><td>Crab</td><td>Starfish</td><td>Big Worm</td></tr>
+                <tr><td>04 AM</td><td>Jelly</td><td>Drawing Of A Fish</td><td>Crate</td></tr>
               </tbody>
             </table>
           </div>
+
+          <h2>Get The Fisherman License</h2>
+          <ol class="step-list">
+            <li><strong>Find Catthew three times.</strong> Check to the right of the unusual cabin, to the left of the village prison, and behind a cemetery tombstone.</li>
+            <li><strong>Escape the cemetery encounter.</strong> The last hiding spot becomes a monster encounter. Run toward the upper village area to find the real Catthew.</li>
+            <li><strong>Unlock the fishing spot.</strong> Catthew gives the Fisherman License; take it to the diver on the beach deck to start fishing.</li>
+          </ol>
 
           <h2>Fishing Method</h2>
           <ol class="step-list">
@@ -185,6 +212,17 @@
           </div>
 
 
+          <section class="feedback-panel" data-helpful aria-labelledby="feedback-title">
+            <div>
+              <h2 id="feedback-title">Did this solve the blocker?</h2>
+              <p>One tap helps prioritize the next verification pass.</p>
+              <p class="feedback-note" data-feedback-note hidden>Thanks. This page is now marked for review.</p>
+            </div>
+            <div class="feedback-actions" role="group" aria-label="Guide feedback">
+              <button class="button secondary-button feedback-button" type="button" data-helpful-choice="yes">Yes, solved</button>
+              <button class="button secondary-button feedback-button" type="button" data-helpful-choice="no">Not yet</button>
+            </div>
+          </section>
         </article>
 
         <aside class="sidebar">
@@ -224,6 +262,6 @@
         <span><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/contact/">Contact</a> | <a href="/editorial-policy/">Editorial Policy</a> | <a href="/changelog/">Changelog</a> | <a href="/sitemap.xml">Sitemap</a></span>
       </div>
     </footer>
-    <script src="/assets/main.js?v=20260805-ai-referral"></script>
+    <script src="/assets/main.js?v=20260806-architecture"></script>
   </body>
 </html>

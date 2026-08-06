@@ -19,7 +19,7 @@
     <meta name="twitter:description" content="Endacopia game guide hub for the Steam full game: walkthroughs, puzzles, map routes, endings, achievements, CHESHIRE, boss fights, and spoiler-controlled answers.">
     <meta name="twitter:image" content="https://www.endacopiaguide.com/assets/og/endacopia-guide-og.jpg">
     <link rel="preload" as="image" href="/assets/endacopia-header-20260730.jpg">
-    <link rel="stylesheet" href="/assets/styles.css?v=20260803-seo-core">
+    <link rel="stylesheet" href="/assets/styles.css?v=20260806-architecture">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -52,6 +52,7 @@
           <span>Endacopia Guide Hub</span>
         </a>
         <div class="nav-links">
+          <a href="/endacopia-guides/">Guide Index</a>
           <a href="/endacopia-walkthrough/">Walkthrough</a><a href="/endacopia-puzzle-solutions/">Puzzles</a>
           <a href="/endacopia-all-endings/">All Endings</a>
           <a href="/endacopia-achievements-guide/">Achievements</a>
@@ -81,6 +82,7 @@
             </label>
             <a class="button" href="/endacopia-puzzle-solutions/">Open puzzle answers</a>
           </div>
+          <p class="search-empty" data-search-empty hidden><strong>No exact match yet.</strong> Try a shorter term such as <code>ending</code>, <code>fish</code>, <code>save</code>, or <code>password</code>.</p>
         </div>
         <figure class="hero-media">
           <img src="/assets/endacopia-header-20260730.jpg" width="460" height="215" alt="Endacopia key art from the Steam store" decoding="async" fetchpriority="high">
@@ -89,6 +91,58 @@
             <span>Point-and-click puzzle adventure guide hub: endings, achievements, characters, and route checks.</span>
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="band home-quick-nav" aria-labelledby="home-nav-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Choose your route</span>
+            <h2 id="home-nav-title">What are you trying to solve?</h2>
+            <p>Start with the player intent that matches your question, then open the focused guide instead of scanning the whole site.</p>
+          </div>
+          <a class="text-link" href="/endacopia-guides/">Open Guide Index</a>
+        </div>
+        <div class="home-tabs" role="tablist" aria-label="Guide intent">
+          <button class="home-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="home-panel-start" data-home-tab="start">Start here</button>
+          <button class="home-tab" type="button" role="tab" aria-selected="false" aria-controls="home-panel-puzzles" data-home-tab="puzzles">Puzzle help</button>
+          <button class="home-tab" type="button" role="tab" aria-selected="false" aria-controls="home-panel-endings" data-home-tab="endings">Endings</button>
+          <button class="home-tab" type="button" role="tab" aria-selected="false" aria-controls="home-panel-achievements" data-home-tab="achievements">Achievements</button>
+          <button class="home-tab" type="button" role="tab" aria-selected="false" aria-controls="home-panel-reference" data-home-tab="reference">Reference</button>
+        </div>
+        <div class="home-tab-panels">
+          <div class="home-tab-panel is-active" id="home-panel-start" role="tabpanel" data-home-panel="start">
+            <a class="route-card" href="/endacopia-beginner-guide/"><span class="route-kicker">New player</span><strong>Beginner guide</strong><p>First blockers, CHESHIRE, Clocky, and the opening route.</p></a>
+            <a class="route-card" href="/endacopia-prologue-walkthrough/"><span class="route-kicker">Opening route</span><strong>Prologue walkthrough</strong><p>Doors.exe, the kitchen, the toilet portal, and the first save rhythm.</p></a>
+            <a class="route-card" href="/endacopia-walkthrough/"><span class="route-kicker">Full route</span><strong>Chapter walkthrough</strong><p>Move from the opening into the full game without losing your place.</p></a>
+            <a class="route-card route-card-featured" href="/endacopia-guides/"><span class="route-kicker">Not sure?</span><strong>Choose from every guide</strong><p>Use the full intent map when you do not know which page matches your blocker.</p></a>
+          </div>
+          <div class="home-tab-panel" id="home-panel-puzzles" role="tabpanel" data-home-panel="puzzles" hidden>
+            <a class="route-card" href="/endacopia-puzzle-solutions/"><span class="route-kicker">Answer hub</span><strong>Puzzle solutions</strong><p>Codes, passwords, softlocks, and the shortest answer-first route.</p></a>
+            <a class="route-card" href="/endacopia-saw-box-code/"><span class="route-kicker">Fast answer</span><strong>Saw Box 471</strong><p>Check the code and understand the Toy Saw versus real Saw branch.</p></a>
+            <a class="route-card" href="/endacopia-cheshire-password/"><span class="route-kicker">Password</span><strong>CHESHIRE</strong><p>Follow the fridge cheese, coin, Wall Bank, and toilet password route.</p></a>
+            <a class="route-card" href="/endacopia-clown-theater-puzzle/"><span class="route-kicker">Mini-game</span><strong>Clown theater puzzle</strong><p>Use the theater seats, projector stories, and color clues.</p></a>
+          </div>
+          <div class="home-tab-panel" id="home-panel-endings" role="tabpanel" data-home-panel="endings" hidden>
+            <a class="route-card" href="/endacopia-all-endings/"><span class="route-kicker">Compare routes</span><strong>All endings</strong><p>See Ending A, Ending B, secret Ending C, and The Yeti in one map.</p></a>
+            <a class="route-card" href="/endacopia-ending-c-complete-route/"><span class="route-kicker">Stay route</span><strong>Ending C complete route</strong><p>Three secrets, branch warnings, save timing, and final trigger checks.</p></a>
+            <a class="route-card" href="/endacopia-the-yeti-ending/"><span class="route-kicker">Hidden route</span><strong>The Yeti ending</strong><p>Find Andy and avoid confusing the hidden route with Stay.</p></a>
+            <a class="route-card" href="/endacopia-ending-c-not-triggering/"><span class="route-kicker">Troubleshooting</span><strong>Ending C not triggering?</strong><p>Audit the three area secrets and the late-game branch flags.</p></a>
+          </div>
+          <div class="home-tab-panel" id="home-panel-achievements" role="tabpanel" data-home-panel="achievements" hidden>
+            <a class="route-card" href="/endacopia-achievements-guide/"><span class="route-kicker">Steam list</span><strong>Achievements guide</strong><p>All 16 achievements grouped by story, optional, boss, and ending route.</p></a>
+            <a class="route-card" href="/endacopia-100-percent-achievement-checklist/"><span class="route-kicker">Interactive</span><strong>100% checklist</strong><p>Track achievements, ending branches, boss saves, and cleanup tasks.</p></a>
+            <a class="route-card" href="/endacopia-boss-fights-guide/"><span class="route-kicker">Boss routes</span><strong>Boss fights guide</strong><p>Clocky, AI, Trapezist, and Chameleon fight or avoid branches.</p></a>
+            <a class="route-card" href="/endacopia-water-break-achievement/"><span class="route-kicker">Specific unlock</span><strong>Water Break</strong><p>Use the hydration tracker and the current proof target for this unlock.</p></a>
+          </div>
+          <div class="home-tab-panel" id="home-panel-reference" role="tabpanel" data-home-panel="reference" hidden>
+            <a class="route-card" href="/endacopia-wiki/"><span class="route-kicker">Reference hub</span><strong>Endacopia wiki guide</strong><p>Start with the site map, sources, and the current update priorities.</p></a>
+            <a class="route-card" href="/endacopia-map/"><span class="route-kicker">Locations</span><strong>Map guide</strong><p>Scribbly, Misery Town, the checkerboard path, and route landmarks.</p></a>
+            <a class="route-card" href="/endacopia-characters/"><span class="route-kicker">Entities</span><strong>Characters</strong><p>Mellow, Clocky, Yeti, and the supporting cast in one reference hub.</p></a>
+            <a class="route-card" href="/endacopia-steam-deck/"><span class="route-kicker">Platform</span><strong>Steam Deck guide</strong><p>Controls, Proton saves, Desktop Mode backups, and route caveats.</p></a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -407,6 +461,14 @@
       <section class="band">
         <div class="container content-layout">
           <article class="article">
+          <nav class="guide-subnav" aria-label="Guide sections">
+            <a href="/endacopia-guides/">Guide Index</a>
+            <a href="/endacopia-walkthrough/">Start</a>
+            <a href="/endacopia-puzzle-solutions/">Puzzles</a>
+            <a href="/endacopia-all-endings/">Endings</a>
+            <a href="/endacopia-achievements-guide/">Achievements</a>
+            <a href="/endacopia-wiki/">Wiki</a>
+          </nav>
             <h2>How to Use This Hub</h2>
             <p>Each guide starts with a quick answer, then links to the next route page so you can move from a specific question into the full walkthrough without losing your place.</p>
             <div class="table-wrap">
@@ -468,6 +530,6 @@
         <span><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/contact/">Contact</a> | <a href="/editorial-policy/">Editorial Policy</a> | <a href="/changelog/">Changelog</a> | <a href="/sitemap.xml">Sitemap</a></span>
       </div>
     </footer>
-    <script src="/assets/main.js?v=20260805-ai-referral"></script>
+    <script src="/assets/main.js?v=20260806-architecture"></script>
   </body>
 </html>
