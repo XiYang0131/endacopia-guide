@@ -335,6 +335,16 @@ h1 {
   background: #f2ede4;
 }
 
+.current-routes {
+  padding-top: 30px;
+  padding-bottom: 18px;
+}
+
+.current-route-card {
+  border-top: 3px solid var(--rust);
+  background: #fff8ec;
+}
+
 .home-tabs {
   display: flex;
   gap: 8px;
