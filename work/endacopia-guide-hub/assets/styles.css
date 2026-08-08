@@ -485,10 +485,24 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fbfaf6;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+.guide-index-card:hover {
+  border-color: rgba(47, 111, 115, 0.55);
+  box-shadow: 0 10px 22px rgba(38, 42, 46, 0.08);
+  transform: translateY(-2px);
 }
 
 .guide-index-card h3 {
   font-size: 20px;
+}
+
+.guide-index-card > strong {
+  color: var(--accent-dark);
+  font-size: 18px;
 }
 
 .guide-index-card p {

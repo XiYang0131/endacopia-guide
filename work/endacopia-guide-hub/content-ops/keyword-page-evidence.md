@@ -134,6 +134,7 @@ Decision: approve / watch / defer:
 | 2026-08-08 | Characters, Boss Fights | Mapped Google autocomplete candidates `all characters`, `all bosses`, and `clocky fight` to existing answer hubs; refreshed metadata without creating duplicate pages | Review GSC after 7-14 days |
 | 2026-08-08 | Keyword approval gate | Added Trends + Similarweb KD + SERP cross-validation; candidates remain unapproved until all three signals are recorded | Collect KD and SERP before building a new page |
 | 2026-08-08 | Trends watchlist | Rebased candidate decisions against `gpts` in the same charts; removed false high-volume interpretation | Use GSC before creating or expanding a page |
+| 2026-08-08 | Guide Index, 100% checklist, homepage trust section | Applied SCYS handbook rules: homepage -> navigation hub -> intent-specific pages; standardized evidence status; exposed Privacy in the main route | Review coverage and query alignment after 7-14 days |
 | 2026-08-07 | Contact, About, Editorial Policy, Privacy, All Endings | Make evidence status and correction path explicit; add trust coverage | Review GSC after 7-14 days |
 | 2026-08-06 | Home, Clown Theater, All Endings, Timesville Fishing, Items | Align titles and snippets with high-impression queries | Review GSC after 7-14 days |
 
