@@ -63,6 +63,44 @@ filter for prioritization, not a search-volume number.
 Similarweb was not authenticated during this check and redirected to its login
 page. No Similarweb search volume, KD, or difficulty value is entered here.
 
+## Three-signal approval gate
+
+Trends, KD, and SERP must be cross-validated before a new keyword becomes a
+page brief. One signal can create a lead; it cannot approve a page by itself.
+
+| Signal | What to record | How to use it |
+| --- | --- | --- |
+| Trends | Global and target-country views over 30 and 90 days, with `gpts` in the same comparison | Separate sustained demand from a one-day breakout or low-base spike |
+| Similarweb KD | Keyword volume, KD, trend direction, and date checked | Prefer lower KD for initial screening; never treat KD as an absolute pass/fail gate |
+| SERP | Top results, presence of small sites, stale or duplicate pages, and the exact unmet intent | Confirm that a small site can satisfy a visible gap with a better answer |
+
+### Current approval status
+
+- Trends is complete for the current watchlist, using `gpts` as the same-chart
+  benchmark.
+- Similarweb KD and volume are still **not collected** because the authenticated
+  Similarweb keyword-generator view is required. No KD value is inferred.
+- SERP review is still **pending** for every watchlist candidate.
+- Therefore, no new keyword is approved for page creation yet. `endacopia game`
+  is only the strongest watch candidate in the current Trends set, not a green
+  light.
+
+### Keyword brief template
+
+Before creating a page, fill every field below in this ledger:
+
+```text
+Keyword:
+Target country / language:
+Trends 30d / 90d and gpts benchmark:
+Similarweb volume / KD / checked date:
+SERP top results and small-site count:
+Unmet player intent:
+Chosen page and primary CTA:
+Evidence source and proof status:
+Decision: approve / watch / defer:
+```
+
 ## Trends comparison protocol
 
 1. Use the same country, date range, and search type for every comparison.
@@ -77,6 +115,7 @@ page. No Similarweb search volume, KD, or difficulty value is entered here.
 
 | Date | Pages changed | Reason | Wait period |
 | --- | --- | --- | --- |
+| 2026-08-08 | Keyword approval gate | Added Trends + Similarweb KD + SERP cross-validation; candidates remain unapproved until all three signals are recorded | Collect KD and SERP before building a new page |
 | 2026-08-08 | Trends watchlist | Rebased candidate decisions against `gpts` in the same charts; removed false high-volume interpretation | Use GSC before creating or expanding a page |
 | 2026-08-07 | Contact, About, Editorial Policy, Privacy, All Endings | Make evidence status and correction path explicit; add trust coverage | Review GSC after 7-14 days |
 | 2026-08-06 | Home, Clown Theater, All Endings, Timesville Fishing, Items | Align titles and snippets with high-impression queries | Review GSC after 7-14 days |
