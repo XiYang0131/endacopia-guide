@@ -1,41 +1,40 @@
-# SCYS Handbook Notes: Endacopia Site Iteration
+# SCYS 手册学习记录：Endacopia 网站迭代
 
-Source: SCYS activity `10092`, course `182`, manual TOC and detail pages read
-through MCP on August 8, 2026.
+来源：SCYS 活动 `10092`，课程 `182`。2026 年 8 月 8 日通过 SCYS MCP
+读取手册目录和相关章节。
 
-## Relevant chapters read
+## 已学习的相关章节
 
-- `13027` Choosing a game keyword: validate with Google Trends, the `gpts`
-  benchmark, Similarweb KD, and a manual SERP review. A trend spike alone does
-  not approve a new page.
-- `13030` Finding user questions: use Google autocomplete, Trends related
-  queries, and Similarweb to build a keyword list. One search intent maps to one
-  page; use a hub when many related items do not justify separate pages.
-- `13033` Researching sources: use multiple sources, keep URLs with the notes,
-  and treat AI as an organizer rather than a source of facts.
-- `13036` Building the site: keep the homepage as the main-term router, add a
-  navigation/index page, then route users to focused inner pages. Reuse layout,
-  not another site's copy.
-- `13042` Reading data: use GSC impressions, clicks, average position, CTR, and
-  the actual query list to decide what to add or revise. Improve the existing
-  site before opening a second one.
-- `13080` and `13081` Template and page scaling: separate framework, config, and
-  content; only scale after a single page is genuinely useful. Batch production
-  must not become near-duplicate content.
+- `13027` 选游戏词：用 Google Trends、`gpts` 对比词、Similarweb KD 和
+  Google 首页 SERP 交叉验证。单独的趋势暴涨不能直接批准一个新页面。
+- `13030` 挖掘用户需求：结合 Google 下拉词、Trends 相关查询和
+  Similarweb 建立关键词清单。一个搜索意图对应一个页面；多个细分项较多
+  时，先做导航/聚合页，不要盲目拆成大量内页。
+- `13033` 调研游戏素材：同一信息尽量使用多个来源交叉验证，保存来源地址。
+  AI 只能负责整理，不能凭空生成事实、数值、角色或兑换码。
+- `13036` 搭建网站：首页承接游戏主词，导航页承接分类，内页承接具体长尾
+  问题。可以参考其他站的页面结构和布局，但不能复制文字和具体内容。
+- `13042` 读取数据：重点观察 GSC 的展示量、点击量、平均排名、CTR 和真实
+  搜索词，用数据决定补页或改页。优先优化现有站，不要过早开第二个站。
+- `13080`、`13081` 模板化和批量建页：框架层、配置层、内容层分离。只有
+  单篇页面已经真实有用后，才适合复用模板；批量生产不能变成换关键词的
+  低质量重复页面。
 
-## Applied to Endacopia in this batch
+## 本轮已经应用到 Endacopia 的改动
 
-1. Added a standard evidence panel to the 100% checklist with evidence state,
-   last checked date, source summary, and the next proof target.
-2. Strengthened the Guide Index as the middle layer between the homepage and
-   focused pages. Added a fresh-coverage block for fish, Misery Town,
-   underground, Water Break, demo/full-game, and map intents.
-3. Added Privacy to the Guide Index footer and the homepage trust section so
-   GA4 and correction expectations are reachable from the main route.
+1. 为 100% 成就清单页增加统一的证据状态、最后检查日期、来源说明和下一
+   个待验证目标。
+2. 强化 Guide Index，使它真正承担“首页 → 导航页 → 具体内页”的中间层
+   作用，增加鱼类、Misery Town、Underground、Water Break、Demo/正式版和
+   Map 等重点页面入口。
+3. 在首页信任板块和 Guide Index 页脚增加 Privacy 入口，让 GA4、外部链接
+   和纠错说明更容易被访问。
 
-## Operating rule for the next batch
+## 下一轮执行规则
 
-Do not create a new page from Trends alone. Record the query, page intent,
-GSC evidence, source status, and next proof target in
-`content-ops/keyword-page-evidence.md`. Change no more than two or three
-search-facing pages, then wait 7-14 days before judging the result.
+不要仅凭 Trends 新建页面。每个候选词都要记录：搜索词、用户意图、目标
+页面、GSC 数据、来源状态、证据状态和下一步验证目标，并写入
+`content-ops/keyword-page-evidence.md`。
+
+每轮最多修改 2 到 3 个搜索页面，发布后等待 7 到 14 天，再根据 GSC 的真实
+查询和页面表现判断下一步。
