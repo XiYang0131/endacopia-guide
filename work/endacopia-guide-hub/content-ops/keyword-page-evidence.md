@@ -41,7 +41,23 @@ complete until its query intent, evidence state, and next action are explicit.
 - **Authorized media:** record the original author, URL, permission wording, and
   exactly which page uses the asset or paraphrased route.
 
-## Candidate watchlist from Google Trends
+## Keyword discovery signals
+
+## Google autocomplete capture
+
+The raw Google autocomplete capture and page mapping for August 8, 2026 is
+recorded in `content-ops/google-autocomplete-2026-08-08.md`. The first batch
+updated two existing pages rather than creating new URLs:
+
+- `endacopia all characters` -> `/endacopia-characters/`
+- `endacopia all bosses` and `endacopia clocky fight` -> `/endacopia-boss-fights-guide/` and `/endacopia-clocky/`
+
+The remaining suggestions are routed to existing release, demo, secrets,
+ending, play, puzzle, and item pages. Ambiguous terms such as `surgeon`,
+`toilet monster`, and `the rule` remain on the watchlist until GSC shows a
+repeated query and the player intent is clear.
+
+### Google Trends candidate watchlist
 
 Google Trends US, past month, web search, checked August 8, 2026. Every
 comparison below includes `gpts` in the same chart as the benchmark. Trends is
@@ -115,6 +131,7 @@ Decision: approve / watch / defer:
 
 | Date | Pages changed | Reason | Wait period |
 | --- | --- | --- | --- |
+| 2026-08-08 | Characters, Boss Fights | Mapped Google autocomplete candidates `all characters`, `all bosses`, and `clocky fight` to existing answer hubs; refreshed metadata without creating duplicate pages | Review GSC after 7-14 days |
 | 2026-08-08 | Keyword approval gate | Added Trends + Similarweb KD + SERP cross-validation; candidates remain unapproved until all three signals are recorded | Collect KD and SERP before building a new page |
 | 2026-08-08 | Trends watchlist | Rebased candidate decisions against `gpts` in the same charts; removed false high-volume interpretation | Use GSC before creating or expanding a page |
 | 2026-08-07 | Contact, About, Editorial Policy, Privacy, All Endings | Make evidence status and correction path explicit; add trust coverage | Review GSC after 7-14 days |
