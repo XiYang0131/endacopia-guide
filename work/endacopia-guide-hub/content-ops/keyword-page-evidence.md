@@ -43,25 +43,41 @@ complete until its query intent, evidence state, and next action are explicit.
 
 ## Candidate watchlist from Google Trends
 
-Google Trends US, past month, checked August 7, 2026. Trends is a relative
-index, not a monthly search-volume estimate.
+Google Trends US, past month, web search, checked August 8, 2026. Every
+comparison below includes `gpts` in the same chart as the benchmark. Trends is
+a relative index, not a monthly search-volume estimate; the benchmark is a
+filter for prioritization, not a search-volume number.
 
 | Candidate | Signal | Current page | Decision |
 | --- | --- | --- | --- |
-| `endacopia surgeon` | Average 13; climbed to 37-40 on Aug 4-6 and 100 on the partial Aug 7 point | No dedicated page | **Priority candidate:** validate the exact in-game intent before creating a page |
-| `endacopia mellow` | Average 18; recent partial-week peak 100 | `/endacopia-mellow/` | **Refresh existing page:** improve location / interaction answer |
-| `endacopia trapezist` | Average 17; recent points 42-83 | `/endacopia-trapezist/` | **Refresh existing page:** add a route-focused answer and evidence date |
-| `endacopia clocky` | Average 3; short spikes only | `/endacopia-clocky/` | Monitor; do not expand yet |
-| `endacopia lost key` | Average 0; one isolated Aug 2 point | No dedicated page | Defer until GSC confirms repeated demand |
-| `endacopia lore` | Average 0 | `/endacopia-meaning-lore/` | Defer; current signal is too weak |
+| `endacopia game` | Average 5 versus `gpts` 37; recent values 10-18 versus `gpts` 21-34 | `/endacopia-full-game/` | **Best current candidate in this set:** refresh the full-game bridge only after GSC confirms the query intent |
+| `endacopia surgeon` | Average 2 versus `gpts` 37; recent values 4-6 versus `gpts` 24-34 | No dedicated page | Do not create a page yet; first validate the exact in-game intent and look for repeated GSC impressions |
+| `endacopia mellow` | Average 2 versus `gpts` 37; recent values 5-6 versus `gpts` 23-34 | `/endacopia-mellow/` | Keep the page, but prioritize only if GSC shows a matching query |
+| `endacopia trapezist` | Average 2 versus `gpts` 37; recent values 4-7 versus `gpts` 23-34 | `/endacopia-trapezist/` | Keep the page, but do not call the trend a high-volume opportunity |
+| `endacopia clown` | Average 2 versus `gpts` 37; recent values 3-6 versus `gpts` 23-34 | `/endacopia-clown-theater-puzzle/` | Use GSC impressions and CTR to decide whether to improve the existing page |
+| `endacopia ending c` | Average 1 versus `gpts` 37; recent values 2-5 versus `gpts` 23-34 | `/endacopia-ending-c-complete-route/` | Keep as a search-intent page; do not expand from Trends alone |
+| `endacopia clocky` | Average 0 versus `gpts` 37; recent values 1-2 versus `gpts` 24-34 | `/endacopia-clocky/` | Monitor only |
+| `endacopia lost key` | Average 0 versus `gpts` 37; one isolated point of 1 | No dedicated page | Defer until GSC confirms repeated demand |
+| `endacopia lore` | Average 0 versus `gpts` 37 | `/endacopia-meaning-lore/` | Defer; current signal is too weak |
 
 Similarweb was not authenticated during this check and redirected to its login
 page. No Similarweb search volume, KD, or difficulty value is entered here.
+
+## Trends comparison protocol
+
+1. Use the same country, date range, and search type for every comparison.
+2. Put `gpts` in the same chart instead of comparing separate screenshots.
+3. Record both the candidate average and the recent daily range beside the
+   benchmark average and range.
+4. Treat a candidate as actionable only when it has sustained non-zero demand,
+   a clear player question, and either GSC impressions or a source-backed SERP
+   gap. A breakout label alone is not enough.
 
 ## Change log
 
 | Date | Pages changed | Reason | Wait period |
 | --- | --- | --- | --- |
+| 2026-08-08 | Trends watchlist | Rebased candidate decisions against `gpts` in the same charts; removed false high-volume interpretation | Use GSC before creating or expanding a page |
 | 2026-08-07 | Contact, About, Editorial Policy, Privacy, All Endings | Make evidence status and correction path explicit; add trust coverage | Review GSC after 7-14 days |
 | 2026-08-06 | Home, Clown Theater, All Endings, Timesville Fishing, Items | Align titles and snippets with high-impression queries | Review GSC after 7-14 days |
 
