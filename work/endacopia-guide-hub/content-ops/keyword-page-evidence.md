@@ -100,6 +100,22 @@ filter for prioritization, not a search-volume number.
 Similarweb was not authenticated during this check and redirected to its login
 page. No Similarweb search volume, KD, or difficulty value is entered here.
 
+## Fresh unresolved-intent review: August 9, 2026
+
+This pass prioritizes exact player blockers found in recent public community
+threads and maps them to existing pages. It does not claim a search-volume
+number: Similarweb volume/KD was not collected in this pass, and community
+thread activity is evidence of urgency, not a market-size estimate.
+
+| Query / player problem | Evidence | Existing page | Evidence state | Action |
+| --- | --- | --- | --- | --- |
+| Endacopia Ending C not triggering after all secrets and A/B appear complete | Recent player report says the late window remained boarded after the reported prerequisites were done | `/endacopia-ending-c-not-triggering/` | Community report / unresolved / replay pending | Add failure-specific backup, completion-event, and final-return checks; do not promise a universal fix |
+| Can I get the other endings without restarting? | Recent player discussion asks whether a save can branch into the other endings; the A/B Saw Box branch is directly actionable, while the C prerequisite order conflicts with older summaries | `/endacopia-all-endings/` and `/endacopia-save-file-location/` | A/B branch practical; C order conflicting / replay pending | Explain pre-Saw and pre-finale backups, downgrade the absolute C prerequisite claim, and keep the failed save |
+| Endacopia scalpel / surgeon puzzle triggers a jumpscare | Recent player report describes a wall-triggered failure and recommends using the scalpel tip, lowering sensitivity, and moving slowly | `/endacopia-puzzle-solutions/` | Player-reported method / possible sensitivity or bug case | Add a precise movement checklist and label it community-reported |
+| Short Circuit not unlocking / Water Break route | Questions and route answers appear in the recent 100% achievement discussion | `/endacopia-achievements-guide/` | Community report / candidate for next batch | Defer until the three-page batch is measured; add only if GSC or repeated reports keep the intent active |
+
+Sources for this review: [Ending C failure report](https://www.reddit.com/r/Endacopia/comments/1viloh1/not_getting_ending_c_after_doing_all_secrets/), [no-restart ending discussion](https://www.reddit.com/r/Endacopia/comments/1vegamb/is_there_a_way_to_get_the_other_endings_without/), [scalpel puzzle report](https://www.reddit.com/r/Endacopia/comments/1vdkgpn/help_with_puzzle/), and [100% achievement discussion](https://www.reddit.com/r/Endacopia/comments/1v9msac/i_have_now_100_endacopias_achievements/).
+
 ## Three-signal approval gate
 
 Trends, KD, and SERP must be cross-validated before a new keyword becomes a
@@ -158,6 +174,7 @@ Decision: approve / watch / defer:
 | 2026-08-08 | Guide Index, 100% checklist, homepage trust section | Applied SCYS handbook rules: homepage -> navigation hub -> intent-specific pages; standardized evidence status; exposed Privacy in the main route | Review coverage and query alignment after 7-14 days |
 | 2026-08-09 | Scribbly, Clown Puzzle, Achievement Guide | GSC showed impressions with approximately 1.0%, 1.1%, and 1.6% CTR; aligned title, description, social metadata, and H1 to exact query intent | Review GSC after 7-14 days |
 | 2026-08-09 | Guide navigation and GA4 events | Added route-specific next-guide links before the helpful panel, tracked `next_guide_click`, `related_guide_click`, and `guide_scroll_90`, and kept the CTR title test unchanged | Review navigation events and engagement after 7-14 days |
+| 2026-08-09 | Ending C troubleshooting, All Endings, Puzzle Solutions | Added three exact high-intent community blockers: boarded window after reported C prerequisites, avoiding a full restart with branch saves, and scalpel/surgeon jumpscare troubleshooting; no new URL created | Review GSC queries, page CTR, helpful feedback, and evidence status after 7-14 days |
 | 2026-08-07 | Contact, About, Editorial Policy, Privacy, All Endings | Make evidence status and correction path explicit; add trust coverage | Review GSC after 7-14 days |
 | 2026-08-06 | Home, Clown Theater, All Endings, Timesville Fishing, Items | Align titles and snippets with high-impression queries | Review GSC after 7-14 days |
 
