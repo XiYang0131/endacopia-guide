@@ -157,6 +157,7 @@ Decision: approve / watch / defer:
 | 2026-08-08 | Trends watchlist | Rebased candidate decisions against `gpts` in the same charts; removed false high-volume interpretation | Use GSC before creating or expanding a page |
 | 2026-08-08 | Guide Index, 100% checklist, homepage trust section | Applied SCYS handbook rules: homepage -> navigation hub -> intent-specific pages; standardized evidence status; exposed Privacy in the main route | Review coverage and query alignment after 7-14 days |
 | 2026-08-09 | Scribbly, Clown Puzzle, Achievement Guide | GSC showed impressions with approximately 1.0%, 1.1%, and 1.6% CTR; aligned title, description, social metadata, and H1 to exact query intent | Review GSC after 7-14 days |
+| 2026-08-09 | Guide navigation and GA4 events | Added route-specific next-guide links before the helpful panel, tracked `next_guide_click`, `related_guide_click`, and `guide_scroll_90`, and kept the CTR title test unchanged | Review navigation events and engagement after 7-14 days |
 | 2026-08-07 | Contact, About, Editorial Policy, Privacy, All Endings | Make evidence status and correction path explicit; add trust coverage | Review GSC after 7-14 days |
 | 2026-08-06 | Home, Clown Theater, All Endings, Timesville Fishing, Items | Align titles and snippets with high-impression queries | Review GSC after 7-14 days |
 

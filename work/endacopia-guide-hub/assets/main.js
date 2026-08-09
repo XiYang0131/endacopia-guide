@@ -45,6 +45,84 @@ if (aiSource) {
   });
 }
 
+const nextGuideMap = {
+  "/endacopia-all-endings/": [
+    { href: "/endacopia-ending-c-complete-route/", label: "Ending C / Stay route", reason: "Three-secret route checklist" },
+    { href: "/endacopia-saw-box-code/", label: "Saw Box 471 guide", reason: "Choose Ending A or B" },
+    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Audit a missing trigger" }
+  ],
+  "/endacopia-timesville-fishing-guide/": [
+    { href: "/endacopia-all-fish-guide/", label: "All fish guide", reason: "Track the full 18-fish route" },
+    { href: "/endacopia-secret-ending/", label: "Secret ending guide", reason: "Continue the Stay route" },
+    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Fix a missing flag" }
+  ],
+  "/endacopia-scribbly/": [
+    { href: "/endacopia-map/", label: "Endacopia map guide", reason: "Use the reward map correctly" },
+    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Move past the next blocker" },
+    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the main route" }
+  ],
+  "/endacopia-clown-theater-puzzle/": [
+    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Find the next exact answer" },
+    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Continue the story route" },
+    { href: "/endacopia-beginner-guide/", label: "Beginner guide", reason: "Review the early-game setup" }
+  ],
+  "/endacopia-achievements-guide/": [
+    { href: "/endacopia-100-percent-achievement-checklist/", label: "100% checklist", reason: "Track every unlock" },
+    { href: "/endacopia-stay-achievement/", label: "Stay achievement", reason: "Target the secret ending" },
+    { href: "/endacopia-the-yeti-ending/", label: "The Yeti route", reason: "Clean up the hidden achievement" }
+  ],
+  "/endacopia-save-file-location/": [
+    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the route" },
+    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Plan a safe replay" },
+    { href: "/endacopia-download/", label: "Download and backup notes", reason: "Keep a recoverable copy" }
+  ]
+};
+
+const fallbackNextGuides = [
+  { href: "/endacopia-guides/", label: "Guide index", reason: "Choose a focused answer" },
+  { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Continue the main route" },
+  { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Plan the final branches" }
+];
+
+const renderNextGuidePanel = () => {
+  const feedbackPanel = document.querySelector("[data-helpful]");
+  if (!feedbackPanel || document.querySelector("[data-next-guide]")) return;
+
+  const currentPath = window.location.pathname;
+  const recommendations = (nextGuideMap[currentPath] || fallbackNextGuides).filter((guide) => guide.href !== currentPath);
+  if (recommendations.length === 0) return;
+
+  const panel = document.createElement("section");
+  panel.className = "next-guide-panel";
+  panel.dataset.nextGuide = "true";
+  panel.setAttribute("aria-labelledby", "next-guide-title");
+
+  const copy = document.createElement("div");
+  copy.className = "next-guide-copy";
+  copy.innerHTML = '<span class="eyebrow">Next step</span><h2 id="next-guide-title">Continue this route</h2><p>Use the next focused guide instead of restarting the search from the homepage.</p>';
+
+  const links = document.createElement("div");
+  links.className = "next-guide-links";
+  recommendations.forEach((guide) => {
+    const link = document.createElement("a");
+    link.className = "next-guide-link";
+    link.dataset.nextGuideLink = "true";
+    link.href = guide.href;
+
+    const label = document.createElement("strong");
+    label.textContent = guide.label;
+    const reason = document.createElement("span");
+    reason.textContent = guide.reason;
+    link.append(label, reason);
+    links.append(link);
+  });
+
+  panel.append(copy, links);
+  feedbackPanel.parentNode.insertBefore(panel, feedbackPanel);
+};
+
+renderNextGuidePanel();
+
 if (searchInput && cards.length > 0) {
   let searchTracked = false;
   searchInput.addEventListener("input", () => {
@@ -137,6 +215,29 @@ document.querySelectorAll("[data-search-intent]").forEach((card) => {
   });
 });
 
+document.querySelectorAll("[data-next-guide-link]").forEach((link) => {
+  link.addEventListener("click", () => {
+    track("next_guide_click", {
+      target_path: link.getAttribute("href"),
+      link_text: link.textContent.trim().slice(0, 100),
+      page_path: window.location.pathname
+    });
+  });
+});
+
+document.querySelectorAll(".article a[href^='/'], .sidebar a[href^='/']").forEach((link) => {
+  if (link.matches("[data-next-guide-link], [data-search-intent], .guide-card")) return;
+  if (link.closest(".guide-subnav, .breadcrumb")) return;
+
+  link.addEventListener("click", () => {
+    track("related_guide_click", {
+      target_path: link.getAttribute("href"),
+      link_text: link.textContent.trim().slice(0, 100),
+      page_path: window.location.pathname
+    });
+  });
+});
+
 document.querySelectorAll("code").forEach((code) => {
   const value = code.textContent.trim();
   if (!value || value.length > 120) return;
@@ -160,16 +261,22 @@ document.querySelectorAll("code").forEach((code) => {
 });
 
 let scrolledHalf = false;
+let scrolledNinety = false;
 window.addEventListener("scroll", () => {
-  if (scrolledHalf) return;
-
   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
   if (scrollable <= 0) return;
 
   const progress = window.scrollY / scrollable;
-  if (progress >= 0.5) {
+  if (!scrolledHalf && progress >= 0.5) {
     scrolledHalf = true;
     track("guide_scroll_50", {
+      page_path: window.location.pathname
+    });
+  }
+
+  if (!scrolledNinety && progress >= 0.9) {
+    scrolledNinety = true;
+    track("guide_scroll_90", {
       page_path: window.location.pathname
     });
   }
