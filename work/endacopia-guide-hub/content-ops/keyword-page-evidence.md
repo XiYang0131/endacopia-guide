@@ -43,6 +43,27 @@ complete until its query intent, evidence state, and next action are explicit.
 
 ## Keyword discovery signals
 
+## GSC CTR review: August 9, 2026
+
+The current Search Console performance report showed 156 clicks, 4,705
+impressions, a 3.3% average CTR, and an average position of 7.7. The report was
+updated about five hours earlier; the visible site data currently runs through
+August 5, so this is a diagnostic snapshot, not a final trend verdict.
+
+The clearest low-CTR query opportunities in the visible query table were:
+
+| Query | Clicks | Impressions | Approx. CTR | Action |
+| --- | ---: | ---: | ---: | --- |
+| `endacopia scribbly` | 1 | 103 | 1.0% | Rewrite title and description around the exact lookup |
+| `endacopia clown puzzle` | 1 | 95 | 1.1% | Put “clown puzzle” and the answer format first |
+| `endacopia achievement guide` | 1 | 63 | 1.6% | Lead with “all 16 Steam unlocks” |
+
+High-CTR queries such as `endacopia office secret`, `endacopia steam deck`, and
+`endacopia misery town secret` were left unchanged. The three low-CTR pages had
+their title, description, social metadata, and visible H1 aligned to the query
+intent on August 9. Review the same pages after 7-14 days before making another
+title change.
+
 ## Google autocomplete capture
 
 The raw Google autocomplete capture and page mapping for August 8, 2026 is
@@ -135,6 +156,7 @@ Decision: approve / watch / defer:
 | 2026-08-08 | Keyword approval gate | Added Trends + Similarweb KD + SERP cross-validation; candidates remain unapproved until all three signals are recorded | Collect KD and SERP before building a new page |
 | 2026-08-08 | Trends watchlist | Rebased candidate decisions against `gpts` in the same charts; removed false high-volume interpretation | Use GSC before creating or expanding a page |
 | 2026-08-08 | Guide Index, 100% checklist, homepage trust section | Applied SCYS handbook rules: homepage -> navigation hub -> intent-specific pages; standardized evidence status; exposed Privacy in the main route | Review coverage and query alignment after 7-14 days |
+| 2026-08-09 | Scribbly, Clown Puzzle, Achievement Guide | GSC showed impressions with approximately 1.0%, 1.1%, and 1.6% CTR; aligned title, description, social metadata, and H1 to exact query intent | Review GSC after 7-14 days |
 | 2026-08-07 | Contact, About, Editorial Policy, Privacy, All Endings | Make evidence status and correction path explicit; add trust coverage | Review GSC after 7-14 days |
 | 2026-08-06 | Home, Clown Theater, All Endings, Timesville Fishing, Items | Align titles and snippets with high-impression queries | Review GSC after 7-14 days |
 
