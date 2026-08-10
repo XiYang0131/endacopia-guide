@@ -288,6 +288,29 @@ h1 {
   background: var(--accent-dark);
 }
 
+.button-secondary {
+  border-color: var(--line);
+  background: var(--panel);
+  color: var(--accent-dark);
+}
+
+.button-secondary:hover {
+  border-color: var(--accent-dark);
+  background: #fff8ec;
+  color: var(--accent-dark);
+}
+
+.hero-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 4px;
+}
+
+.hero-action-row .button {
+  flex: 1 1 190px;
+}
+
 .main {
   padding: 32px 0 48px;
 }

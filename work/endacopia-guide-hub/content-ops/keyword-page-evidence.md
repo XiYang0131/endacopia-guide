@@ -116,6 +116,29 @@ thread activity is evidence of urgency, not a market-size estimate.
 
 Sources for this review: [Ending C failure report](https://www.reddit.com/r/Endacopia/comments/1viloh1/not_getting_ending_c_after_doing_all_secrets/), [no-restart ending discussion](https://www.reddit.com/r/Endacopia/comments/1vegamb/is_there_a_way_to_get_the_other_endings_without/), [scalpel puzzle report](https://www.reddit.com/r/Endacopia/comments/1vdkgpn/help_with_puzzle/), and [100% achievement discussion](https://www.reddit.com/r/Endacopia/comments/1v9msac/i_have_now_100_endacopias_achievements/).
 
+## xixi Steam guide refresh: August 10, 2026
+
+The authorized xixi guide was checked again after its visible update on August
+10. The page showed 2,166 unique visitors, 68 current favorites, and a new
+comment thread. These are guide engagement signals, not Endacopia search
+volume.
+
+New route details suitable for existing pages:
+
+| Detail | Destination | Evidence state | Action |
+|---|---|---|---|
+| Catthew hide-and-seek spots, Fisherman License, diver unlock | `/endacopia-timesville-fishing-guide/` | Community report from xixi; replay pending | Added license steps and six-period fish table |
+| Soccer music becomes distracting around 25 points | `/endacopia-soccer-ball/` | Community tip from xixi | Added mute-audio troubleshooting note |
+| Overclockey drains one stamina per landed hit; phase 3 is hardest | `/endacopia-boss-fights-guide/` and Ending C route | Community report from xixi; replay pending | Added stamina and guard warning |
+| True Fighter phone/9 PM route | `/endacopia-underground/` or future focused section | Community report; exact retry behavior unclear | Watch; do not publish system-time workaround as a confirmed fix |
+| Ending C Clocky prerequisite | `/endacopia-all-endings/`, `/endacopia-secret-ending/`, `/endacopia-ending-c-complete-route/` | Conflicting community reports | Downgraded no-Clocky from hard requirement to a testable route |
+| Clocky rematch / Overclockey tips | `/endacopia-clocky/`, `/endacopia-ending-c-complete-route/` | Community reports from Reddit and xixi's Steam guide; replay pending | Added first-fight vs rematch split, phase-3 difficulty warning, stamina guidance, and direct evidence links |
+
+Source: [xixi Endacopia achievement guide](https://steamcommunity.com/sharedfiles/filedetails/?id=3774754099).
+The author explicitly permits use of information and images with attribution.
+Keep the source link, author credit, evidence label, and replay status on every
+public page that uses the material.
+
 ## GA4 yesterday snapshot: August 9, 2026
 
 The GA4 report was switched to the single day August 9. This is a property
