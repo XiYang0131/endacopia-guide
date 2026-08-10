@@ -116,6 +116,33 @@ thread activity is evidence of urgency, not a market-size estimate.
 
 Sources for this review: [Ending C failure report](https://www.reddit.com/r/Endacopia/comments/1viloh1/not_getting_ending_c_after_doing_all_secrets/), [no-restart ending discussion](https://www.reddit.com/r/Endacopia/comments/1vegamb/is_there_a_way_to_get_the_other_endings_without/), [scalpel puzzle report](https://www.reddit.com/r/Endacopia/comments/1vdkgpn/help_with_puzzle/), and [100% achievement discussion](https://www.reddit.com/r/Endacopia/comments/1v9msac/i_have_now_100_endacopias_achievements/).
 
+## GA4 yesterday snapshot: August 9, 2026
+
+The GA4 report was switched to the single day August 9. This is a property
+snapshot, not a clean Endacopia-only total: the same property also contains
+Sovereign Tower pages, so property-level users and channel totals must not be
+used as Endacopia-only totals until a hostname comparison or separate
+measurement ID is in place.
+
+| Endacopia page title | Views | Active users | Events | Bounce rate | Decision |
+| --- | ---: | ---: | ---: | ---: | --- |
+| Endacopia Guide & Walkthrough - All Endings, Secrets & Puzzles | 13 | 12 | 55 | 38.5% | Keep as the main router; do not rewrite after one day |
+| Endacopia All Endings Guide - Ending A, B, C & The Yeti | 10 | 10 | 36 | 41.7% | Let the August 9 answer update run for 7-14 days |
+| Endacopia Fishing Guide - Timesville Fish Paper, Key & 18 Fish | 8 | 6 | 32 | 0.0% | Protect this page; add no new competing fish URL |
+| Endacopia Save File Location - Backup and Restore Guide | 8 | 7 | 35 | 25.0% | Protect the high-intent page and keep its save-location CTA |
+
+The property report showed 102 active users and 97 new users for the day, but
+those totals include Sovereign Tower. Its acquisition rows showed 60 Google
+organic, 28 direct, 5 Bing, 4 DuckDuckGo, and 3 Steam users at the property
+level; do not attribute those channel counts to Endacopia without a hostname
+split.
+
+The next page action is the existing `/endacopia-clown-theater-puzzle/`: GSC
+currently shows `endacopia clown puzzle` at 3 clicks and 169 impressions in
+the available report, so the page now leads with the theater-seat, color-map,
+and community-reported three-hit answer. Review its CTR after 7-14 days before
+changing the title again.
+
 ## Three-signal approval gate
 
 Trends, KD, and SERP must be cross-validated before a new keyword becomes a
@@ -175,6 +202,8 @@ Decision: approve / watch / defer:
 | 2026-08-09 | Scribbly, Clown Puzzle, Achievement Guide | GSC showed impressions with approximately 1.0%, 1.1%, and 1.6% CTR; aligned title, description, social metadata, and H1 to exact query intent | Review GSC after 7-14 days |
 | 2026-08-09 | Guide navigation and GA4 events | Added route-specific next-guide links before the helpful panel, tracked `next_guide_click`, `related_guide_click`, and `guide_scroll_90`, and kept the CTR title test unchanged | Review navigation events and engagement after 7-14 days |
 | 2026-08-09 | Ending C troubleshooting, All Endings, Puzzle Solutions | Added three exact high-intent community blockers: boarded window after reported C prerequisites, avoiding a full restart with branch saves, and scalpel/surgeon jumpscare troubleshooting; no new URL created | Review GSC queries, page CTR, helpful feedback, and evidence status after 7-14 days |
+| 2026-08-10 | Clown Theater Puzzle | GSC showed 169 impressions and 3 clicks for `endacopia clown puzzle`; aligned title, description, H1, FAQ, and answer-first content to theater seats, color mapping, knife intent, and the community-reported three-hit method | Review CTR and helpful feedback after 7-14 days; do not publish an exact order until completion proof exists |
+| 2026-08-10 | GA4 data quality note | Yesterday's property report included Sovereign Tower pages alongside Endacopia; record hostname split or separate measurement IDs before using property totals for site decisions | Fix measurement separation before the next channel-level diagnosis |
 | 2026-08-07 | Contact, About, Editorial Policy, Privacy, All Endings | Make evidence status and correction path explicit; add trust coverage | Review GSC after 7-14 days |
 | 2026-08-06 | Home, Clown Theater, All Endings, Timesville Fishing, Items | Align titles and snippets with high-impression queries | Review GSC after 7-14 days |
 
