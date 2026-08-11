@@ -138,6 +138,23 @@
             <p>For Steam Deck, install Endacopia through Steam and expect Proton to create a Windows-style prefix under <code>steamapps/compatdata/2684630/</code>. The likely save path mirrors Windows inside the prefix: <code>pfx/drive_c/users/steamuser/Saved Games/Endacopia/</code>. Back up before copying or editing saves.</p>
           </div>
 
+          <section class="answer-box compact-answer" aria-labelledby="steam-deck-at-a-glance">
+            <h2 id="steam-deck-at-a-glance">Steam Deck Answer At A Glance</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Need</th><th>Fast answer</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Can I play it?</td><td>Install the Steam version and let Proton create the game prefix. This guide is source-backed; device replay is still pending.</td></tr>
+                  <tr><td>How do I control it?</td><td>Use the trackpad or touchscreen for point-and-click input. Start with mouse-style controls before making a full button layout.</td></tr>
+                  <tr><td>Where are saves?</td><td>In Desktop Mode, inspect <code>compatdata/2684630/pfx/drive_c/users/steamuser/Saved Games/Endacopia/</code> and back up the folder before editing.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="supporting-copy"><a href="#steam-deck-setup">Jump to setup steps</a> or <a href="#steam-deck-save-path">jump to the save path</a>.</p>
+          </section>
+
 
           <h2>Official Steam Media Reference</h2>
           <div class="media-grid media-single">
@@ -154,7 +171,7 @@
           </div>
 
 
-          <h2>Steam Deck Quick Setup</h2>
+          <h2 id="steam-deck-setup">Steam Deck Quick Setup</h2>
           <ol class="step-list">
             <li><strong>Install from Steam.</strong> Use the Steam store app ID <code>2684630</code> so Proton and achievements are tied to the right prefix.</li>
             <li><strong>Use mouse-style controls.</strong> Trackpad or touchscreen is usually more comfortable than trying to map every click to buttons.</li>
@@ -162,7 +179,7 @@
             <li><strong>Use Desktop Mode for files.</strong> If you need save backups, switch to Desktop Mode and browse the Proton prefix carefully.</li>
           </ol>
 
-          <h2>Likely Steam Deck Save Path</h2>
+          <h2 id="steam-deck-save-path">Likely Steam Deck Save Path</h2>
           <div class="source-box">
             <p><code>~/.local/share/Steam/steamapps/compatdata/2684630/pfx/drive_c/users/steamuser/Saved Games/Endacopia/</code></p>
           </div>
