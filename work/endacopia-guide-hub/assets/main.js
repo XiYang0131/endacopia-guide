@@ -123,6 +123,79 @@ const renderNextGuidePanel = () => {
 
 renderNextGuidePanel();
 
+const sponsorAdConfig = {
+  link: "https://www.effectivecpmnetwork.com/z2pkz9ua?key=3a78117943f8cc61a51702eb6455e146",
+  scripts: [
+    "https://pl30797998.effectivecpmnetwork.com/fb/09/6c/fb096cbb21a286b14a1ae4f4e3160a6c.js",
+    "https://pl30797999.effectivecpmnetwork.com/cf/84/f5/cf84f5c009449802cb80b647390c0588.js"
+  ]
+};
+
+const sponsorExcludedPaths = new Set(["/about/", "/contact/", "/editorial-policy/", "/privacy/", "/changelog/"]);
+
+const renderSponsorSlot = () => {
+  if (!document.querySelector(".article") || sponsorExcludedPaths.has(window.location.pathname)) return;
+
+  const anchor = document.querySelector("[data-helpful]") || document.querySelector(".site-footer");
+  if (!anchor?.parentNode) return;
+
+  const slot = document.createElement("section");
+  slot.className = "sponsor-slot";
+  slot.dataset.sponsorSlot = "true";
+  slot.setAttribute("aria-labelledby", "sponsor-slot-title");
+  slot.innerHTML = `
+    <div class="sponsor-slot-copy">
+      <span class="eyebrow">Sponsored</span>
+      <h2 id="sponsor-slot-title">Support this guide</h2>
+      <p>This optional sponsor placement helps keep the guide available. The guide content remains free and independent.</p>
+      <a class="sponsor-slot-link" data-sponsored-link href="${sponsorAdConfig.link}" target="_blank" rel="sponsored nofollow noopener noreferrer">View sponsor offer</a>
+    </div>
+    <div class="sponsor-network-slot" data-sponsor-network aria-label="Sponsored placement"></div>
+  `;
+
+  anchor.parentNode.insertBefore(slot, anchor);
+
+  const loadScripts = () => {
+    const networkSlot = slot.querySelector("[data-sponsor-network]");
+    if (!networkSlot || networkSlot.dataset.loaded === "true") return;
+
+    networkSlot.dataset.loaded = "true";
+    sponsorAdConfig.scripts.forEach((src) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.dataset.sponsorScript = "true";
+      networkSlot.appendChild(script);
+    });
+
+    track("sponsor_ads_loaded", {
+      page_path: window.location.pathname,
+      provider: "effectivecpmnetwork"
+    });
+  };
+
+  const observer = "IntersectionObserver" in window
+    ? new IntersectionObserver((entries, instance) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          loadScripts();
+          instance.disconnect();
+        }
+      }, { rootMargin: "300px" })
+    : null;
+
+  if (observer) observer.observe(slot);
+  window.setTimeout(loadScripts, 7000);
+
+  slot.querySelector("[data-sponsored-link]")?.addEventListener("click", () => {
+    track("sponsor_link_click", {
+      page_path: window.location.pathname,
+      provider: "effectivecpmnetwork"
+    });
+  });
+};
+
+renderSponsorSlot();
+
 if (searchInput && cards.length > 0) {
   let searchTracked = false;
   searchInput.addEventListener("input", () => {
