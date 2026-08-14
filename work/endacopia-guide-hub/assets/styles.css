@@ -1344,6 +1344,16 @@ code[data-copyable].copied {
 
   .nav-links {
     margin-left: 0;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .nav-links a {
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .toolbar {
