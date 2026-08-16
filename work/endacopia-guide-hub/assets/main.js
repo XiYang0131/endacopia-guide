@@ -75,6 +75,26 @@ const nextGuideMap = {
     { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the route" },
     { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Plan a safe replay" },
     { href: "/endacopia-download/", label: "Download and backup notes", reason: "Keep a recoverable copy" }
+  ],
+  "/endacopia-water-break-achievement/": [
+    { href: "/endacopia-timesville-fishing-guide/", label: "Timesville fishing guide", reason: "Continue the area route" },
+    { href: "/endacopia-office-secret/", label: "Office secret guide", reason: "Check the stable Office interaction" },
+    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Audit a missing flag" }
+  ],
+  "/endacopia-let-me-go-let-me-talk/": [
+    { href: "/endacopia-office-secret/", label: "Office secret guide", reason: "Continue the corporate route" },
+    { href: "/endacopia-phone-puzzle-answers/", label: "Phone puzzle answers", reason: "Solve the next Office blocker" },
+    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the main route" }
+  ],
+  "/endacopia-red-ball-guide/": [
+    { href: "/endacopia-clown-theater-puzzle/", label: "Clown theater puzzle", reason: "Check the color setup" },
+    { href: "/endacopia-trapezist/", label: "Trapezist route", reason: "Continue the Misery Town branch" },
+    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Find the next exact answer" }
+  ],
+  "/endacopia-soccer-ball/": [
+    { href: "/endacopia-100-percent-achievement-checklist/", label: "100% achievement checklist", reason: "Track the remaining unlocks" },
+    { href: "/endacopia-prologue-walkthrough/", label: "Prologue walkthrough", reason: "Review the first-room route" },
+    { href: "/endacopia-screenshot-checklist/", label: "Screenshot checklist", reason: "Capture proof for a route" }
   ]
 };
 
@@ -91,6 +111,15 @@ const renderNextGuidePanel = () => {
   const currentPath = window.location.pathname;
   const recommendations = (nextGuideMap[currentPath] || fallbackNextGuides).filter((guide) => guide.href !== currentPath);
   if (recommendations.length === 0) return;
+  const answerBox = document.querySelector(".answer-box");
+  const topIntentPaths = new Set([
+    "/endacopia-water-break-achievement/",
+    "/endacopia-save-file-location/",
+    "/endacopia-let-me-go-let-me-talk/",
+    "/endacopia-clown-theater-puzzle/",
+    "/endacopia-red-ball-guide/",
+    "/endacopia-soccer-ball/"
+  ]);
 
   const panel = document.createElement("section");
   panel.className = "next-guide-panel";
@@ -118,7 +147,8 @@ const renderNextGuidePanel = () => {
   });
 
   panel.append(copy, links);
-  feedbackPanel.parentNode.insertBefore(panel, feedbackPanel);
+  const insertionPoint = topIntentPaths.has(currentPath) && answerBox ? answerBox : feedbackPanel;
+  insertionPoint.parentNode.insertBefore(panel, insertionPoint === answerBox ? answerBox.nextSibling : feedbackPanel);
 };
 
 renderNextGuidePanel();
