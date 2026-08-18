@@ -84,6 +84,9 @@ img {
 }
 
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--ink);
   text-decoration: none;
   font-size: 14px;
@@ -92,8 +95,11 @@ img {
   border-radius: 6px;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a[aria-current="page"] {
   background: rgba(47, 111, 115, 0.12);
+  color: var(--accent-dark);
 }
 
 .container {

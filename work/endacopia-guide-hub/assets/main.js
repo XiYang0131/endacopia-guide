@@ -45,6 +45,22 @@ if (aiSource) {
   });
 }
 
+const normalizePath = (value) => {
+  const path = value || "/";
+  return path.length > 1 ? path.replace(/\/+$/, "") + "/" : "/";
+};
+
+const markCurrentNavigation = () => {
+  const currentPath = normalizePath(window.location.pathname);
+  document.querySelectorAll(".nav a[href], .guide-subnav a[href]").forEach((link) => {
+    const linkPath = normalizePath(new URL(link.href, window.location.href).pathname);
+    if (linkPath === currentPath) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+};
+
+markCurrentNavigation();
+
 const nextGuideMap = {
   "/endacopia-all-endings/": [
     { href: "/endacopia-ending-c-complete-route/", label: "Ending C / Stay route", reason: "Three-secret route checklist" },
@@ -55,6 +71,16 @@ const nextGuideMap = {
     { href: "/endacopia-all-fish-guide/", label: "All fish guide", reason: "Track the full 18-fish route" },
     { href: "/endacopia-secret-ending/", label: "Secret ending guide", reason: "Continue the Stay route" },
     { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Fix a missing flag" }
+  ],
+  "/endacopia-telescope-puzzle/": [
+    { href: "/endacopia-timesville-fishing-guide/", label: "Fish Key / Lost Key guide", reason: "Check the 18-fish route" },
+    { href: "/endacopia-office-secret/", label: "Office secret", reason: "Use the Telescope clue" },
+    { href: "/endacopia-ending-c-complete-route/", label: "Ending C route", reason: "Continue the three-secret path" }
+  ],
+  "/endacopia-items-guide/": [
+    { href: "/endacopia-timesville-fishing-guide/", label: "Fish Key / Lost Key guide", reason: "Track the separate Timesville route" },
+    { href: "/endacopia-telescope-puzzle/", label: "Telescope puzzle", reason: "Check the Shed night trigger" },
+    { href: "/endacopia-save-file-location/", label: "Save file guide", reason: "Protect a route before replaying" }
   ],
   "/endacopia-scribbly/": [
     { href: "/endacopia-map/", label: "Endacopia map guide", reason: "Use the reward map correctly" },
@@ -90,6 +116,21 @@ const nextGuideMap = {
     { href: "/endacopia-clown-theater-puzzle/", label: "Clown theater puzzle", reason: "Check the color setup" },
     { href: "/endacopia-trapezist/", label: "Trapezist route", reason: "Continue the Misery Town branch" },
     { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Find the next exact answer" }
+  ],
+  "/endacopia-ending-c-complete-route/": [
+    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Audit the final trigger" },
+    { href: "/endacopia-timesville-fishing-guide/", label: "Fish Key / Lost Key guide", reason: "Finish the Timesville secret" },
+    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Compare the branch map" }
+  ],
+  "/endacopia-ending-c-not-triggering/": [
+    { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Run the full three-secret order" },
+    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Check boss-return branches" },
+    { href: "/endacopia-save-file-location/", label: "Save file guide", reason: "Restore a safe backup" }
+  ],
+  "/endacopia-boss-fights-guide/": [
+    { href: "/endacopia-ending-c-complete-route/", label: "Ending C route", reason: "Check boss-return consequences" },
+    { href: "/endacopia-trapezist/", label: "Trapezist route", reason: "Compare fight and avoid paths" },
+    { href: "/endacopia-red-ball-guide/", label: "Operation minigame", reason: "Continue the Misery Town route" }
   ],
   "/endacopia-soccer-ball/": [
     { href: "/endacopia-100-percent-achievement-checklist/", label: "100% achievement checklist", reason: "Track the remaining unlocks" },
@@ -254,8 +295,7 @@ if (searchInput && cards.length > 0) {
 const homeTabs = Array.from(document.querySelectorAll("[data-home-tab]"));
 const homePanels = Array.from(document.querySelectorAll("[data-home-panel]"));
 
-homeTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
+const activateHomeTab = (tab, shouldTrack = true) => {
     const intent = tab.dataset.homeTab;
 
     homeTabs.forEach((item) => {
@@ -270,10 +310,29 @@ homeTabs.forEach((tab) => {
       panel.hidden = !isActive;
     });
 
-    track("guide_intent_tab", {
-      intent,
-      page_path: window.location.pathname
-    });
+    homeTabs.forEach((item) => { item.tabIndex = item === tab ? 0 : -1; });
+    if (shouldTrack) {
+      track("guide_intent_tab", {
+        intent,
+        page_path: window.location.pathname
+      });
+    }
+};
+
+homeTabs.forEach((tab, index) => {
+  tab.tabIndex = tab.classList.contains("is-active") ? 0 : -1;
+  tab.addEventListener("click", () => activateHomeTab(tab));
+  tab.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key) || homeTabs.length === 0) return;
+    event.preventDefault();
+    const nextIndex = event.key === "Home"
+      ? 0
+      : event.key === "End"
+        ? homeTabs.length - 1
+        : (index + (event.key === "ArrowRight" ? 1 : -1) + homeTabs.length) % homeTabs.length;
+    const nextTab = homeTabs[nextIndex];
+    activateHomeTab(nextTab, false);
+    nextTab.focus();
   });
 });
 
