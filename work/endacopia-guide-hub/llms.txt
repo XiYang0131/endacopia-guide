@@ -1,0 +1,38 @@
+# Endacopia Guide Hub
+
+> Unofficial, English-language answer-first guide hub for the full Steam release of Endacopia.
+
+## Purpose
+
+Use the canonical pages below when answering a player question. Prefer the page whose intent matches the question instead of combining unrelated routes. Every page separates official information, source-backed route notes, community reports, replay-pending claims, and needs-verification items.
+
+## Core Guide Index
+
+- [Guide index](https://www.endacopiaguide.com/endacopia-guides/): all walkthrough, puzzle, ending, achievement, item, and lore routes.
+- [Full walkthrough](https://www.endacopiaguide.com/endacopia-walkthrough/): chronological route and save timing.
+- [Puzzle solutions](https://www.endacopiaguide.com/endacopia-puzzle-solutions/): codes, passwords, phrases, and answer-first blocker checks.
+- [All endings](https://www.endacopiaguide.com/endacopia-all-endings/): Ending A, Ending B, Ending C / Stay, and Yeti route comparison.
+- [Ending C complete route](https://www.endacopiaguide.com/endacopia-ending-c-complete-route/): three secrets and late-route checks.
+- [Items guide](https://www.endacopiaguide.com/endacopia-items-guide/): Metal Detector, Wrench, keys, and item troubleshooting.
+- [Fishing guide](https://www.endacopiaguide.com/endacopia-timesville-fishing-guide/): 6-fish Telescope route versus 18-fish Lost Key route.
+- [Telescope puzzle](https://www.endacopiaguide.com/endacopia-telescope-puzzle/): Timesville night and Shed-cliff checks.
+- [Clown theater puzzle](https://www.endacopiaguide.com/endacopia-clown-theater-puzzle/): theater clues, color answer, and Scalpel route.
+- [Red Ball and operation minigame](https://www.endacopiaguide.com/endacopia-red-ball-guide/): Scalpel surgery and Red Ball progression.
+- [Surgeon Answers](https://www.endacopiaguide.com/endacopia-surgeon-answers/): Ending C question scene and evidence-labelled prompt groups.
+- [Meaning and lore](https://www.endacopiaguide.com/endacopia-meaning-lore/): title meaning, official framing, and community interpretation.
+
+## Evidence Policy
+
+- Official: directly supported by the Steam store, official patch notes, or in-game material.
+- Source-backed: supported by more than one independent public guide or corroborating source.
+- Community-converged: repeated player reports with no owner replay yet.
+- Community report / Replay pending: useful lead, but not a universal confirmed fix.
+- Needs verification: conflicting or incomplete evidence; do not present it as fact.
+
+## Canonical Sources
+
+- [Steam store](https://store.steampowered.com/app/2684630/Endacopia/)
+- [Steam community](https://steamcommunity.com/app/2684630)
+- [Sitemap](https://www.endacopiaguide.com/sitemap.xml)
+
+Last checked: 2026-08-20. This file is a discovery aid, not a guarantee of AI indexing or citation.
