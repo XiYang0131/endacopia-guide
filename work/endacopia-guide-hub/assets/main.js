@@ -207,7 +207,7 @@ const sponsorExcludedPaths = new Set(["/about/", "/contact/", "/editorial-policy
 const renderSponsorSlot = () => {
   if (!document.querySelector(".article") || sponsorExcludedPaths.has(window.location.pathname)) return;
 
-  const anchor = document.querySelector("[data-helpful]") || document.querySelector(".site-footer");
+  const anchor = document.querySelector("[data-helpful]:not(.feedback-button)") || document.querySelector(".feedback-panel") || document.querySelector(".site-footer");
   if (!anchor?.parentNode) return;
 
   const slot = document.createElement("section");
@@ -255,7 +255,9 @@ const renderSponsorSlot = () => {
     : null;
 
   if (observer) observer.observe(slot);
-  window.setTimeout(loadScripts, 7000);
+  window.setTimeout(() => {
+    if (document.visibilityState === "visible") loadScripts();
+  }, 12000);
 
   slot.querySelector("[data-sponsored-link]")?.addEventListener("click", () => {
     track("sponsor_link_click", {

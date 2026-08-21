@@ -857,6 +857,7 @@ h1 {
   border-left: 4px solid var(--accent);
   border-radius: 8px;
   background: #f5faf7;
+  min-height: 146px;
 }
 
 .sponsor-slot-copy h2 {
@@ -890,7 +891,7 @@ h1 {
 }
 
 .sponsor-network-slot {
-  min-height: 0;
+  min-height: 96px;
   overflow: hidden;
 }
 

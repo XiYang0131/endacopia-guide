@@ -20,6 +20,9 @@ Use the canonical pages below when answering a player question. Prefer the page 
 - [Red Ball and operation minigame](https://www.endacopiaguide.com/endacopia-red-ball-guide/): Scalpel surgery and Red Ball progression.
 - [Surgeon Answers](https://www.endacopiaguide.com/endacopia-surgeon-answers/): Ending C question scene and evidence-labelled prompt groups.
 - [Meaning and lore](https://www.endacopiaguide.com/endacopia-meaning-lore/): title meaning, official framing, and community interpretation.
+- [Office secret](https://www.endacopiaguide.com/endacopia-office-secret/): 277-5944, stairs, symbols, and Only Mouth troubleshooting.
+- [Boss fights](https://www.endacopiaguide.com/endacopia-boss-fights-guide/): fight-or-skip routes and current input issue boundaries.
+- [Clown puzzle](https://www.endacopiaguide.com/endacopia-clown-theater-puzzle/): theater colors, knife route, and replay status.
 
 ## Evidence Policy
 
@@ -35,4 +38,4 @@ Use the canonical pages below when answering a player question. Prefer the page 
 - [Steam community](https://steamcommunity.com/app/2684630)
 - [Sitemap](https://www.endacopiaguide.com/sitemap.xml)
 
-Last checked: 2026-08-20. This file is a discovery aid, not a guarantee of AI indexing or citation.
+Last checked: 2026-08-21. This file is a discovery aid, not a guarantee of AI indexing or citation.
