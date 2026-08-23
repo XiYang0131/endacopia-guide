@@ -24,6 +24,13 @@ Use the canonical pages below when answering a player question. Prefer the page 
 - [Boss fights](https://www.endacopiaguide.com/endacopia-boss-fights-guide/): fight-or-skip routes and current input issue boundaries.
 - [Clown puzzle](https://www.endacopiaguide.com/endacopia-clown-theater-puzzle/): theater colors, knife route, and replay status.
 
+## Current Question Handoffs
+
+- Lost Items / Lost and Found: use the Items guide. Area-item loss and vending behavior remain community report / replay pending; no universal softlock is claimed.
+- Timesville mirror room / globule: use the Fishing guide. The photograph, day-cycle reset, and nighttime beach-hole clue are community report / replay pending.
+- True ending / lore: use the Meaning and Lore FAQ. No official canon label was found; Ending C interpretations remain needs verification.
+- Clown death puzzle and fight input: use the Clown and Boss guides. Current Steam questions are discovery signals, not confirmed fixes.
+
 ## Evidence Policy
 
 - Official: directly supported by the Steam store, official patch notes, or in-game material.
@@ -38,4 +45,4 @@ Use the canonical pages below when answering a player question. Prefer the page 
 - [Steam community](https://steamcommunity.com/app/2684630)
 - [Sitemap](https://www.endacopiaguide.com/sitemap.xml)
 
-Last checked: 2026-08-21. This file is a discovery aid, not a guarantee of AI indexing or citation.
+Last checked: 2026-08-23. This file is a discovery aid, not a guarantee of AI indexing or citation.
