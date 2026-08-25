@@ -62,6 +62,21 @@ const markCurrentNavigation = () => {
 markCurrentNavigation();
 
 const nextGuideMap = {
+  "/endacopia-meaning-lore/": [
+    { href: "/endacopia-characters/", label: "Characters and Mellow", reason: "Read the story context behind the title" },
+    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Compare the route interpretations" },
+    { href: "/endacopia-wiki/", label: "Endacopia wiki", reason: "Check terms and source boundaries" }
+  ],
+  "/endacopia-puzzle-solutions/": [
+    { href: "/endacopia-telescope-puzzle/", label: "Telescope puzzle", reason: "Check the phone-clue route" },
+    { href: "/endacopia-items-guide/", label: "Items guide", reason: "Resolve detector or missing-item blockers" },
+    { href: "/endacopia-surgeon-answers/", label: "Surgeon answers", reason: "Continue the scalpel question route" }
+  ],
+  "/endacopia-all-fish-guide/": [
+    { href: "/endacopia-timesville-fishing-guide/", label: "Timesville fishing guide", reason: "Review the fishing-area route" },
+    { href: "/endacopia-items-guide/", label: "Items guide", reason: "Check Fish Paper and Lost Key handoffs" },
+    { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Continue the secret-route checklist" }
+  ],
   "/endacopia-all-endings/": [
     { href: "/endacopia-ending-c-complete-route/", label: "Ending C / Stay route", reason: "Three-secret route checklist" },
     { href: "/endacopia-saw-box-code/", label: "Saw Box 471 guide", reason: "Choose Ending A or B" },
@@ -154,6 +169,9 @@ const renderNextGuidePanel = () => {
   if (recommendations.length === 0) return;
   const answerBox = document.querySelector(".answer-box");
   const topIntentPaths = new Set([
+    "/endacopia-meaning-lore/",
+    "/endacopia-puzzle-solutions/",
+    "/endacopia-all-fish-guide/",
     "/endacopia-water-break-achievement/",
     "/endacopia-save-file-location/",
     "/endacopia-let-me-go-let-me-talk/",
