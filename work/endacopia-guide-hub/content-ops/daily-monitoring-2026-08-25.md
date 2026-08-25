@@ -5,7 +5,7 @@
 - Collection time: 2026-08-25 10:36 Asia/Shanghai. This is the actual read time of the 08:00 scheduled check.
 - Scope: Endacopia and Endacopia Guide Hub; Google demand signals, GA4, GSC, Similarweb availability, public SERP snapshots, Steam community signals, and existing-page ownership.
 - Decision: no new page and no public content backfill today. GSC confirms existing ownership for meaning, telescope, puzzle, soccer-ball, fishing, items, and related guide intent; the new Clocky/save/softlock signals remain community reports without a second source or reproduced test.
-- Publishing boundary: the discovery report itself made no external submission; the approved low-risk maintenance pass is recorded below and remains subject to build, production, and GSC queue verification.
+- Publishing boundary: the approved low-risk maintenance was deployed. The existing sitemap was not resubmitted; five explicitly authorized URL inspection requests were queued. No post, external form, ranking, traffic, or new-indexing claim is made.
 
 ## Query and source parameters
 
@@ -193,8 +193,11 @@ No opportunity meets the two-independent-signal threshold for a new page today. 
 - Approved maintenance implementation: synchronized sitemap `lastmod` and JSON-LD `dateModified` across the 59-page URL set using the newer existing-date rule; pages without the field now use their existing sitemap date.
 - Added targeted `nextGuideMap` handoffs for Meaning/Lore, Puzzle Solutions, and All Fish. The existing `next_guide_click` event format and existing URL set are unchanged.
 - Updated `changelog/index.html` with the audit, routing, and evidence-boundary entries. The 31 long-title and 15 long-description items remain observation-only; no CTR copy rewrite was made.
-- Build/test/diff verification still pending immediately after this report write; run `npm run build`, `git diff --check`, and an untracked-report trailing-whitespace check before handoff.
-- Deployment and GSC indexing submission: pending validation and production handoff.
+- `npm run build`: passed (`Static site: no build step required`). Full static audit: 59 pages, 59 sitemap URLs, 0 canonical errors, 0 H1 errors, 0 GA4 identifier errors, 0 image-alt errors, 0 JSON-LD parse errors, 0 date mismatches, and 0 broken internal links.
+- `nextGuideMap` smoke check: 3 new route groups with 3 existing targets each; `next_guide_click` carries `target_path` and `page_path`. `git diff --check` passed before release; the final report-only diff is rechecked after this update.
+- Commit/push: `4c7a4c4c2a1fe8df3e5ec7b80e168008d8707fe3` pushed to `origin/main`. Vercel production deployment `dpl_3Zmy1r9xnCHGjDNDg8LcikEsyoTG` is `READY` for that exact Git SHA.
+- Production checks: apex `https://endacopiaguide.com/` returns 308 to `https://www.endacopiaguide.com/`; www home, Meaning/Lore, Puzzle Solutions, All Fish, Items, `robots.txt`, `sitemap.xml`, and `assets/main.js` return 200. Public sitemap contains 59 URLs and robots points to the canonical sitemap.
+- GSC: existing `https://www.endacopiaguide.com/sitemap.xml` remains `成功`, submitted 2026-08-23, last read 2026-08-23, 59 discovered pages, 0 videos; it was not resubmitted. URL inspection requests for `/`, `/endacopia-meaning-lore/`, `/endacopia-puzzle-solutions/`, `/endacopia-all-fish-guide/`, and `/endacopia-items-guide/` each returned “已请求编入索引” and entered the priority crawl queue. This is not a claim of indexing, ranking, or traffic.
 - Existing untracked daily reports were preserved.
 
 ## Next review indicators
