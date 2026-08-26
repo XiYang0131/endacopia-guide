@@ -215,8 +215,9 @@ No keyword meets the new-page threshold. Existing URLs already cover every actio
 - Updated the existing Patch Notes page with the official 1.08 fix list and synchronized its JSON-LD `dateModified` and sitemap `lastmod` to 2026-08-26. No title or description change was made. Existing `next_guide_click` routing remains the current implementation.
 - `npm run build`: passed; output `Static site: no build step required`.
 - `git diff --check`: passed with no output.
-- Deployment after the daily run: user-authorized Git push triggered Vercel production deployment `dpl_3F7qux2xoAsQfzBvcBohF3Bm8v7f`; status `READY`; deployment URL `https://endacopia-guide-4r3vpya06-weijiaxis-projects.vercel.app`; source commit `20fd84d8134ccc9bf79a43f618fce8f91c679ab3`.
-- Production verification: `www.endacopiaguide.com` homepage, four priority routes, `robots.txt`, and `sitemap.xml` returned HTTP 200; sitemap contained 59 URLs; all 59 sitemap pages passed production H1, canonical, GA4, and image-alt checks; apex returned HTTP 308 to `https://www.endacopiaguide.com/`.
+- Daily-run deployment: user-authorized Git push triggered Vercel production deployment `dpl_3F7qux2xoAsQfzBvcBohF3Bm8v7f`; status `READY`; deployment URL `https://endacopia-guide-4r3vpya06-weijiaxis-projects.vercel.app`; source commit `20fd84d8134ccc9bf79a43f618fce8f91c679ab3`.
+- Official 1.08 fact update deployment: Vercel production deployment `dpl_7LhFQ2MvrrbF5Zzxd44g9XdQeZtZ`; status `READY`; deployment URL `https://endacopia-guide-js6bo804a-weijiaxis-projects.vercel.app`; source commit `799913092f3708653b3cbad8eb66cb821cb5633c`.
+- Production verification after the fact update: `www.endacopiaguide.com` Patch Notes, Changelog, `robots.txt`, and `sitemap.xml` returned HTTP 200; sitemap contained 59 URLs; all 59 sitemap pages passed production H1, canonical, GA4, image-alt, and date consistency checks; the new 1.08 markers were present; apex returned HTTP 308 to `https://www.endacopiaguide.com/`.
 - GSC URL inspection/indexing: not performed by this daily run.
 - Existing unrelated untracked reports and parent-directory files were preserved.
 
