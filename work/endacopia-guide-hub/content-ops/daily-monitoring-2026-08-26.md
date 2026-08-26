@@ -6,7 +6,7 @@
 - Scope: Endacopia and Endacopia Guide Hub; Google Suggest, Google Trends, GA4, GSC, Similarweb availability, public SERP discovery, Steam, Reddit, and existing-page ownership.
 - Decision: reuse existing pages. No new page and no factual page-body change today. The strongest signals map to Meaning/Lore, All Endings, Puzzle Solutions, Clown/Red Ball, All Fish, Timesville Fishing, Items, Telescope, Soccer Ball, and Surgeon Answers.
 - Evidence boundary: the fishing input report, save-file report, Clocky/Ending C discussion, softlock reports, and combat-input questions remain community reports or needs-verification. They were not promoted to confirmed answers.
-- Release boundary: monitoring record only. No public deploy, GSC URL inspection request, sitemap submission, post, or external form submission was made.
+- Release boundary at data-collection time: monitoring record only; no GSC URL inspection request, sitemap submission, post, or external form submission was made. A later user-authorized production deploy is recorded below.
 
 ## Query and source parameters
 
@@ -215,7 +215,8 @@ No keyword meets the new-page threshold. Existing URLs already cover every actio
 - No public page body, title, description, schema, sitemap, or JavaScript change was made. Existing `next_guide_click` routing remains the current implementation.
 - `npm run build`: passed; output `Static site: no build step required`.
 - `git diff --check`: passed with no output.
-- Deployment: not performed by this daily run.
+- Deployment after the daily run: user-authorized Git push triggered Vercel production deployment `dpl_3F7qux2xoAsQfzBvcBohF3Bm8v7f`; status `READY`; deployment URL `https://endacopia-guide-4r3vpya06-weijiaxis-projects.vercel.app`; source commit `20fd84d8134ccc9bf79a43f618fce8f91c679ab3`.
+- Production verification: `www.endacopiaguide.com` homepage, four priority routes, `robots.txt`, and `sitemap.xml` returned HTTP 200; sitemap contained 59 URLs; all 59 sitemap pages passed production H1, canonical, GA4, and image-alt checks; apex returned HTTP 308 to `https://www.endacopiaguide.com/`.
 - GSC URL inspection/indexing: not performed by this daily run.
 - Existing unrelated untracked reports and parent-directory files were preserved.
 
