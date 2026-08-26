@@ -4,7 +4,7 @@
 
 - Collection time: 2026-08-26 18:33 Asia/Shanghai. This is a manual backfill after the scheduled run was missed.
 - Scope: Endacopia and Endacopia Guide Hub; Google Suggest, Google Trends, GA4, GSC, Similarweb availability, public SERP discovery, Steam, Reddit, and existing-page ownership.
-- Decision: reuse existing pages. No new page and no factual page-body change today. The strongest signals map to Meaning/Lore, All Endings, Puzzle Solutions, Clown/Red Ball, All Fish, Timesville Fishing, Items, Telescope, Soccer Ball, and Surgeon Answers.
+- Decision: reuse existing pages. No new page was created. After the data-only run, a user-authorized official 1.08 patch-fact update was added to the existing Patch Notes page; no unverified route conclusions were changed. The strongest signals map to Meaning/Lore, All Endings, Puzzle Solutions, Clown/Red Ball, All Fish, Timesville Fishing, Items, Telescope, Soccer Ball, and Surgeon Answers.
 - Evidence boundary: the fishing input report, save-file report, Clocky/Ending C discussion, softlock reports, and combat-input questions remain community reports or needs-verification. They were not promoted to confirmed answers.
 - Release boundary at data-collection time: monitoring record only; no GSC URL inspection request, sitemap submission, post, or external form submission was made. A later user-authorized production deploy is recorded below.
 
@@ -212,7 +212,7 @@ No keyword meets the new-page threshold. Existing URLs already cover every actio
 ## Local backfill, tests, and release status
 
 - Added this report: `content-ops/daily-monitoring-2026-08-26.md`.
-- No public page body, title, description, schema, sitemap, or JavaScript change was made. Existing `next_guide_click` routing remains the current implementation.
+- Updated the existing Patch Notes page with the official 1.08 fix list and synchronized its JSON-LD `dateModified` and sitemap `lastmod` to 2026-08-26. No title or description change was made. Existing `next_guide_click` routing remains the current implementation.
 - `npm run build`: passed; output `Static site: no build step required`.
 - `git diff --check`: passed with no output.
 - Deployment after the daily run: user-authorized Git push triggered Vercel production deployment `dpl_3F7qux2xoAsQfzBvcBohF3Bm8v7f`; status `READY`; deployment URL `https://endacopia-guide-4r3vpya06-weijiaxis-projects.vercel.app`; source commit `20fd84d8134ccc9bf79a43f618fce8f91c679ab3`.
