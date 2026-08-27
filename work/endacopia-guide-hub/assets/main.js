@@ -72,6 +72,21 @@ const nextGuideMap = {
     { href: "/endacopia-items-guide/", label: "Items guide", reason: "Resolve detector or missing-item blockers" },
     { href: "/endacopia-surgeon-answers/", label: "Surgeon answers", reason: "Continue the scalpel question route" }
   ],
+  "/endacopia-office-secret/": [
+    { href: "/endacopia-277-5944/", label: "277-5944 phone clue", reason: "Check the Telescope number handoff" },
+    { href: "/endacopia-phone-puzzle-answers/", label: "Phone puzzle answers", reason: "Separate Jobs calls from the Office secret" },
+    { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Continue the Office secret checklist" }
+  ],
+  "/endacopia-surgeon-answers/": [
+    { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Return to the late route after the Surgeon" },
+    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Resolve the connected route blockers" },
+    { href: "/endacopia-meaning-lore/", label: "Meaning and lore", reason: "Separate lore questions from route answers" }
+  ],
+  "/endacopia-phone-puzzle-answers/": [
+    { href: "/endacopia-office-secret/", label: "Office secret", reason: "Follow the Telescope phone clue" },
+    { href: "/endacopia-277-5944/", label: "277-5944 answer", reason: "Check the separate Office number" },
+    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Audit route flags before replaying" }
+  ],
   "/endacopia-all-fish-guide/": [
     { href: "/endacopia-timesville-fishing-guide/", label: "Timesville fishing guide", reason: "Review the fishing-area route" },
     { href: "/endacopia-items-guide/", label: "Items guide", reason: "Check Fish Paper and Lost Key handoffs" },
