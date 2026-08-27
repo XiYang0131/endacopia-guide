@@ -214,8 +214,10 @@ No candidate met the two-independent-signal threshold for a new page or an unver
 - `npm run build`: passed; output `Static site: no build step required`.
 - `git diff --check`: passed with no output for tracked changes; the new untracked report was separately checked and contains no trailing whitespace.
 - Route audit: 59 local `index.html` pages and 59 sitemap URLs remain present; 57 HTML pages reference the new `main.js` cache-bust, with no old reference remaining.
-- Deployment: not performed; the daily task does not auto-deploy.
-- GSC: no URL inspection or indexing request; the 7-day comparison UI error was recorded and not retried.
+- Git deployment source: pushed `main` commit `75fdc02` (`Optimize route handoffs from daily signals`) to `origin`.
+- Vercel CLI was not installed in this environment (`vercel : The term 'vercel' is not recognized...`), so no Vercel dashboard `READY` record was available. Production was verified directly instead: [homepage](https://www.endacopiaguide.com/), [Office Secret](https://www.endacopiaguide.com/endacopia-office-secret/), [Surgeon Answers](https://www.endacopiaguide.com/endacopia-surgeon-answers/), [Phone Puzzle](https://www.endacopiaguide.com/endacopia-phone-puzzle-answers/), [robots.txt](https://www.endacopiaguide.com/robots.txt), and [sitemap.xml](https://www.endacopiaguide.com/sitemap.xml) returned HTTP 200 and served `main.js?v=20260827-route-handoffs`; apex `https://endacopiaguide.com/` returned HTTP 308 to the canonical `www` URL.
+- GSC sitemap: not re-submitted because `https://www.endacopiaguide.com/sitemap.xml` was already listed under `sc-domain:endacopiaguide.com` with status `成功`, 59 discovered pages, and last read 2026-08-23.
+- GSC URL inspection: the homepage was inspected and returned `网址已收录到 Google`; `请求编入索引` returned `已请求编入索引` and added it to the priority crawl queue. The four content-page requests were not confirmed: the batch call ended with `tool call failed ... timed out awaiting tools/call after 300s`, and the single `Meaning/Lore` retry ended with `js execution timed out; kernel reset, rerun your request`. Per the no-retry rule, no further URL requests were made today; these four remain `未确认`, not “已提交”.
 
 ## Verification queue and next review metrics
 
