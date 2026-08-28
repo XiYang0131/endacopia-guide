@@ -4,7 +4,7 @@
 
 - Run date: 2026-08-28, Asia/Shanghai. This is a live manual execution of the daily monitoring task; no old snapshot was substituted for today's reads.
 - Scope: Endacopia and Endacopia Guide Hub; Google Trends, Google Suggest, Similarweb keyword discovery, GA4, GSC, Google US/English SERP, Steam Community, Reddit, and existing-page ownership.
-- Decision: keep the current URL architecture and confirmed page facts. No new page, public body-fact backfill, title/description rewrite, deployment, sitemap submission, or indexing request was made during this scheduled run.
+- Decision: keep the current URL architecture and confirmed page facts. No new page, public body-fact backfill, or title/description rewrite was made. After the monitoring pass, the user explicitly authorized deployment and GSC submission; the validated repository state was deployed, while the GSC inspection flow timed out before a request receipt was obtained.
 - Evidence boundary: Trends indices, Similarweb estimates, personalized SERP modules, and single-player/community reports are discovery evidence. They are not absolute search volume, ranking proof, or canon. Clocky/Ending C prerequisites, save behavior, Broken Phone, fishing input behavior, and combat-input reports remain needs-verification unless supported by official documentation or a reproduced test.
 
 ## Query and source parameters
@@ -169,8 +169,9 @@ No candidate met the two-independent-signal threshold for a new page or an unver
 
 - Added this report: `content-ops/daily-monitoring-2026-08-28.md`.
 - No public page body, title, description, JSON-LD, sitemap, or navigation file was changed in this run.
-- No deployment was performed, consistent with the scheduled-task boundary. No GSC sitemap or priority-URL request was submitted.
-- Existing production version remains the previously verified route-handoff deployment; today's monitoring did not re-release it.
+- User-authorized production deployment: pushed commit `5f83a48` (`Record Endacopia daily monitoring 2026-08-28`) to `origin/main`. Vercel project `weijiaxis-projects/endacopia-guide` produced deployment `https://endacopia-guide-clv3gzdfb-weijiaxis-projects.vercel.app` with status `Ready`, target `production`, and Vercel deployment id `dpl_AMvKKZTvZPjAnQsQ3nKww64JaUHX`.
+- Direct public verification passed: homepage, Meaning/Lore, Puzzle Solutions, All Fish, Items Guide, `robots.txt`, and `sitemap.xml` returned HTTP 200; the apex domain returned HTTP 308 to `https://www.endacopiaguide.com/`. HTML routes served the existing `main.js?v=20260827-route-handoffs` marker.
+- GSC sitemap was not resubmitted because the existing sitemap was already recorded as successful. One URL Inspection navigation was attempted for `/endacopia-meaning-lore/`, but the browser operation failed with `js execution timed out; kernel reset, rerun your request` before a request receipt was visible. Per the no-retry rule, no further inspection or indexing request was made; the five priority URLs remain unconfirmed in this run.
 - Existing unrelated untracked files were preserved.
 - Validation to run after this report is written: `npm run build`, `git diff --check`, and status inspection. No claim of a new public release is made from local validation.
 
