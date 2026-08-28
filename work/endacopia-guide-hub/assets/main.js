@@ -92,6 +92,11 @@ const nextGuideMap = {
     { href: "/endacopia-items-guide/", label: "Items guide", reason: "Check Fish Paper and Lost Key handoffs" },
     { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Continue the secret-route checklist" }
   ],
+  "/endacopia-patch-notes/": [
+    { href: "/endacopia-save-file-location/", label: "Save file guide", reason: "Protect a route before replaying a fix" },
+    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the stable route" },
+    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Resolve the blocker after updating" }
+  ],
   "/endacopia-all-endings/": [
     { href: "/endacopia-ending-c-complete-route/", label: "Ending C / Stay route", reason: "Three-secret route checklist" },
     { href: "/endacopia-saw-box-code/", label: "Saw Box 471 guide", reason: "Choose Ending A or B" },
