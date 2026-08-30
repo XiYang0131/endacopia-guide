@@ -108,7 +108,7 @@ No candidate met the evidence threshold for a new page or unsupported body-fact 
 ## Local backfill, validation, and release
 
 - Added this monitoring record: `content-ops/daily-monitoring-2026-08-30.md`.
-- The follow-up optimization updated only `how-long-to-beat-endacopia/index.html`, its sitemap `lastmod`, the changelog, and the playtime `nextGuideMap` handoff. No title/description rewrite or unverified Clocky, Broken Phone, combat, fishing, or Ending C prerequisite was promoted to fact.
+- The follow-up optimization updated `how-long-to-beat-endacopia/index.html` and `endacopia-meaning-lore/index.html`, their sitemap dates, the changelog, and the playtime/meaning route handoffs. No title/description rewrite or unverified Clocky, Broken Phone, combat, fishing, or Ending C prerequisite was promoted to fact.
 - Build: `npm run build` passed; static output regenerated in `dist`.
 - Diff hygiene: `git diff --check` passed; only existing LF-to-CRLF normalization warnings were emitted.
 - Structural checks: passed for 59 sitemap URLs and 59 unique local pages; every URL mapped locally; every page had one H1, one canonical, a GA4 marker, and image alt coverage; every sitemap `lastmod` matched a JSON-LD `dateModified`.
