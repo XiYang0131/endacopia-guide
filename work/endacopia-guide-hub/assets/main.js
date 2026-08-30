@@ -171,6 +171,11 @@ const nextGuideMap = {
     { href: "/endacopia-100-percent-achievement-checklist/", label: "100% achievement checklist", reason: "Track the remaining unlocks" },
     { href: "/endacopia-prologue-walkthrough/", label: "Prologue walkthrough", reason: "Review the first-room route" },
     { href: "/endacopia-screenshot-checklist/", label: "Screenshot checklist", reason: "Capture proof for a route" }
+  ],
+  "/how-long-to-beat-endacopia/": [
+    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Reduce search and backtracking time" },
+    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Plan the replay branches" },
+    { href: "/endacopia-100-percent-achievement-checklist/", label: "100% checklist", reason: "Estimate the remaining cleanup" }
   ]
 };
 
@@ -197,7 +202,8 @@ const renderNextGuidePanel = () => {
     "/endacopia-let-me-go-let-me-talk/",
     "/endacopia-clown-theater-puzzle/",
     "/endacopia-red-ball-guide/",
-    "/endacopia-soccer-ball/"
+    "/endacopia-soccer-ball/",
+    "/how-long-to-beat-endacopia/"
   ]);
 
   const panel = document.createElement("section");
