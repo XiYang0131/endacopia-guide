@@ -114,7 +114,7 @@ No candidate met the evidence threshold for a new page or unsupported body-fact 
 - Structural checks: passed for 59 sitemap URLs and 59 unique local pages; every URL mapped locally; every page had one H1, one canonical, a GA4 marker, and image alt coverage; every sitemap `lastmod` matched a JSON-LD `dateModified`.
 - Deployment: Vercel production deployment `dpl_9dLvVBj9yKpX3FLGt4gPsZs3Vi1T` reached `READY` and was aliased to `https://www.endacopiaguide.com`. Inspect URL: https://vercel.com/weijiaxis-projects/endacopia-guide/9dLvVBj9yKpX3FLGt4gPsZs3Vi1T.
 - Public verification: `/`, `/endacopia-meaning-lore/`, `/endacopia-puzzle-solutions/`, `/endacopia-all-fish-guide/`, `/endacopia-items-guide/`, `/robots.txt`, `/sitemap.xml`, and `/content-ops/daily-monitoring-2026-08-30.md` returned HTTP `200`. The public sitemap contained `59` `<loc>` entries. Apex `https://endacopiaguide.com/` returned HTTP `308` with `Location: https://www.endacopiaguide.com/`.
-- GSC: no new automated sitemap or URL request was made because the live UI failed with `ERR_CONNECTION_CLOSED`. This is a blocked GSC action, not a successful submission.
+- GSC: `https://www.endacopiaguide.com/sitemap.xml` was successfully submitted in the logged-in UI on 2026-08-30. The table showed status `成功`, last read today, and 59 discovered pages. The priority URL request was not completed: the direct inspection path returned a GSC 404, and subsequent browser recovery navigation was blocked by the browser URL policy. No indexing, ranking, or traffic claim is made.
 
 ## Verification queue and next review metrics
 
@@ -127,4 +127,4 @@ No candidate met the evidence threshold for a new page or unsupported body-fact 
 ## Release results
 
 - Completed: Vercel production status `READY`; public route verification passed as recorded above.
-- GSC handoff: not completed today because the Search Console UI returned `ERR_CONNECTION_CLOSED`; no sitemap or priority-URL request is claimed for this run.
+- GSC handoff: sitemap submission completed successfully with 59 discovered pages. Priority URL request remains blocked by the GSC inspection-route/browser-policy error described above.
