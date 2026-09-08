@@ -38,8 +38,8 @@ The public search result set continues to show strong answer-first patterns arou
 - Updated only the visible anchor headings and freshness metadata on Items, Puzzle Solutions, and Changelog; titles/descriptions and gameplay facts were not rewritten.
 - `npm run build` passed at the repository root and copied the static site to `dist`.
 - Static audit passed: 59 pages, 59 sitemap URLs, 0 page assertion issues, 0 URL issues, and 0 sitemap/JSON-LD date mismatches.
-- The September 7 production change remains live with the Meaning/Lore title `What Does Endacopia Mean? Story, Lore & Horror Explained`. The September 8 anchor update is local until the authorized production push is completed.
-- GSC URL inspection was not available in this run because the browser bridge still failed with `failed to write kernel assets: 系统找不到指定的路径。 (os error 3)`; no indexing request is claimed.
+- The September 7 production change remains live with the Meaning/Lore title `What Does Endacopia Mean? Story, Lore & Horror Explained`. The September 8 anchor update was pushed in commit `9b0990d`; public Items Guide, Puzzle Solutions, Changelog, and sitemap checks returned HTTP 200, and the apex returned 308 to the canonical www host.
+- GSC URL inspection was not available in this run because the browser bridge still failed with `failed to write kernel assets: 系统找不到指定的路径。 (os error 3)`; no indexing request is claimed. The existing sitemap remains the correct crawl handoff, but a new URL Inspection receipt was not obtained.
 
 ## Evidence status and next run
 
