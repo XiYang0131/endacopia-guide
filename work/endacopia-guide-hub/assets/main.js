@@ -61,6 +61,57 @@ const markCurrentNavigation = () => {
 
 markCurrentNavigation();
 
+const topBannerConfig = {
+  key: "027ceae82d4b46f6acf3541e08932f70",
+  format: "iframe",
+  height: 90,
+  width: 728,
+  params: {}
+};
+
+const topBannerExcludedPaths = new Set(["/about/", "/contact/", "/editorial-policy/", "/privacy/", "/changelog/"]);
+
+const renderTopBanner = () => {
+  const header = document.querySelector(".site-header");
+  if (!header || document.querySelector("[data-top-banner]") || topBannerExcludedPaths.has(normalizePath(window.location.pathname))) return;
+
+  const slot = document.createElement("section");
+  slot.className = "header-banner-slot";
+  slot.dataset.topBanner = "true";
+  slot.setAttribute("aria-label", "Advertisement");
+  slot.innerHTML = `
+    <span class="header-banner-label">Advertisement</span>
+    <div class="header-banner-network" data-top-banner-network></div>
+  `;
+
+  const network = slot.querySelector("[data-top-banner-network]");
+  window.atOptions = topBannerConfig;
+
+  const adScript = document.createElement("script");
+  adScript.src = "https://www.highrevenueformat.com/027ceae82d4b46f6acf3541e08932f70/invoke.js";
+  adScript.addEventListener("load", () => {
+    track("banner_ad_loaded", {
+      page_path: window.location.pathname,
+      provider: "highrevenueformat",
+      format: "iframe",
+      placement: "below_primary_nav"
+    });
+  });
+  adScript.addEventListener("error", () => {
+    track("banner_ad_error", {
+      page_path: window.location.pathname,
+      provider: "highrevenueformat",
+      format: "iframe",
+      placement: "below_primary_nav"
+    });
+  });
+
+  header.insertAdjacentElement("afterend", slot);
+  network.append(adScript);
+};
+
+renderTopBanner();
+
 const nextGuideMap = {
   "/endacopia-meaning-lore/": [
     { href: "/endacopia-characters/", label: "Characters and Mellow", reason: "Read the story context behind the title" },
