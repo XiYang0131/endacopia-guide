@@ -3,57 +3,62 @@
 ## Scope and evidence boundary
 
 - Site: `https://www.endacopiaguide.com/`
-- GSC property: `sc-domain:endacopiaguide.com`
-- GSC search type: Web search
-- GSC data freshness shown in the UI: last updated 19 hours ago; this is not a same-day-complete dataset.
-- Main windows: 7 days (`2026-08-31`–`2026-09-06`) and 28 days (`2026-08-10`–`2026-09-06`).
+- GSC property: `sc-domain:endacopiaguide.com`; API permission: `siteOwner`.
+- GA4 property: `483141489` (`Endacopia`); GA4 and GSC API status: `ok`.
+- Authorization: local OAuth desktop client with GA4 read-only and Search Console read-only scopes; no token or secret is stored in this report.
+- API windows: 7 days (`2026-09-02`–`2026-09-08`) and 28 days (`2026-08-12`–`2026-09-08`), timezone `Asia/Shanghai`.
+- The earlier browser UI snapshot is retained below only as historical context; API results are the primary current dataset.
 - No fresh Similarweb estimate was reused. No fresh Google Trends result was treated as available after the direct request returned HTTP 429.
 
 ## GSC observations
 
-### 7-day window
+### GSC API — 7-day window
 
-- Clicks: `2,014`
-- Impressions: `45,909`
-- CTR: `4.4%`
-- Average position: `6.1`
-
-Top queries observed:
-
-| Query | Clicks | Impressions |
-|---|---:|---:|
-| `endacopia telescope` | 53 | 373 |
-| `endacopia metal detector` | 34 | 259 |
-| `endacopia meaning` | 29 | 2,255 |
-| `endacopia water break` | 26 | 64 |
-| `endacopia soccer ball timing` | 22 | 174 |
-| `endacopia office secret` | 19 | 58 |
-| `metal detector endacopia` | 17 | 120 |
-| `endacopia office secret puzzle` | 17 | 55 |
-| `telescope endacopia` | 13 | 106 |
-| `endacopia scalpel` | 12 | 49 |
-
-### 28-day window
-
-- Clicks: `6,208`
-- Impressions: `167,996`
-- CTR: `3.7%`
-- Average position: `6.2`
+- Page-dimension clicks: `1,839`
+- Page-dimension impressions: `43,768`
+- Page-dimension CTR: `4.20%`
+- Page-dimension average position: `6.24`
+- Previous 7-day page-dimension clicks/impressions: `1,895` / `57,979`
+- Previous 7-day page-dimension CTR/position: `3.27%` / `6.35`
 
 Top queries observed:
 
 | Query | Clicks | Impressions |
 |---|---:|---:|
-| `endacopia telescope` | 123 | 973 |
-| `endacopia meaning` | 103 | 11,615 |
-| `endacopia water break` | 68 | 217 |
-| `endacopia soccer ball timing` | 65 | 639 |
-| `endacopia metal detector` | 63 | 720 |
-| `endacopia office secret` | 47 | 186 |
-| `endacopia scalpel` | 47 | 175 |
-| `endacopia steam deck` | 41 | 252 |
-| `telescope endacopia` | 40 | 329 |
-| `water break endacopia` | 37 | 124 |
+| `endacopia meaning` | 108 | 11,915 |
+| `what does endacopia mean` | 6 | 1,355 |
+| `endacopia definition` | 3 | 1,327 |
+| `endacopia telescope` | 130 | 1,034 |
+| `endacopia fishing guide` | 26 | 905 |
+| `endacopia metal detector` | 69 | 759 |
+| `endacopia all fish` | 14 | 719 |
+| `endacopia soccer ball timing` | 74 | 685 |
+| `endacopia surgeon questions` | 2 | 659 |
+| `endacopia lore` | 24 | 622 |
+
+### GSC API — 28-day window
+
+- Page-dimension clicks: `6,516`
+- Page-dimension impressions: `184,960`
+- Page-dimension CTR: `3.52%`
+- Page-dimension average position: `6.37`
+- Previous 28-day page-dimension clicks/impressions: `508` / `15,706`
+- Previous 28-day page-dimension CTR/position: `3.23%` / `7.54`
+
+Top queries observed:
+
+| Query | Clicks | Impressions |
+|---|---:|---:|
+| `endacopia meaning` | 108 | 11,915 |
+| `what does endacopia mean` | 6 | 1,355 |
+| `endacopia definition` | 3 | 1,327 |
+| `endacopia telescope` | 130 | 1,034 |
+| `endacopia fishing guide` | 26 | 905 |
+| `endacopia metal detector` | 69 | 759 |
+| `endacopia all fish` | 14 | 719 |
+| `endacopia soccer ball timing` | 74 | 685 |
+| `endacopia surgeon questions` | 2 | 659 |
+| `endacopia lore` | 24 | 622 |
 
 ### Query-to-page assessment
 
@@ -77,7 +82,23 @@ Top queries observed:
 | `/endacopia-save-file-location/` | 314 | 2,978 |
 | `/endacopia-meaning-lore/` | 297 | 22,848 |
 
-## GA4 realtime observation
+## GA4 API observation — 28-day window
+
+The API returned historical landing-page and source/medium data for property `483141489`. The strongest landing pages were:
+
+| Landing page | Sessions | Active users | Page views | Engagement rate |
+|---|---:|---:|---:|---:|
+| `/` | 735 | 637 | 1,461 | 71.6% |
+| `/endacopia-telescope-puzzle/` | 634 | 571 | 897 | 87.5% |
+| `/endacopia-puzzle-solutions/` | 633 | 567 | 911 | 77.7% |
+| `/endacopia-water-break-achievement/` | 433 | 394 | 530 | 85.5% |
+| `/endacopia-soccer-ball/` | 390 | 358 | 445 | 86.2% |
+| `/endacopia-items-guide/` | 348 | 317 | 425 | 75.9% |
+| `/endacopia-meaning-lore/` | 302 | 290 | 356 | 72.5% |
+
+For `google / organic`, the API returned 609 sessions to Telescope, 582 to Puzzle Solutions, 416 to Water Break, 374 to Soccer Ball, 343 to All Fish, 319 to Items, and 285 to Meaning/Lore. These are GA4 sessions and are not substituted for GSC clicks.
+
+## GA4 realtime observation (browser cross-check)
 
 - Property: `Endacopia`.
 - Scope: Realtime overview; not a complete historical acquisition report.
