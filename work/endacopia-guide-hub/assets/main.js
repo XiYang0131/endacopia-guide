@@ -61,7 +61,7 @@ const markCurrentNavigation = () => {
 
 markCurrentNavigation();
 
-const topBannerConfig = {
+const contentBannerConfig = {
   key: "027ceae82d4b46f6acf3541e08932f70",
   format: "iframe",
   height: 90,
@@ -69,23 +69,25 @@ const topBannerConfig = {
   params: {}
 };
 
-const topBannerExcludedPaths = new Set(["/about/", "/contact/", "/editorial-policy/", "/privacy/", "/changelog/"]);
+const contentBannerExcludedPaths = new Set(["/about/", "/contact/", "/editorial-policy/", "/privacy/", "/changelog/"]);
 
-const renderTopBanner = () => {
-  const header = document.querySelector(".site-header");
-  if (!header || document.querySelector("[data-top-banner]") || topBannerExcludedPaths.has(normalizePath(window.location.pathname))) return;
+const renderContentBanner = () => {
+  const article = document.querySelector("article.article");
+  const main = document.querySelector("main.main");
+  const target = article || main;
+  if (!target || document.querySelector("[data-content-banner]") || contentBannerExcludedPaths.has(normalizePath(window.location.pathname))) return;
 
   const slot = document.createElement("section");
-  slot.className = "header-banner-slot";
-  slot.dataset.topBanner = "true";
+  slot.className = "content-banner-slot";
+  slot.dataset.contentBanner = "true";
   slot.setAttribute("aria-label", "Advertisement");
   slot.innerHTML = `
-    <span class="header-banner-label">Advertisement</span>
-    <div class="header-banner-network" data-top-banner-network></div>
+    <span class="content-banner-label">Advertisement</span>
+    <div class="content-banner-network" data-content-banner-network></div>
   `;
 
-  const network = slot.querySelector("[data-top-banner-network]");
-  window.atOptions = topBannerConfig;
+  const network = slot.querySelector("[data-content-banner-network]");
+  window.atOptions = contentBannerConfig;
 
   const adScript = document.createElement("script");
   adScript.src = "https://www.highrevenueformat.com/027ceae82d4b46f6acf3541e08932f70/invoke.js";
@@ -94,7 +96,7 @@ const renderTopBanner = () => {
       page_path: window.location.pathname,
       provider: "highrevenueformat",
       format: "iframe",
-      placement: "below_primary_nav"
+      placement: "article_end"
     });
   });
   adScript.addEventListener("error", () => {
@@ -102,15 +104,15 @@ const renderTopBanner = () => {
       page_path: window.location.pathname,
       provider: "highrevenueformat",
       format: "iframe",
-      placement: "below_primary_nav"
+      placement: "article_end"
     });
   });
 
-  header.insertAdjacentElement("afterend", slot);
+  target.append(slot);
   network.append(adScript);
 };
 
-renderTopBanner();
+renderContentBanner();
 
 const nextGuideMap = {
   "/endacopia-meaning-lore/": [
