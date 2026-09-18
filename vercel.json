@@ -6,6 +6,15 @@
   "trailingSlash": true,
   "headers": [
     {
+      "source": "/assets/steam-authorized/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
       "source": "/assets/og/(.*)",
       "headers": [
         {

@@ -20,7 +20,8 @@
 - 通用静态检查：H1、canonical、GA标识、JSON-LD、日期、站内路径及锚点通过。
 - 广告代码块不变检查通过。node --check 与 git diff --check 通过。
 - 图片抽查：Office 与 Fishing 1280px 版文字可辨。未完成浏览器页面布局或 Lighthouse 复测。
-- 生产部署：待验证。
+- 首轮生产版本 e151e6b，Vercel READY。59页、main.js、sitemap.xml、robots.txt 均返回200且匹配本地；Phone单次超时后独立复核通过。11个WebP资源均为200且字节一致。
+- 线上响应发现授权图的Cache-Control仍为max-age=0：站点子目录已有规则，但生产根目录vercel.json未包含该目录。已补生产根目录规则，复用现有截图长期缓存策略；待复核最终部署。
 
 ## 逐页清单
 
@@ -92,4 +93,3 @@
 - 真实用户 p75 目标：LCP ≤2.5s、INP ≤200ms、CLS ≤0.1。需等待真实样本，静态测试不能替代 CrUX。
 - sitemap 无新 URL；性能更新不意味着重新收录或排名增长。
 - 参考：https://web.dev/articles/optimize-lcp 、https://web.dev/articles/fetch-priority 。
-
