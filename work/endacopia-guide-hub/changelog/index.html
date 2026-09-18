@@ -18,7 +18,7 @@
     <meta name="twitter:title" content="Endacopia Guide Hub Changelog">
     <meta name="twitter:description" content="Changelog for Endacopia Guide Hub, including guide coverage, image fixes, SEO metadata, and source-backed route updates.">
     <meta name="twitter:image" content="https://www.endacopiaguide.com/assets/og/endacopia-guide-og.jpg">
-    <link rel="preload" as="image" href="/assets/endacopia-header-20260730.jpg">
+    <link rel="preload" as="image" href="/assets/endacopia-header-20260730.jpg" media="(min-width: 921px)">
     <link rel="stylesheet" href="/assets/styles.css?v=20260828-seo-audit">
     <script type="application/ld+json">
 {
@@ -123,6 +123,7 @@
 
           <h2>September 18, 2026</h2>
           <ul class="shot-list">
+            <li><strong>Page performance</strong><span>Pre-rendered next-guide panels to avoid late insertion, adjusted offscreen image loading, added responsive WebP copies of authorized screenshots, and reduced repeated search and scroll work. Advertising unchanged; field Core Web Vitals have not yet been remeasured.</span></li>
             <li><strong>Focused route handoffs</strong><span>Added direct answer-section links and crawlable next steps to Puzzle Solutions, Soccer Ball and Items. The Core Key link now opens the relevant item section instead of a code table.</span></li>
             <li><strong>Clocky search help</strong><span>Separated first-fight, Clockey rematch / Overclockey and Ending C questions with anchored links. Retained community-report labels and the disputed opening-fight caveat; no new combat inputs or prerequisites asserted.</span></li>
             <li><strong>Scope</strong><span>Existing next-guide analytics retained. No advertising, Meaning page, title or description changes.</span></li>
@@ -388,7 +389,7 @@
 
         <aside class="sidebar">
           <section class="side-panel game-card">
-            <img src="/assets/endacopia-header-20260730.jpg" width="460" height="215" alt="Endacopia game key art" decoding="async" fetchpriority="high">
+            <img loading="lazy" src="/assets/endacopia-header-20260730.jpg" width="460" height="215" alt="Endacopia game key art" decoding="async">
             <div class="game-card-body">
               <strong>Endacopia</strong>
               <span>Version notes and next proof targets for the guide hub.</span>
@@ -423,6 +424,6 @@
         <span><a href="/">Home</a> | <a href="/about/">About</a> | <a href="/contact/">Contact</a> | <a href="/editorial-policy/">Editorial Policy</a> | <a href="/changelog/">Changelog</a> | <a href="/sitemap.xml">Sitemap</a></span>
       </div>
     </footer>
-    <script src="/assets/main.js?v=20260911-article-banner"></script>
+    <script src="/assets/main.js?v=20260918-performance"></script>
   </body>
 </html>

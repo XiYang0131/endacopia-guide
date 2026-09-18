@@ -114,182 +114,7 @@ const renderContentBanner = () => {
 
 renderContentBanner();
 
-const nextGuideMap = {
-  "/endacopia-meaning-lore/": [
-    { href: "/endacopia-characters/", label: "Characters and Mellow", reason: "Read the story context behind the title" },
-    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Compare the route interpretations" },
-    { href: "/endacopia-wiki/", label: "Endacopia wiki", reason: "Check terms and source boundaries" }
-  ],
-  "/endacopia-puzzle-solutions/": [
-    { href: "/endacopia-telescope-puzzle/", label: "Telescope puzzle", reason: "Check the phone-clue route" },
-    { href: "/endacopia-items-guide/", label: "Items guide", reason: "Resolve detector or missing-item blockers" },
-    { href: "/endacopia-surgeon-answers/", label: "Surgeon answers", reason: "Continue the scalpel question route" }
-  ],
-  "/endacopia-office-secret/": [
-    { href: "/endacopia-277-5944/", label: "277-5944 phone clue", reason: "Check the Telescope number handoff" },
-    { href: "/endacopia-phone-puzzle-answers/", label: "Phone puzzle answers", reason: "Separate Jobs calls from the Office secret" },
-    { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Continue the Office secret checklist" }
-  ],
-  "/endacopia-surgeon-answers/": [
-    { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Return to the late route after the Surgeon" },
-    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Resolve the connected route blockers" },
-    { href: "/endacopia-meaning-lore/", label: "Meaning and lore", reason: "Separate lore questions from route answers" }
-  ],
-  "/endacopia-phone-puzzle-answers/": [
-    { href: "/endacopia-office-secret/", label: "Office secret", reason: "Follow the Telescope phone clue" },
-    { href: "/endacopia-277-5944/", label: "277-5944 answer", reason: "Check the separate Office number" },
-    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Audit route flags before replaying" }
-  ],
-  "/endacopia-all-fish-guide/": [
-    { href: "/endacopia-timesville-fishing-guide/", label: "Timesville fishing guide", reason: "Review the fishing-area route" },
-    { href: "/endacopia-items-guide/", label: "Items guide", reason: "Check Fish Paper and Lost Key handoffs" },
-    { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Continue the secret-route checklist" }
-  ],
-  "/endacopia-patch-notes/": [
-    { href: "/endacopia-save-file-location/", label: "Save file guide", reason: "Protect a route before replaying a fix" },
-    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the stable route" },
-    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Resolve the blocker after updating" }
-  ],
-  "/endacopia-all-endings/": [
-    { href: "/endacopia-ending-c-complete-route/", label: "Ending C / Stay route", reason: "Three-secret route checklist" },
-    { href: "/endacopia-saw-box-code/", label: "Saw Box 471 guide", reason: "Choose Ending A or B" },
-    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Audit a missing trigger" }
-  ],
-  "/endacopia-timesville-fishing-guide/": [
-    { href: "/endacopia-all-fish-guide/", label: "All fish guide", reason: "Track the full 18-fish route" },
-    { href: "/endacopia-secret-ending/", label: "Secret ending guide", reason: "Continue the Stay route" },
-    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Fix a missing flag" }
-  ],
-  "/endacopia-telescope-puzzle/": [
-    { href: "/endacopia-timesville-fishing-guide/", label: "Fish Key / Lost Key guide", reason: "Check the 18-fish route" },
-    { href: "/endacopia-office-secret/", label: "Office secret", reason: "Use the Telescope clue" },
-    { href: "/endacopia-ending-c-complete-route/", label: "Ending C route", reason: "Continue the three-secret path" }
-  ],
-  "/endacopia-items-guide/": [
-    { href: "/endacopia-timesville-fishing-guide/", label: "Fish Key / Lost Key guide", reason: "Track the separate Timesville route" },
-    { href: "/endacopia-telescope-puzzle/", label: "Telescope puzzle", reason: "Check the Shed night trigger" },
-    { href: "/endacopia-save-file-location/", label: "Save file guide", reason: "Protect a route before replaying" }
-  ],
-  "/endacopia-scribbly/": [
-    { href: "/endacopia-map/", label: "Endacopia map guide", reason: "Use the reward map correctly" },
-    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Move past the next blocker" },
-    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the main route" }
-  ],
-  "/endacopia-clown-theater-puzzle/": [
-    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Find the next exact answer" },
-    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Continue the story route" },
-    { href: "/endacopia-beginner-guide/", label: "Beginner guide", reason: "Review the early-game setup" }
-  ],
-  "/endacopia-achievements-guide/": [
-    { href: "/endacopia-100-percent-achievement-checklist/", label: "100% checklist", reason: "Track every unlock" },
-    { href: "/endacopia-stay-achievement/", label: "Stay achievement", reason: "Target the secret ending" },
-    { href: "/endacopia-the-yeti-ending/", label: "The Yeti route", reason: "Clean up the hidden achievement" }
-  ],
-  "/endacopia-save-file-location/": [
-    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the route" },
-    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Plan a safe replay" },
-    { href: "/endacopia-download/", label: "Download and backup notes", reason: "Keep a recoverable copy" }
-  ],
-  "/endacopia-water-break-achievement/": [
-    { href: "/endacopia-timesville-fishing-guide/", label: "Timesville fishing guide", reason: "Continue the area route" },
-    { href: "/endacopia-office-secret/", label: "Office secret guide", reason: "Check the stable Office interaction" },
-    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Audit a missing flag" }
-  ],
-  "/endacopia-let-me-go-let-me-talk/": [
-    { href: "/endacopia-office-secret/", label: "Office secret guide", reason: "Continue the corporate route" },
-    { href: "/endacopia-phone-puzzle-answers/", label: "Phone puzzle answers", reason: "Solve the next Office blocker" },
-    { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Return to the main route" }
-  ],
-  "/endacopia-red-ball-guide/": [
-    { href: "/endacopia-clown-theater-puzzle/", label: "Clown theater puzzle", reason: "Check the color setup" },
-    { href: "/endacopia-trapezist/", label: "Trapezist route", reason: "Continue the Misery Town branch" },
-    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Find the next exact answer" }
-  ],
-  "/endacopia-ending-c-complete-route/": [
-    { href: "/endacopia-ending-c-not-triggering/", label: "Ending C troubleshooting", reason: "Audit the final trigger" },
-    { href: "/endacopia-timesville-fishing-guide/", label: "Fish Key / Lost Key guide", reason: "Finish the Timesville secret" },
-    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Compare the branch map" }
-  ],
-  "/endacopia-ending-c-not-triggering/": [
-    { href: "/endacopia-ending-c-complete-route/", label: "Ending C complete route", reason: "Run the full three-secret order" },
-    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Check boss-return branches" },
-    { href: "/endacopia-save-file-location/", label: "Save file guide", reason: "Restore a safe backup" }
-  ],
-  "/endacopia-boss-fights-guide/": [
-    { href: "/endacopia-ending-c-complete-route/", label: "Ending C route", reason: "Check boss-return consequences" },
-    { href: "/endacopia-trapezist/", label: "Trapezist route", reason: "Compare fight and avoid paths" },
-    { href: "/endacopia-red-ball-guide/", label: "Operation minigame", reason: "Continue the Misery Town route" }
-  ],
-  "/endacopia-soccer-ball/": [
-    { href: "/endacopia-100-percent-achievement-checklist/", label: "100% achievement checklist", reason: "Track the remaining unlocks" },
-    { href: "/endacopia-prologue-walkthrough/", label: "Prologue walkthrough", reason: "Review the first-room route" },
-    { href: "/endacopia-screenshot-checklist/", label: "Screenshot checklist", reason: "Capture proof for a route" }
-  ],
-  "/how-long-to-beat-endacopia/": [
-    { href: "/endacopia-puzzle-solutions/", label: "Puzzle solutions", reason: "Reduce search and backtracking time" },
-    { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Plan the replay branches" },
-    { href: "/endacopia-100-percent-achievement-checklist/", label: "100% checklist", reason: "Estimate the remaining cleanup" }
-  ]
-};
-
-const fallbackNextGuides = [
-  { href: "/endacopia-guides/", label: "Guide index", reason: "Choose a focused answer" },
-  { href: "/endacopia-walkthrough/", label: "Full walkthrough", reason: "Continue the main route" },
-  { href: "/endacopia-all-endings/", label: "All endings guide", reason: "Plan the final branches" }
-];
-
-const renderNextGuidePanel = () => {
-  const feedbackPanel = document.querySelector("[data-helpful]");
-  if (!feedbackPanel || document.querySelector("[data-next-guide]")) return;
-
-  const currentPath = window.location.pathname;
-  const recommendations = (nextGuideMap[currentPath] || fallbackNextGuides).filter((guide) => guide.href !== currentPath);
-  if (recommendations.length === 0) return;
-  const answerBox = document.querySelector(".answer-box");
-  const topIntentPaths = new Set([
-    "/endacopia-meaning-lore/",
-    "/endacopia-puzzle-solutions/",
-    "/endacopia-all-fish-guide/",
-    "/endacopia-water-break-achievement/",
-    "/endacopia-save-file-location/",
-    "/endacopia-let-me-go-let-me-talk/",
-    "/endacopia-clown-theater-puzzle/",
-    "/endacopia-red-ball-guide/",
-    "/endacopia-soccer-ball/",
-    "/how-long-to-beat-endacopia/"
-  ]);
-
-  const panel = document.createElement("section");
-  panel.className = "next-guide-panel";
-  panel.dataset.nextGuide = "true";
-  panel.setAttribute("aria-labelledby", "next-guide-title");
-
-  const copy = document.createElement("div");
-  copy.className = "next-guide-copy";
-  copy.innerHTML = '<span class="eyebrow">Next step</span><h2 id="next-guide-title">Continue this route</h2><p>Use the next focused guide instead of restarting the search from the homepage.</p>';
-
-  const links = document.createElement("div");
-  links.className = "next-guide-links";
-  recommendations.forEach((guide) => {
-    const link = document.createElement("a");
-    link.className = "next-guide-link";
-    link.dataset.nextGuideLink = "true";
-    link.href = guide.href;
-
-    const label = document.createElement("strong");
-    label.textContent = guide.label;
-    const reason = document.createElement("span");
-    reason.textContent = guide.reason;
-    link.append(label, reason);
-    links.append(link);
-  });
-
-  panel.append(copy, links);
-  const insertionPoint = topIntentPaths.has(currentPath) && answerBox ? answerBox : feedbackPanel;
-  insertionPoint.parentNode.insertBefore(panel, insertionPoint === answerBox ? answerBox.nextSibling : feedbackPanel);
-};
-
-renderNextGuidePanel();
+// Next-guide panels are in static HTML to avoid late layout shifts.
 
 const sponsorAdConfig = {
   link: "https://www.effectivecpmnetwork.com/z2pkz9ua?key=3a78117943f8cc61a51702eb6455e146",
@@ -368,26 +193,32 @@ renderSponsorSlot();
 
 if (searchInput && cards.length > 0) {
   let searchTracked = false;
+  let searchFrame = 0;
+  // Read text once; rapid inputs share one DOM update per animation frame.
+  const searchableCards = cards.map((card) => ({ card, text: card.textContent.toLowerCase() }));
   searchInput.addEventListener("input", () => {
-    const query = searchInput.value.trim().toLowerCase();
-    let visibleCards = 0;
-    cards.forEach((card) => {
-      const text = card.textContent.toLowerCase();
-      const matches = query.length === 0 || text.includes(query);
-      card.classList.toggle("hidden", !matches);
-      if (matches) visibleCards += 1;
-    });
-
-    if (searchEmpty) {
-      searchEmpty.hidden = query.length === 0 || visibleCards > 0;
-    }
-
-    if (!searchTracked && query.length >= 2) {
-      searchTracked = true;
-      track("guide_search_used", {
-        search_term: query.slice(0, 80)
+    if (searchFrame) return;
+    searchFrame = window.requestAnimationFrame(() => {
+      searchFrame = 0;
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCards = 0;
+      searchableCards.forEach(({ card, text }) => {
+        const matches = query.length === 0 || text.includes(query);
+        card.classList.toggle("hidden", !matches);
+        if (matches) visibleCards += 1;
       });
-    }
+
+      if (searchEmpty) {
+        searchEmpty.hidden = query.length === 0 || visibleCards > 0;
+      }
+
+      if (!searchTracked && query.length >= 2) {
+        searchTracked = true;
+        track("guide_search_used", {
+          search_term: query.slice(0, 80)
+        });
+      }
+    });
   });
 }
 
@@ -523,7 +354,9 @@ document.querySelectorAll("code").forEach((code) => {
 
 let scrolledHalf = false;
 let scrolledNinety = false;
-window.addEventListener("scroll", () => {
+let scrollFrame = 0;
+const checkScrollDepth = () => {
+  scrollFrame = 0;
   const scrollable = document.documentElement.scrollHeight - window.innerHeight;
   if (scrollable <= 0) return;
 
@@ -540,8 +373,13 @@ window.addEventListener("scroll", () => {
     track("guide_scroll_90", {
       page_path: window.location.pathname
     });
+    window.removeEventListener("scroll", scheduleScrollDepth);
   }
-}, { passive: true });
+};
+const scheduleScrollDepth = () => {
+  if (!scrollFrame) scrollFrame = window.requestAnimationFrame(checkScrollDepth);
+};
+window.addEventListener("scroll", scheduleScrollDepth, { passive: true });
 
 const checklist = document.querySelector("[data-achievement-checklist]");
 
