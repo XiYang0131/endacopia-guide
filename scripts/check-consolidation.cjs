@@ -8,7 +8,7 @@ const sourceConfig=JSON.parse(fs.readFileSync(path.join(repo,'work/endacopia-gui
 assert.deepEqual(config.redirects,sourceConfig.redirects,'Deployment configs must agree');
 retired.forEach((s,i)=>{
  assert(!fs.existsSync(path.join(root,s,'index.html')),'Retired article still served: '+s);
- const rules=config.redirects.filter(r=>r.source==='/'+s+'/:path*');assert.equal(rules.length,1);
+ const rules=config.redirects.filter(r=>r.source==='/'+s+'/');assert.equal(rules.length,1);
  assert.equal(rules[0].permanent,true);assert.equal(rules[0].destination,'https://www.endacopiaguide.com/'+destinations[i]+'/');
  assert(!retired.includes(new URL(rules[0].destination).pathname.split('/')[1]),'Redirect chain');
 });

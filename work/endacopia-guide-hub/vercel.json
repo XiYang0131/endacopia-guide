@@ -41,17 +41,17 @@
   ],
   "redirects": [
     {
-      "source": "/endacopia-prologue-walkthrough/:path*",
+      "source": "/endacopia-prologue-walkthrough/",
       "destination": "https://www.endacopiaguide.com/endacopia-beginner-guide/",
       "permanent": true
     },
     {
-      "source": "/endacopia-secret-ending/:path*",
+      "source": "/endacopia-secret-ending/",
       "destination": "https://www.endacopiaguide.com/endacopia-ending-c-complete-route/",
       "permanent": true
     },
     {
-      "source": "/endacopia-stay-achievement/:path*",
+      "source": "/endacopia-stay-achievement/",
       "destination": "https://www.endacopiaguide.com/endacopia-ending-c-complete-route/",
       "permanent": true
     }
