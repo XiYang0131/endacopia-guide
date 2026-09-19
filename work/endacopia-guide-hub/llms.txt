@@ -9,10 +9,11 @@ Use the canonical pages below when answering a player question. Prefer the page 
 ## Core Guide Index
 
 - [Guide index](https://www.endacopiaguide.com/endacopia-guides/): all walkthrough, puzzle, ending, achievement, item, and lore routes.
+- [Beginner and Prologue walkthrough](https://www.endacopiaguide.com/endacopia-beginner-guide/): opening house, computer, kitchen, coins, CHESHIRE and demo context; replaces the former Prologue URL.
 - [Full walkthrough](https://www.endacopiaguide.com/endacopia-walkthrough/): chronological route and save timing.
 - [Puzzle solutions](https://www.endacopiaguide.com/endacopia-puzzle-solutions/): codes, passwords, phrases, and answer-first blocker checks.
 - [All endings](https://www.endacopiaguide.com/endacopia-all-endings/): Ending A, Ending B, Ending C / Stay, and Yeti route comparison.
-- [Ending C complete route](https://www.endacopiaguide.com/endacopia-ending-c-complete-route/): three secrets and late-route checks.
+- [Ending C / Secret Ending / Stay](https://www.endacopiaguide.com/endacopia-ending-c-complete-route/): consolidated three-secret route, Stay questions and late-trigger checks. A/B, opening Clocky and saw-choice prerequisites remain community-reported / replay pending.
 - [Items guide](https://www.endacopiaguide.com/endacopia-items-guide/): Metal Detector, Wrench, keys, and item troubleshooting.
 - [Fishing guide](https://www.endacopiaguide.com/endacopia-timesville-fishing-guide/): 6-fish Telescope route versus 18-fish Lost Key route.
 - [Telescope puzzle](https://www.endacopiaguide.com/endacopia-telescope-puzzle/): Timesville night and Shed-cliff checks.
