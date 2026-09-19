@@ -10,6 +10,9 @@ const read = p => fs.readFileSync(p,'utf8').replace(/\r/g,'');
 const manifest = [...read(path.join(source,'sitemap.xml')).matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);
 const get = slug => read(path.join(dist,slug,'index.html'));
 const text = s => s.replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/\s+/g,' ').trim();
+const visibleFaqs = article => new Map([...article.matchAll(/<h3\b[^>]*>((?:(?!<\/h3>)[\s\S])*)<\/h3>\s*<p>([\s\S]*?)<\/p>/g)].map(m=>[text(m[1]),text(m[2])]));
+const regression = visibleFaqs('<h3>Route</h3><ul><li>Not an answer</li></ul><h3>Actual question?</h3><p>Actual answer.</p>');
+assert.deepEqual([...regression], [['Actual question?', 'Actual answer.']]);
 let faqChecks=0;
 for(const url of manifest){
   const slug = new URL(url).pathname.replace(/^\/|\/$/g,'');
@@ -24,7 +27,9 @@ for(const url of manifest){
     assert.equal(h.match(/<meta name="description" content="([^"]*)"/)[1],before.match(/<meta name="description" content="([^"]*)"/)[1],url+' description changed');
   }
   if(['endacopia-mellow','endacopia-characters','endacopia-name-puzzle-flashlight','endacopia-meaning-lore','endacopia-ending-c-not-triggering','endacopia-ending-c-complete-route','endacopia-telescope-puzzle'].includes(slug)){
-    const visible=new Map([...article.matchAll(/<h3\b[^>]*>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/g)].map(m=>[text(m[1]),text(m[2])]));
+    // Do not span across a closed heading whose next element is a list/table.
+    // That previously let a whole article become a seemingly valid FAQ question.
+    const visible=visibleFaqs(article);
     for(const m of h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)){
       const data=JSON.parse(m[1]);
       for(const n of data['@graph']||[data])if(n['@type']==='FAQPage')for(const q of n.mainEntity){assert.equal(q.acceptedAnswer.text,visible.get(q.name),url+' FAQ mismatch: '+q.name);faqChecks++;}
