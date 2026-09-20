@@ -33,7 +33,7 @@
                         "url": "https://www.endacopiaguide.com/endacopia-save-file-location/",
                         "image": "https://www.endacopiaguide.com/assets/og/endacopia-guide-og.jpg",
                         "datePublished": "2026-07-31",
-                        "dateModified": "2026-08-03",
+                        "dateModified": "2026-09-20",
                         "author": {
                                 "@type": "Organization",
                                 "name": "Endacopia Guide Hub",
@@ -110,28 +110,28 @@
           <span class="eyebrow">Save backup</span>
           <h1>Endacopia Save File Location - Backup and Restore Guide</h1>
           <div class="meta-line">
-            <span class="badge hot">Updated August 3, 2026</span>
+            <span class="badge hot">Updated September 20, 2026</span>
             <span class="badge safe">Windows</span>
             <span class="badge">SteamOS</span>
           </div>
           <div class="verification-panel" aria-label="Guide verification status">
             <div>
               <span>Verification</span>
-              <strong>Source-backed</strong>
+              <strong>Documented paths; recovery not playtested</strong>
             </div>
             <div>
               <span>Last checked</span>
-              <strong>August 3, 2026</strong>
+              <strong>September 20, 2026</strong>
             </div>
             <div>
               <span>Evidence</span>
-              <strong>Public guide / community sources cross-checked</strong>
+              <strong>Steam Cloud announcement, cloud configuration and original community guide</strong>
             </div>
           </div>
 
           <div class="answer-box">
             <h2>Quick Answer</h2>
-            <p>On Windows, Endacopia saves are stored in <code>C:\Users\&lt;your name&gt;\Saved Games\Endacopia\</code>. On SteamOS/Proton, check <code>~/.local/share/Steam/steamapps/compatdata/2684630/pfx/drive_c/users/steamuser/Saved Games/Endacopia/</code>. Always close the game before copying or restoring saves.</p>
+            <p>On Windows, check <code>%USERPROFILE%\Saved Games\Endacopia\</code> for files matching <code>agssave.*</code>. On SteamOS/Proton, use the game's Steam library and the <code>steamapps/compatdata/2684630/pfx/</code> prefix shown below. Close the game and copy the whole save folder to a separate backup before changing anything. Steam Cloud was enabled in patch 1.04; it does not establish that an overwritten save can be recovered.</p>
           </div>
 <section class="next-guide-panel" data-next-guide="true" aria-labelledby="next-guide-title"><div class="next-guide-copy"><span class="eyebrow">Next step</span><h2 id="next-guide-title">Continue this route</h2><p>Use the next focused guide instead of restarting the search from the homepage.</p></div><div class="next-guide-links"><a class="next-guide-link" data-next-guide-link="true" href="/endacopia-walkthrough/"><strong>Full walkthrough</strong><span>Return to the route</span></a><a class="next-guide-link" data-next-guide-link="true" href="/endacopia-all-endings/"><strong>All endings guide</strong><span>Plan a safe replay</span></a><a class="next-guide-link" data-next-guide-link="true" href="/endacopia-download/"><strong>Download and backup notes</strong><span>Keep a recoverable copy</span></a></div></section>
 
@@ -140,16 +140,22 @@
           <h2>Save Locations</h2>
           <div class="source-box">
             <p><strong>Windows:</strong> <code>C:\Users\&lt;your name&gt;\Saved Games\Endacopia\</code></p>
-            <p><strong>SteamOS / Proton:</strong> <code>~/.local/share/Steam/steamapps/compatdata/2684630/pfx/drive_c/users/steamuser/Saved Games/Endacopia/</code></p>
+            <p><strong>SteamOS / Proton:</strong> <code>&lt;SteamLibrary&gt;/steamapps/compatdata/2684630/pfx/drive_c/users/steamuser/Saved Games/Endacopia/</code>. The original community guide uses <code>~/.local/share/Steam/</code> as its example library; an alternate library or SD-card installation may have a different prefix.</p>
+            <p><strong>What supports these paths?</strong> <a href="https://steamdb.info/app/2684630/ufs/">SteamDB's copy of the app's cloud configuration</a> lists <code>WinSavedGames</code>, folder <code>Endacopia</code> and pattern <code>agssave.*</code>. An <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669">original Steam community backup guide</a> independently documents the Windows and default SteamOS paths. SteamDB is not Valve, and this site has not performed a local restore test.</p>
           </div>
 
           <h2>Safe Backup Steps</h2>
           <ol class="step-list">
             <li><strong>Close Endacopia.</strong> Do not copy files while the game is writing saves.</li>
-            <li><strong>Copy the whole folder.</strong> Put the backup somewhere outside the active save directory.</li>
+            <li><strong>Copy the whole folder.</strong> Put the backup somewhere outside the active save directory. Copy, do not move or delete, the live files.</li>
             <li><strong>Name the backup clearly.</strong> Include route state, such as <code>chapter-1-before-office-secret</code>.</li>
-            <li><strong>Restore only while closed.</strong> Copy your backup files back into the original save folder after quitting the game.</li>
+            <li><strong>Check the backup before relying on it.</strong> Confirm that it contains save files, and record their size and modification time. An empty folder is not a backup.</li>
           </ol>
+
+          <h2 id="cloud-and-recovery">Steam Cloud, Overwritten Saves and Restore Limits</h2>
+          <p><a href="https://steamcommunity.com/games/2684630/announcements/detail/689764519146161653">The official 1.04 announcement</a> confirms cross-device Steam Cloud support. That is a sync feature, not evidence of a recoverable history of every route or save. Do not delete a local folder to try to force recovery.</p>
+          <p>If you have a known-good backup, the original community guide describes restoring its complete contents while the game is closed. First preserve a separate copy of the current folder too: replacement can discard newer progress. If Steam presents a sync conflict and you cannot identify the intended version, stop before choosing an overwrite. Consult <a href="https://help.steampowered.com/en/faqs/view/68D2-35AB-09A9-7678">Steam Cloud support</a>.</p>
+          <p><strong>No backup, corrupt file or unexpected rollback?</strong> No universal repair is verified here. Keep the affected files, game version and error message. The <a href="https://steamcommunity.com/games/2684630/announcements/detail/689764519146161811">1.05 announcement</a> offered developer help for the specific old crash when entering the dice room; it is not a promise to recover any overwritten save. Do not import an unknown player's save or edit save contents as a general fix.</p>
 
           <h2>Best Save Points</h2>
           <div class="table-wrap">
@@ -165,7 +171,7 @@
 
           <h2>Sources Used</h2>
           <div class="source-box">
-            <p><a href="https://ninewiki.com/endings/endacopia-all-endings/">ninewiki all endings</a> | <a href="https://tposegaming.com/endacopia-endings/">Tpose endings guide</a></p>
+            <p><a href="https://steamcommunity.com/games/2684630/announcements/detail/689764519146161653">Official 1.04: Steam Cloud</a> | <a href="https://steamdb.info/app/2684630/ufs/">App cloud configuration via SteamDB</a> | <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3773635669">Original community backup guide</a>. Cloud support is official; paths are source-cross-checked. A successful restore, compatibility between saves and recovery of overwritten data are not independently tested by this site.</p>
           </div>
 
 
