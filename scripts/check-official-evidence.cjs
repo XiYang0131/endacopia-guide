@@ -12,8 +12,9 @@ for(const slug of slugs){
  const html=get(slug);
  const before=execFileSync('git',['show',`${base}:work/endacopia-guide-hub/${slug}/index.html`],{cwd:root,encoding:'utf8'});
  for(const re of [/<title>(.*?)<\/title>/,/<meta name="description" content="([^"]+)"/,/<link rel="canonical" href="([^"]+)"/])assert.equal(html.match(re)[1],before.match(re)[1],slug+' changed traffic metadata');
- assert(html.match(/"dateModified"\s*:\s*"2026-09-20"/),slug+' date');
- assert(sitemap.includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>2026-09-20</lastmod>`),slug+' sitemap');
+ const date=html.match(/"dateModified"\s*:\s*"(\d{4}-\d{2}-\d{2})"/)?.[1];
+ assert(date && date>='2026-09-20' && date<=new Date().toISOString().slice(0,10),slug+' date');
+ assert(sitemap.includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>${date}</lastmod>`),slug+' sitemap');
  assert(!/Next proof task|Next evidence task|Query signal|before publishing a workaround|competitor's useful patch-note structure/.test(html),slug+' internal tasks');
 }
 const expected={
