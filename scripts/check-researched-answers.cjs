@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,'..');
 const base='4453accab2f44d9eee8369d22c6393136f29162b';
 const read=s=>fs.readFileSync(path.join(root,'dist',s,'index.html'),'utf8');
 const sitemap=fs.readFileSync(path.join(root,'dist/sitemap.xml'),'utf8');
-const expectedDates={'endacopia-clocky':'2026-09-22','endacopia-items-guide':'2026-09-21','endacopia-surgeon-answers':'2026-09-22','endacopia-boss-fights-guide':'2026-09-22','endacopia-puzzle-solutions':'2026-09-22','changelog':'2026-09-22'};
+const expectedDates={'endacopia-clocky':'2026-09-22','endacopia-items-guide':'2026-09-21','endacopia-surgeon-answers':'2026-09-22','endacopia-boss-fights-guide':'2026-09-22','endacopia-puzzle-solutions':'2026-09-22','endacopia-soccer-ball':'2026-09-23','changelog':'2026-09-23'};
 for(const [slug,date] of Object.entries(expectedDates)){
  const html=read(slug);
  const before=execFileSync('git',['show',`${base}:work/endacopia-guide-hub/${slug}/index.html`],{cwd:root,encoding:'utf8'});
@@ -30,5 +30,8 @@ assert(!/Next proof task|do not publish a fixed sequence|Two clean hits|drains o
 const puzzles=read('endacopia-puzzle-solutions');
 for(const s of ['Select one memory on each side','1v8k6cr','blowing out candles','Neoseeker Chapter 1 reference','No numbered map or current-build replay'])assert(puzzles.includes(s),s);
 for(const f of ['assets/main.js','assets/styles.css','robots.txt'])assert.equal(fs.readFileSync(path.join(root,'dist',f),'utf8').replace(/\r/g,''),execFileSync('git',['show',`${base}:work/endacopia-guide-hub/${f}`],{cwd:root,encoding:'utf8'}).replace(/\r/g,''),f+' unchanged');
+const soccer=read('endacopia-soccer-ball');
+for(const s of ['525387040750270062','no universal BPM','does not exactly match','one player\'s account','ball and kick-line cue','exact timing unverified'])assert(soccer.includes(s),s);
+assert(!/Similarweb shows|5th red ball|<strong>92-98 BPM<\/strong>|The cue disappears/.test(soccer));
 assert(!fs.existsSync(path.join(root,'dist/content-ops')));
-console.log(JSON.stringify({result:'PASS',pagesChecked:6,routeSources:true,conflictingAdviceQualified:true,datesMatch:true,trafficMetadataAndAdsUnchanged:true,scope:'Static checks, not gameplay reproduction'}));
+console.log(JSON.stringify({result:'PASS',pagesChecked:7,routeSources:true,conflictingAdviceQualified:true,datesMatch:true,trafficMetadataAndAdsUnchanged:true,scope:'Static checks, not gameplay reproduction'}));
