@@ -10,8 +10,9 @@ const sitemap = read('sitemap.xml');
 for (const slug of ['endacopia-meaning-lore','how-long-to-beat-endacopia','endacopia-trapezist','changelog']) {
   const html = read(slug+'/index.html');
   for (const re of [/<title>(.*?)<\/title>/, /<meta name="description" content="([^"]+)"/, /<link rel="canonical" href="([^"]+)"/]) assert.equal(html.match(re)[1], before(slug+'/index.html').match(re)[1]);
-  assert.equal(html.match(/"dateModified"\s*:\s*"([^"]+)"/)[1], '2026-09-24');
-  assert(sitemap.includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>2026-09-24</lastmod>`));
+  const date = slug === 'changelog' ? '2026-09-25' : '2026-09-24';
+  assert.equal(html.match(/"dateModified"\s*:\s*"([^"]+)"/)[1], date);
+  assert(sitemap.includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>${date}</lastmod>`));
 }
 for (const p of ['endacopia-clocky/index.html','assets/main.js','assets/styles.css','robots.txt']) assert.equal(read(p).replace(/\r/g,''),before(p).replace(/\r/g,''),p+' preserved');
 const meaning = read('endacopia-meaning-lore/index.html');

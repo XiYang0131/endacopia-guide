@@ -6,7 +6,7 @@ const root=path.resolve(__dirname,'..');
 const base='4453accab2f44d9eee8369d22c6393136f29162b';
 const read=s=>fs.readFileSync(path.join(root,'dist',s,'index.html'),'utf8');
 const sitemap=fs.readFileSync(path.join(root,'dist/sitemap.xml'),'utf8');
-const expectedDates={'endacopia-clocky':'2026-09-22','endacopia-items-guide':'2026-09-21','endacopia-surgeon-answers':'2026-09-22','endacopia-boss-fights-guide':'2026-09-22','endacopia-puzzle-solutions':'2026-09-22','endacopia-soccer-ball':'2026-09-23','changelog':'2026-09-24'};
+const expectedDates={'endacopia-clocky':'2026-09-22','endacopia-items-guide':'2026-09-21','endacopia-surgeon-answers':'2026-09-22','endacopia-boss-fights-guide':'2026-09-22','endacopia-puzzle-solutions':'2026-09-25','endacopia-soccer-ball':'2026-09-23','changelog':'2026-09-25'};
 for(const [slug,date] of Object.entries(expectedDates)){
  const html=read(slug);
  const before=execFileSync('git',['show',`${base}:work/endacopia-guide-hub/${slug}/index.html`],{cwd:root,encoding:'utf8'});
