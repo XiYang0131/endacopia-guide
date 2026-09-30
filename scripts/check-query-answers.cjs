@@ -11,8 +11,9 @@ for (const slug of ['endacopia-puzzle-solutions','endacopia-all-fish-guide','end
   const html = read(slug+'/index.html');
   const old = before(slug+'/index.html');
   for (const re of [/<title>(.*?)<\/title>/, /<meta name="description" content="([^"]+)"/, /<link rel="canonical" href="([^"]+)"/]) assert.equal(html.match(re)[1], old.match(re)[1]);
-  assert.equal(html.match(/"dateModified"\s*:\s*"([^"]+)"/)[1], '2026-09-25');
-  assert(sitemap.includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>2026-09-25</lastmod>`));
+  const date = ['endacopia-puzzle-solutions','changelog'].includes(slug) ? '2026-09-30' : '2026-09-25';
+  assert.equal(html.match(/"dateModified"\s*:\s*"([^"]+)"/)[1], date);
+  assert(sitemap.includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>${date}</lastmod>`));
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1);
   assert(html.includes('G-NEY4H1D17M'));
   for (const id of old.matchAll(/\bid="([^"]+)"/g)) {
