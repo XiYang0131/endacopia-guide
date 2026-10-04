@@ -10,7 +10,7 @@ const sitemap = read('sitemap.xml');
 for (const slug of ['endacopia-meaning-lore','how-long-to-beat-endacopia','endacopia-trapezist','changelog']) {
   const html = read(slug+'/index.html');
   for (const re of [/<title>(.*?)<\/title>/, /<meta name="description" content="([^"]+)"/, /<link rel="canonical" href="([^"]+)"/]) assert.equal(html.match(re)[1], before(slug+'/index.html').match(re)[1]);
-  const date = slug === 'changelog' ? '2026-09-30' : '2026-09-24';
+  const date = slug === 'changelog' ? '2026-10-04' : '2026-09-24';
   assert.equal(html.match(/"dateModified"\s*:\s*"([^"]+)"/)[1], date);
   assert(sitemap.includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>${date}</lastmod>`));
 }

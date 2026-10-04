@@ -10,8 +10,9 @@ for (const slug of ['endacopia-mellow','endacopia-puzzle-solutions','endacopia-t
   const html=read(slug+'/index.html');
   assert.equal((html.match(/<h1[ >]/g)||[]).length,1);
   assert(html.includes(`href="https://www.endacopiaguide.com/${slug}/"`));
-  assert(html.includes('"dateModified": "2026-09-30"'));
-  assert(read('sitemap.xml').includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>2026-09-30</lastmod>`));
+  const date = slug === 'changelog' ? '2026-10-04' : '2026-09-30';
+  assert(html.includes(`"dateModified": "${date}"`));
+  assert(read('sitemap.xml').includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>${date}</lastmod>`));
   for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) JSON.parse(m[1]);
   for (const m of before(slug+'/index.html').matchAll(/\bid="([^"]+)"/g)) assert(html.includes(`id="${m[1]}"`),'lost anchor '+m[1]);
 }
