@@ -21,7 +21,8 @@ assert(items.includes('href="#wrench-core-key"'));
 const soccer=read('endacopia-soccer-ball/index.html');
 assert(soccer.indexOf('id="soccer-troubleshooting"') < soccer.indexOf('<h2>Official Steam Media Reference'));
 assert(soccer.includes('aria-label="Soccer goal shortcuts"'));
-for(const p of ['endacopia-meaning-lore/index.html','endacopia-mellow/index.html','endacopia-telescope-puzzle/index.html','endacopia-puzzle-solutions/index.html','assets/main.js','assets/styles.css','robots.txt']) assert.equal(read(p),before(p),p+' must stay unchanged');
+// Telescope/Puzzle now have deliberate FAQ/evidence repairs, covered by check-answer-consistency.cjs.
+for(const p of ['endacopia-meaning-lore/index.html','endacopia-mellow/index.html','assets/main.js','assets/styles.css','robots.txt']) assert.equal(read(p),before(p),p+' must stay unchanged');
 const js=read('assets/main.js');
 const start=js.indexOf('document.querySelectorAll("[data-next-guide-link]")');
 const end=js.indexOf('\ndocument.querySelectorAll',start+1);
