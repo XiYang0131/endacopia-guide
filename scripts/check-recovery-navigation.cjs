@@ -11,8 +11,9 @@ for(const slug of ['endacopia-items-guide','endacopia-soccer-ball']) {
   for(const re of [/<title>(.*?)<\/title>/, /<meta name="description" content="([^"]+)"/, /<link rel="canonical" href="([^"]+)"/]) assert.equal(html.match(re)[1],old.match(re)[1]);
   for(const m of old.matchAll(/\bid="([^"]+)"/g)) assert(html.includes(`id="${m[1]}"`),'lost anchor '+m[1]);
   for(const m of old.matchAll(/href="(https:\/\/[^"#]+)"/g)) assert(html.includes(m[0]),'lost evidence link '+m[1]);
-  assert(html.includes('"dateModified": "2026-10-04"'));
-  assert(read('sitemap.xml').includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>2026-10-04</lastmod>`));
+  const modified=slug==='endacopia-items-guide'?'2026-10-08':'2026-10-04';
+  assert(html.includes(`"dateModified": "${modified}"`));
+  assert(read('sitemap.xml').includes(`<loc>https://www.endacopiaguide.com/${slug}/</loc><lastmod>${modified}</lastmod>`));
 }
 const items=read('endacopia-items-guide/index.html');
 assert(items.indexOf('id="metal-detector-route"') < items.indexOf('id="body-parts-answer-title"'));
