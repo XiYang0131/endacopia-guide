@@ -1,0 +1,351 @@
+{
+  "reviewed": "2026-11-09",
+  "domain": "https://www.endacopiaguide.com",
+  "measurement": "Editorial ownership map. Not search-volume estimates or evidence of cannibalization.",
+  "homepage": {
+    "primary": "Endacopia guide",
+    "role": "Game-wide navigation and overview",
+    "url": "/"
+  },
+  "pages": [
+    {
+      "group": "start",
+      "url": "/endacopia-guides/",
+      "primary": "Endacopia guide index",
+      "role": "Navigation index, not a second full walkthrough"
+    },
+    {
+      "group": "start",
+      "url": "/endacopia-walkthrough/",
+      "primary": "Endacopia walkthrough",
+      "variants": [
+        "chapter walkthrough",
+        "chapter 1",
+        "chapter 2"
+      ],
+      "role": "Owns the full chronological chapter route"
+    },
+    {
+      "group": "start",
+      "url": "/endacopia-beginner-guide/",
+      "primary": "Endacopia Beginner and prologue guide",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "start",
+      "url": "/endacopia-full-game/",
+      "primary": "Endacopia Full-game completion",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "start",
+      "url": "/endacopia-play/",
+      "primary": "Endacopia Where to play",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "start",
+      "url": "/endacopia-download/",
+      "primary": "Endacopia Official download links",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "start",
+      "url": "/endacopia-demo-vs-full-game/",
+      "primary": "Endacopia Demo versus full game",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "start",
+      "url": "/endacopia-release-date/",
+      "primary": "Endacopia Release and platform information",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "start",
+      "url": "/how-long-to-beat-endacopia/",
+      "primary": "Endacopia How long to beat Endacopia",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-puzzle-solutions/",
+      "primary": "Endacopia Puzzle answers index",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-telescope-puzzle/",
+      "primary": "Endacopia telescope puzzle",
+      "variants": [
+        "night",
+        "shed",
+        "key constellation",
+        "not working"
+      ],
+      "role": "Owns Timesville shed use; Office secret is a separate location and route"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-clown-theater-puzzle/",
+      "primary": "Endacopia Clown puzzle",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-saw-box-code/",
+      "primary": "Endacopia Saw Box code",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-cheshire-password/",
+      "primary": "Endacopia CHESHIRE password",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-let-me-go-let-me-talk/",
+      "primary": "Endacopia LET ME GO / LET ME TALK",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-phone-puzzle-answers/",
+      "primary": "Endacopia Phone puzzle answers",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-name-puzzle-flashlight/",
+      "primary": "Endacopia Name and flashlight puzzle",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-red-ball-guide/",
+      "primary": "Endacopia Scalpel operation and Red Ball",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "puzzles",
+      "url": "/endacopia-items-guide/",
+      "primary": "Endacopia Missing items, Hands, Mouth and Eyes",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-all-endings/",
+      "primary": "Endacopia all endings",
+      "role": "Comparison of outcomes; complete steps belong to focused route guides"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-ending-c-complete-route/",
+      "primary": "Endacopia Ending C",
+      "variants": [
+        "Stay route",
+        "secret ending route"
+      ],
+      "role": "Owns the complete route; troubleshooting has separate user intent"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-ending-c-not-triggering/",
+      "primary": "Endacopia Ending C not triggering",
+      "variants": [
+        "Stay not unlocked"
+      ],
+      "role": "Checklist for failed route; links to complete route rather than duplicating it"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-all-secrets/",
+      "primary": "Endacopia All secrets checklist",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-misery-town-secret/",
+      "primary": "Endacopia Misery Town secret",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-office-secret/",
+      "primary": "Endacopia Office secret",
+      "variants": [
+        "behind stairs",
+        "symbol puzzle",
+        "Office telescope"
+      ],
+      "role": "Owns full Office-secret route"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-277-5944/",
+      "primary": "Endacopia 277-5944",
+      "variants": [
+        "phone number"
+      ],
+      "role": "Short number lookup; links to Office-secret owner for complete route"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-the-yeti-ending/",
+      "primary": "Endacopia The Yeti ending",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "endings",
+      "url": "/endacopia-underground/",
+      "primary": "Endacopia Underground routes",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "achievements",
+      "url": "/endacopia-achievements-guide/",
+      "primary": "Endacopia Achievements guide",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "achievements",
+      "url": "/endacopia-100-percent-achievement-checklist/",
+      "primary": "Endacopia 100% achievement checklist",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "achievements",
+      "url": "/endacopia-soccer-ball/",
+      "primary": "Endacopia soccer ball",
+      "variants": [
+        "timing",
+        "how to kick",
+        "100 points",
+        "Footwork Master"
+      ],
+      "role": "Owns manual soccer input and achievement target"
+    },
+    {
+      "group": "achievements",
+      "url": "/endacopia-clocky/",
+      "primary": "Endacopia Clocky fight and rematch",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "achievements",
+      "url": "/endacopia-boss-fights-guide/",
+      "primary": "Endacopia Boss fights",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "achievements",
+      "url": "/endacopia-trapezist/",
+      "primary": "Endacopia Trapezist",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "achievements",
+      "url": "/endacopia-chameleon-battle/",
+      "primary": "Endacopia Chameleon encounter",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "achievements",
+      "url": "/endacopia-water-break-achievement/",
+      "primary": "Endacopia Water Break",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "world",
+      "url": "/endacopia-timesville-fishing-guide/",
+      "primary": "Endacopia Fish Key and Lost Key",
+      "role": "Progression route with the collection guide as a supporting checklist"
+    },
+    {
+      "group": "world",
+      "url": "/endacopia-all-fish-guide/",
+      "primary": "Endacopia all fish",
+      "role": "Collection list and times; progression instructions belong to fishing guide"
+    },
+    {
+      "group": "world",
+      "url": "/endacopia-map/",
+      "primary": "Endacopia Map and location guide",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "world",
+      "url": "/endacopia-scribbly/",
+      "primary": "Endacopia Scribbly",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-meaning-lore/",
+      "primary": "Endacopia meaning",
+      "variants": [
+        "name meaning",
+        "what does Endacopia mean",
+        "word definition",
+        "story meaning",
+        "what is Endacopia about"
+      ],
+      "role": "Owns title and premise questions; links to Surgeon and endings for depth"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-surgeon-answers/",
+      "primary": "Endacopia Surgeon questions and answers",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-mellow/",
+      "primary": "Endacopia Mellow",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-characters/",
+      "primary": "Endacopia Characters",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-wiki/",
+      "primary": "Endacopia Wiki and reference index",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-steam-deck/",
+      "primary": "Endacopia Steam Deck",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-save-file-location/",
+      "primary": "Endacopia Save file location",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-patch-notes/",
+      "primary": "Endacopia Patch notes",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/endacopia-screenshot-checklist/",
+      "primary": "Endacopia Record a stuck puzzle",
+      "role": "Focused existing page; no URL migration proposed"
+    },
+    {
+      "group": "reference",
+      "url": "/games-like-endacopia/",
+      "primary": "Endacopia Games like Endacopia",
+      "role": "Focused existing page; no URL migration proposed"
+    }
+  ]
+}
